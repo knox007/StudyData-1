@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1. IniFile", "IniFile\IniFile.vcxproj", "{90B2BE61-5B85-4F8B-A332-4FF410B05A89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7F409CE2-73C3-4612-8941-F135ECAA2ED4}"
+	ProjectSection(SolutionItems) = preProject
+		INI_레지스트리.txt = INI_레지스트리.txt
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2. Registry", "Registry\Registry.vcxproj", "{A2420346-25EE-4664-BD34-E1B63365FA78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90B2BE61-5B85-4F8B-A332-4FF410B05A89}.Debug|x86.ActiveCfg = Debug|Win32
+		{90B2BE61-5B85-4F8B-A332-4FF410B05A89}.Debug|x86.Build.0 = Debug|Win32
+		{90B2BE61-5B85-4F8B-A332-4FF410B05A89}.Release|x86.ActiveCfg = Release|Win32
+		{90B2BE61-5B85-4F8B-A332-4FF410B05A89}.Release|x86.Build.0 = Release|Win32
+		{A2420346-25EE-4664-BD34-E1B63365FA78}.Debug|x86.ActiveCfg = Debug|Win32
+		{A2420346-25EE-4664-BD34-E1B63365FA78}.Debug|x86.Build.0 = Debug|Win32
+		{A2420346-25EE-4664-BD34-E1B63365FA78}.Release|x86.ActiveCfg = Release|Win32
+		{A2420346-25EE-4664-BD34-E1B63365FA78}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75C7BCF7-0A4E-4A1B-9E7E-E24887A6870B}
+	EndGlobalSection
+EndGlobal

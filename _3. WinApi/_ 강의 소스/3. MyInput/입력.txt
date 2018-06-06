@@ -1,0 +1,104 @@
+/// 입력 ///////////////////////////////////////////////////////
+======================================
+1. 키보드 입력
+	-	키보드로부터 입력이 발생했을 경우 윈도우즈는 포커스를 가진 프로그램에게
+		키보드 메시지( WM_CHAR, WM_KEYDOWN )을 보낸다.
+				
+		*	포커스
+			-	입력 초점
+			-	키보드 입력을 받아들일 수 있는 상태.
+			-	한 번에 오직 한개의 프로그램만 활성화.
+			-	활성화된 프로그램내에서도 한 한개의 컨트롤만 포커스를 가질수 있다.
+
+		*	WM_CHAR / WM_KEYDOWN
+			-	WM_CHAR		:	문자 입력시 발생.
+			-	WM_KEYDOWN	:	그외 키 입력시 발생.(Alt키 및 일부 제외)
+
+
+
+
+======================================
+2.	무효 영역
+	-	윈도우의 외부적인 변화가 생기면( 윈도우의 일부가 가려짐, 최소화 되었다가 복구 )
+		WM_PAINT를 운영체제로 부터 받게됨.
+	-	프로그램의 내부적인 변화에 의해 화면이 다시 그려져야할 때는 작업영역을 무효화 하지 않음.
+		:	운영체제 입장에서는 내부적인 변화의 목적을 알 수 없다.
+		( 입력받은 문자를 화면으로 출력할지, 내부 계산에만 사용할지, 네트웍이나 db로 전송할지 알 수 없음. )
+		:	InvalidateRect를 통해 강제 무효화.
+	-	BOOL InvalidateRect( HWND hWnd, CONST RECT* lpRect, BOOL bErase)		
+		-	lpRect	:	무효화할 사각영역.
+					:	NULL이면 윈도우 전영역 무효화.		-	완전히 다시 그려진다는 장점.
+															-	속도는 상대적으로 느려짐.
+															-	변경영역을 최소화하면 속도가 상대적으로 증가.
+		-	bErase	:	무효화되기 전에 배경을 모두 지울지 말지를 설정.
+						메모리 상의 버퍼와 화면 상의 버퍼가 구별됨.
+
+
+
+
+======================================
+3.	TranslateMessage(CONST MSG *lpMsg)
+	-	키보드에서 문자키를 누르면 발생하는 메시지 순서
+		:	WM_KEYDOWN -> WM_CHAR -> WM_KEYUP	( 3-1. TranslateMessage 참고 예제 확인.)
+		:	WM_KEYDOWN / WM_KEYUP	-	키보드로 부터 전달되는 메시지
+			WM_CHAR					-	WM_KEYDOWN 에의해 추가로 발생.
+									-	메시지 루프에서 인위적으로 생성됨.
+										-	GetMessage가 메시지 큐에서 꺼낸 메시지를 TranslateMessage로 넘김.
+										-	TranslateMessage는 전달된 메시지가 WM_KEYDOWN && 눌러진 키가 문자인지 검사 후 DispatchMessage에 의해 WndProc에 전달.
+											- Yes	: WM_CHAR를 추가 발생
+											- No	: Do Nothing!!!
+	
+	-	TranslateMessage를 호출하지 않으면 WM_CHAR은 발생하지 않음.
+		:	오직 WM_CHAR을 만들어내기 위해 존재.
+		:	문자입력을 전혀 받을 필요가 없는 프로그램이라면 TranslateMessage 생략해도 무관.
+
+
+	-	TranslateMessage를 사용하지 않는다면.. ㄷㄷㄷㄷ
+		:	키보드 레이아웃에 따라 입력이 달라질수 있다.
+		:	국가에 따라 A버튼이 A버튼이 아닐수 있다.
+		:	Shift, Caps Lock키 상태에 따라 문자가 바뀔수 있다.
+		:	'R'을 입력	-	한글모드	-	Yes		-	Shift		- ㄱ
+																	- ㄲ
+										-	No		-	Caps Lock	-	Shift	-	r
+																				-	R
+																	-	Shift	-	R
+																				-	r
+
+
+
+
+======================================
+3.	마우스 입력
+
+버튼		down				up				doubleclick
+------------------------------------------------------------------
+Left		WM_LBUTTONDOWN		WM_LBUTTONUP	WM_LBUTTONDBLCLK
+Right		WM_RBUTTONDOWN		WM_RBUTTONUP	WM_RBUTTONDBLCLK
+Middle		WM_MBUTTONDOWN		WM_MBUTTONUP	WM_MBUTTONDBLCLK
+
+lParam		-	상위 워드	:	y좌표
+			-	하위 워드	:	x좌표
+
+wParam		-	마우스 버튼 상태
+			-	키보드 조합 키(Shift, Ctrl)상태
+				-	MK_SHIFT, MK_CONTROL, MK_LBUTTON 등..
+
+
+
+
+======================================
+4.	더블 클릭
+	*	일정 영역을 정해진 시간안에 연속적으로 눌러야 인정.
+	*	더블 클릭을 디폴트로 지원하지 않은 이유.
+		-	프로그램에 따라 WM_LBUTTONDOWN을 두번 받기를 원할 수도 있다.
+		-	워드의 경우 트리플 클릭은 문단 선택.
+			페이지 메이커는 최대 5번까지의 연속 클릭을 정의.
+
+
+
+======================================
+5.	wParam, lParam
+	*	메시지별로 wParam과 lParam에 추가 정보를 담아서 전달.
+	*	둘다 32비트 값이므로 메시지가 전달할 수 있는 부가 정보는 총 64비트.
+	*	네이밍의 유래
+		-	Win16에서 wParam(WORD)은 16비트, lParam(Long)은 32비트였다.

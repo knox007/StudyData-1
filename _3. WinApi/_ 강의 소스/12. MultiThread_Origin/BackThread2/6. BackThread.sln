@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "6. BackThread", "6. BackThread.vcxproj", "{EA69CEFA-898C-4892-A81D-C9FF65B70C26}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA69CEFA-898C-4892-A81D-C9FF65B70C26}.Debug|x86.ActiveCfg = Debug|Win32
+		{EA69CEFA-898C-4892-A81D-C9FF65B70C26}.Debug|x86.Build.0 = Debug|Win32
+		{EA69CEFA-898C-4892-A81D-C9FF65B70C26}.Release|x86.ActiveCfg = Release|Win32
+		{EA69CEFA-898C-4892-A81D-C9FF65B70C26}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {328F55F5-EDE3-4E18-915E-BD67C61A12DF}
+	EndGlobalSection
+EndGlobal

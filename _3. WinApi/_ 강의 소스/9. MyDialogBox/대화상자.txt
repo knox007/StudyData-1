@@ -1,0 +1,220 @@
+/// 대화 상자 //////////////////////////////////////////////////////
+-------
+1.	종류
+-------
+-	모달형(Modal)과 모델리스형(Modeless).
+	-	모달(Modal)형
+		:	대화상자를 닫기 전에 다른 윈도우로 전환할 수 없음.
+			OK버튼이나 Cancel 버튼을 눌러 대화상자를 닫아야 다른 윈도우로 전환 가능.			 
+			다른 프로그램으로는 전환가능.
+			예) 비쥬얼 스튜디오 Open대화상자, MessageBox 함수에 의해 만들어지는 메시지 박스.
+
+	-	모델리스(Modeless)형
+		:	대화상자를 열어 놓은 채로 다른 윈도우로 전환가능.
+			모달형에 비해 많이 사용되지는 않음.			
+			다른 작업을 하면서도 열려 있을 수 있기 때문에 여러가지 문제 발생 가능.
+			-	에러 상황을 고려해야하므로 프로그램이 더 까다로움.
+			예) 비쥬얼 스튜디오의 찾기 대화상자.
+				(문자열을 찾으면서 검색된 문자열이 있는 부분을 즉시 편집 가능하도록 해야하므로.)
+
+
+-------
+2.	만들기
+-------
+-	필수사항
+	-	대화상자 템플리트
+		:	대화상자의 모양과 대화상자내의 컨트롤 배치 상태가 저장 정보.			
+			IDE [Integrated Development Environment]에 별도의 대화상자 편집기가 제공됨.
+			리소스 파일에 작성됨.
+
+	-	대화상자 프로시저
+		:	대화상자에서 발생하는 메시지를 처리.(윈도우 프로시저와 유사.)
+
+-	대화상자 템플리트 만들기.
+	솔루션 탐색기 - 프로젝트 우클릭 - 팝업메뉴 - 추가 - 리소스 선택 - Dialog 선택
+
+
+-------
+3.	대화 상자 프로시저
+-------
+-	윈도우 프로시저와의 차이.
+	1.	리턴값.
+		-	윈도우 프로시저		:	LRESULT(long)형의 값을 리턴.
+		-	대화상자 프로시저	:	BOOL형의 값을 리턴.
+									대화상자 프로시저가 메시지를 처리하지 못해 FALSE를 리턴했다면
+									그 메시지에 대한 나머지 처리는 윈도우즈가 알아서 해줌.
+
+	2.	초기화
+		-	윈도우 프로시저		:	WM_CREATE.
+		-	대화상자 프로시저	:	WM_INITDIALOG.
+									대화상자에 필요한 초기화 작업.
+
+-	대화상자와의 통신
+	1.	LOWORD(wParam)			:	메시지를 보낸 컨트롤의 ID.
+		HIWORD(wParam)			:	통지 코드 전달.
+
+	2.	BOOL EndDialog(HWND hDlg,int nResult)	:	대화상자를 종료.
+													nResult는 대화상자를 호출한 DialogBox 함수의 리턴값으로 전달.
+
+	3.	IDOK / IDCANCEL			:	리소스에서 대화상자 생성시 기본으로 제공되는 버튼 ID.
+	
+	4.	IDCANCEL				:	Cancel 버튼의 ID, 닫기버튼(X)의 ID이며 ESC키 입력시 호출.
+									취소 버튼을 제거했다하더라도 IDCANCEL에 대한 처리를 하지 않으면 대화상자가 닫히지 않음.
+									
+									
+
+	
+
+	
+-------
+4.	대화 상자 템플릿 만들기.
+-------
+	1.	포인터
+		-	대화 상자 편집기 좌측 최상단에 위치
+		-	컨트롤의 위치나 크기를 바꿀때 사용.
+	2.	컨트롤 배치
+		-	대화 상자 편집기에서 컨트롤 선택 -> 대화상자의 원하는 위치에 클릭 또는 드래그.
+		-	같은 종류의 컨트롤을 여러개 배치 : Ctrl 키를 누른 상태에서 컨트롤 선택.
+										해제 : 다른 컨트롤 선택 또는 포인터 선택.
+	3.	편집
+		-	컨트롤 선택	:	선택된 컨트롤 주변에는 8개의 크기 조절 핸들이 표시됨.
+
+							단일 선택	-	단순 클릭
+
+							다중 선택	-	Shift 또는 Ctrl 키를 누른 상태에서 원하는 컨트롤들을 순서대로 클릭.
+
+											마우스로 드래그 하여 일정영역에 둘러싸인 컨트롤 들을 모두 선택( 마키 셀렉션 ).
+
+											마지막으로 선택된 컨트롤 주변의 크기 조절 핸들이 다른 크기조절 핸들과 구별되는데
+											이 컨트롤은 정렬의 기준이 된다.
+
+
+
+		-	이동		:	좌클릭으로 컨트롤 선택한 상태에서 드래그 후 버튼 업.
+
+		-	크기 조정	:	컨트롤 선택후 컨트롤 주변에 생기는 8개의 크기 조절 핸들을 사용하여 수정.
+		
+		-	눈금선		:	대화 상자에 점들이 일정 간격으로 나타남.
+							
+							크기 조정과 위치 이동이 격자 점을 기준으로 이뤄짐.
+							
+							다수의 컨트롤을 같은 크기로 맞추거나 정렬하는데 용이.
+
+		-	안내선		:	다수의 컨트롤을 같은 간격으로 이동시킬때 용이.
+			*	눈금선 / 안내선의 설정은 메뉴 -> 서식 -> 안내선 설정.
+	
+		-	복사, 잘라내기, 붙여넣기	:	원하는 컨트롤 위에서 마우스 우클릭 하면 나타나는 팝업 메뉴에서 선택.
+
+											클립보드(컴퓨터에서 임시 저장 공간으로 사용하기 위해 확보된 메모리 영역)
+											를 사용하므로 문서의 복사, 잘라내기, 붙여넣기 방식과 유사.
+
+											컨트롤을 복사하면 같은 크기,속성, 종류의 컨트롤이 하나 더 만들어지지만
+											ID는 중복되지 않고 다른 ID가 발급된다.
+											( 복사 후 ID와 이름을 갱신하여 구별하기 쉽게한다. )
+
+		-	정렬		:	다중의 컨트롤들의 위치를 일정한 간격 또는 일정한 위치에 모으은 것.
+							메뉴 -> 대화 상자 편집기 -> 정렬
+							기준 설정
+								-	가장 마지막에 선택한 컨트롤.
+								-	Ctrl을 누른채 선택된 컨트롤.
+	
+		-	탭순서		:	대화 상자내에 있는 컨트롤을 Tab키를 이용하여 포커싱을 이동할때 순서 설정.
+							
+							메뉴 -> 서식 -> 탭순서.
+
+							좌 -> 우, 위 -> 아래의 순서로한다( 책 읽는 순서. )
+
+		-	테스트		:	작성한 대화상자 템플릿이 원하는대로 작동하는지 체크.
+
+							메뉴 -> 대화 상자 편집기 -> 테스트
+				
+-------
+5.	컨트롤과의 통신
+-------
+	1.	핸들과 ID
+		HWND GetDlgItem( HWND hDlg, int nIDDlgItem )
+			hDlg		:	대화상자의 핸들
+			nIDDlgItem	:	컨트롤의 ID
+			반환값		:	컨트롤의 윈도우 핸들.
+
+		int GetDlgCtrlID( HWND hCtrl )
+			hCtrl		:	컨트롤의 윈도우 핸들.
+			반환값		:	컨트롤의 ID
+
+	2.	한 대상을 가리키는데 ID와 핸들이라는 이중의 식별자를 사용하는 이유는?
+		:	컨트롤도 윈도우이며 윈도우를 관리하기 위해서는 핸들이 필요하다.
+			핸들은 운영체제가 일방적으로 발급하는 것이기 때문에 연속성이 없다.
+			연속성이 없으므로 반복적이거나 연속적인 처리에 대해서는 사용할 수 없다.
+			
+			!!	ID는 사용자가 직접 정의 할 수 있으며 연속성을 가지게 할수 있음.
+				for나 while등의 반복문으로 연속적인 처리를 할 수 있음.	!!
+
+	3.	대화상자 -> 컨트롤
+		
+		1.	SendMessage 를 사용.
+
+			컨트롤의 ID 만 알고 있을경우..
+			SendMessage( GetDlgItem(hDlg, ID), wParam, lParam )
+			->	LONG SendDlgItemMessage( HWND hDlg, int nID, WPARAM wParam, LPARAM lParam )
+				:	GetDliItem과 SendMessage의 래퍼 함수.
+
+
+		2.	문자열(주로 Edit박스)
+			UINT GetDlgItemText( HWND hDlg, int nIDDlgItem, LPTSTR lpString, int nMaxCount )
+			:	컨트롤로부터 문자열을 읽는 함수
+				hDlg		:	대화상자의 윈도우 핸들.
+				nIDDlgItem	:	값을 읽거나 쓸 컨트롤의 ID.
+				lpString	:	문자열을 읽을 버퍼.
+				nMaxCount	:	읽을 버퍼의 길이.
+
+			BOOL SetDlgItemText( HWND hDlg, int nIDDlgItem, LPCTSTR lpString )
+			:	컨트롤로 문자열을 출력하는 함수 
+				lpString	:	출력할 문자열 버퍼.
+
+		3.	정수(주로 Edit박스)
+			UINT GetDlgItemInt( HWND hDlg, int nIDDlgItem, BOOL *lpTranslated, BOOL bSigned )
+			:	해당 컨트롤에 입력된 정수값을 읽어옴.
+				리턴값			:	bSigned가 TRUE일 경우는 부호있는 정수값
+								FALSE일 경우는 부호를 무시하고 무조건 양수반환.
+				lpTranslated	:	에러검사용. 사용하지 않을때는 NULL.						
+
+			BOOL SetDlgItemInt( HWND hDlg, int nIDDlgItem, UINT uValue, BOOL bSigned )
+
+			*	읽기	Get			Int		정수
+							DlgItem
+				쓰기	Set			Text	문자열
+
+		4.	논리형(주로 체크 박스, 라디오 버튼)
+			BOOL CheckDlgButton( HWND hDlg, int nIDButton, UINT uCheck )
+			:	체크상태 설정.
+				hDlg		:	부모 윈도우 핸들
+				nIDButton	:	버튼 ID,
+				uCheck		:	원하는 체크 상태
+
+				예)	CheckDlgButton( hDlg, IDC_STUDENT, isStudent ? BST_CHECKED : BST_UNCHECKED );
+
+			UINT IsDlgButtonChecked( HWND hDlg, int nIDButton )				
+				리턴값	:	체크 상태.
+				예)	isStudent = (IsDlgButtonChecked( hDlg, IDC_STUDENT ) == BST_CHECKED);
+
+
+			다른 표현)	SendMessage( GetDlgItem( hDlg, nID ), BM_SETCHECK, uCheck, 0);
+						SendMessage( GetDlgItem( hDlg, nID ), BM_GETCHECK,0,0);
+						또는
+						SendDlgItemMessage( hDlg, nID, BM_SETCHECK, uCheck, 0);
+						SendDlgItemMessage( hDlg, nID, BM_GETCHECK,0,0);
+
+			
+		
+-------
+5.	모델리스형 대화상자
+-------			
+	1.	특징
+		:	대화상자를 열어놓은 채로 메인 윈도우를 조작할 수 있음.
+			모달형보다 더 복잡하며 사용하기에 더 어려움.
+			-	생성, 파괴.
+			-	메시지 처리.
+
+		5번 프로젝트 참고.
+
+		

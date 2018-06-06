@@ -1,0 +1,149 @@
+/// 정보 저장 방식 ////////////////////////////////////////////////////////
+------------------------
+//	1.	INI 파일.
+------------------------
+	//-------------------
+	WritePrivateProfileString
+	-	형식	:
+					BOOL WritePrivateProfileString( LPCWSTR lpAppName,
+													LPCWSTR lpKeyName,
+													LPCWSTR lpString,
+													LPCWSTR lpFileName );
+	
+					lpAppName	:	정보를 기록할 섹션 이름.
+									키 그룹.
+									필요한 만큼 나눌 수 있음.
+
+					lpKeyName	:	키 이름.
+									저장할 정보의 이름.
+
+					lpString	:	키 값.
+									실제 저장 데이터.
+
+					lpFileName	:	INI 파일 경로명.
+
+		예)	WritePrivateProfileString("Position", "Left", "100", szCurDir);
+		
+			[Position]	->	섹션 이름.
+			Left=100
+
+
+	//-------------------
+	GetPrivateProfileInt
+	-	형식	:
+					UINT GetPrivateProfileInt(	LPCWSTR lpAppName,
+												LPCWSTR lpKeyName,
+												INT nDefault,
+												LPCWSTR lpFileName );
+
+					nDefault	:	INI파일이 없거나, 섹션, 키 등이 없을때의 디폴트 값.
+
+
+
+	//-------------------
+	GetPrivateProfileString
+	-	형식	:
+					DWORD GetPrivateProfileString(	LPCSTR lpAppName,
+													LPCSTR lpKeyName,
+													LPCSTR lpDefault,
+													LPSTR lpReturnedString,
+													DWORD nSize,
+													LPCSTR lpFileName );
+					
+					lpReturnedString	: 읽은 문자열을 대입받을 버퍼.
+					nSize				: 버퍼 크기.
+
+
+------------------------
+2.	INI 파일의 단점.
+------------------------
+	1.	텍스트 파일 포맷으로 저장 되므로 사용자가 임의로 조작 가능하며
+		오동작의 원인이 될 수도 있다.
+		
+		->	레지스트리도 편집할 수 있지만 원할 경우 편집하지 못하게 권한을 설정 할 수 있다.
+
+	2.	프로그램 당 하나 이상의 INI파일을 생성 할 수 있다.
+		INI파일이 증가 할 수록 하드 디스크 공간을 낭비한다.
+
+		->	레지스트리는 정보를 한 곳에 집결 시켜 저장하므로 이런 문제가 없다.
+
+	3.	INI 파일이 손상되었을 경우 복구 할 수 있는 방법이 없다.
+		
+		->	레지스트리는 항상 백업본을 작성한다.
+			레지스트리 손상시 운영체제는 자동으로 안전모드로 부팅된다.
+
+	4.	실제 디스크 상에 존재하는 텍스트 파일이므로 정보를 읽고 쓸때마다
+		하드 디스크를 액세스해야함.
+		
+		->	레지스트리도 하드디스크에 파일 형태로 저장되지만 
+			시스템은 레지스트리 캐시를 위해 시스템 메모리를 할당하므로
+			INI 파일에 비해 속도가 훨씬 빠르다.
+
+	-	그럼에도 불구하고...
+		:	간단한 스크립트나 설치 옵션은 INI파일 포맷이 편리.
+		:	직접 편집이 가능하다는 것이 장점이 될수도 있음.
+		:	파일 입출력이나 레지스트리에 비해 사용이 간편.
+
+	** 하지만 최근 컴퓨터 성능의 향상으로 속도에 관한 단점이 거의 무의미해졌다.
+
+
+/// 레지스트리 ////////////////////////////////////////////////////////
+1.	RegCreateKeyEx( HKEY 	hKey,
+			LPCSTR	lpSubKey,
+			DWORD	Reserved,
+			LPSTR	lpClass,
+			DWORD	dwOptions,
+			REGSAM	samDesired,
+			const 	LPSECURITY_ATTRIBUTES lpSecurityAttributes,
+			PHKEY	phkResult,
+			LPDWORD	lpdwDisposition )
+	-	대부분 디폴트가 적용됨.
+		( hKey, lpSubKey, phkResult가 중요. )
+	
+	-	hKey		:	새로 만들어지는 키의 부모키 지정.
+						HKEY_CLASSES_ROOT, HKEY_CURRENT_USER, HKEY_LOCAL_MACHINE 등...
+						주로 HKEY_CURRENT_USER가 사용된다.
+
+		lpSubKey	:	만들고자 하는 서브키.
+						반드시 지정해야함.
+						hKey 아래에 생성됨.
+						서브키의 충돌을 막기 위해 관습적으로 "Software/회사명/프로그램명/버전"으로 구성.
+
+		Reserved	:	예약된 인수. 
+						사용하지 않음.
+						0 으로 지정.
+
+		lpClass		:	생성되는 키의 클래스를 지정하는 문자열.
+						이미 존재하는 키를 오픈할때는 무시됨.
+						지정하지 않을때는 NULL.
+		
+		dwOptions	:	생성하는 키의 옵션 지정.
+						키 생성시에만 적용됨.
+						존재하는 키를 오픈할때는 사용되지 않음.
+						REG_OPTION_NON_VOLATILE 	: 영구저장. 재부팅시에도 정보 유지. 디폴트.
+						REG_OPTION_VOLATILE			: 메모리에 저장. 재부팅시 사라짐.
+						REG_OPTION_BACKUP_RESTORE	: samDesired 인수가 무시됨.
+		
+		samDesired	:	세로 만들어지는 키의 보안 속성.
+					
+						KEY_ALL_ACCESS			:	아래 여섯 가지 속성의 조합
+						KEY_CREATE_LINK			:	심볼릭 링크 생성 허가
+						KEY_CREATE_SUB_KEY		: 	서브 키 생성 허가
+					 	KEY_ENUMERATE_SUB_KEY	: 	서브 키 열거 허가
+						KEY_NOTIFY				: 	통지 변경 허가
+						KEY_QUERY_VALUE			:	값을 읽을 수 있다.
+					 	KEY_SET_VALUE			: 	값을 쓸 수 있다.
+						KEY_READ				:	KEY_QUERY_VALUE | KEY_ENUMERATE_SUB_KEY | KEY_NOTIFY 
+						KEY_WRITE				: 	KEY_SET_VALUE | KEY_CREATE_SUB_KEY
+						KEY_EXECUTE				:	읽기를 허가.
+
+		lpSecurityAttributes	:	생성된 키 값이 차일드 프로세스로도 상속될 것인가 설정.
+									보통 NULL 처리.
+		
+		phkResult	:	생성된 키의 핸들.
+						RegCloseKey를 사용하여 해제.
+
+		lpdwDisposition	:	생성된 키의 상태.
+					REG_CREATED_NEW_KEY		:	새로 생성된 키
+					REG_OPENED_EXISTING_KEY :	기존에 존재하던 키
+

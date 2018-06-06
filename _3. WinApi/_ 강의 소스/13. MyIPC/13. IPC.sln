@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. IPCMessage", "1. IPCMessage", "{212923EA-307C-4D25-8C37-818FC3905410}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IPCMessage1", "IPCMessage\IPCMessage1\IPCMessage1.vcxproj", "{D8C99EAD-7361-49B6-80D5-5C90426866D4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IPCMessage2", "IPCMessage\IPCMessage2\IPCMessage2.vcxproj", "{E77DBFB9-7E3B-4025-9F4A-A05681E168F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. CopyData", "2. CopyData", "{8A0468D2-A8E0-4B49-B736-8F1079042BD5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CopyData1", "CopyData\CopyData1\CopyData1.vcxproj", "{980F9046-FA15-4EAC-B2FF-B4FEF0BBDA33}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CopyData2", "CopyData\CopyData2\CopyData2.vcxproj", "{C8A660BD-A785-45EB-B7E8-F67271C84F83}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CACEA2B2-DFEE-43E8-8270-41869102D544}"
+	ProjectSection(SolutionItems) = preProject
+		IPC.txt = IPC.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8C99EAD-7361-49B6-80D5-5C90426866D4}.Debug|x86.ActiveCfg = Debug|Win32
+		{D8C99EAD-7361-49B6-80D5-5C90426866D4}.Debug|x86.Build.0 = Debug|Win32
+		{D8C99EAD-7361-49B6-80D5-5C90426866D4}.Release|x86.ActiveCfg = Release|Win32
+		{D8C99EAD-7361-49B6-80D5-5C90426866D4}.Release|x86.Build.0 = Release|Win32
+		{E77DBFB9-7E3B-4025-9F4A-A05681E168F9}.Debug|x86.ActiveCfg = Debug|Win32
+		{E77DBFB9-7E3B-4025-9F4A-A05681E168F9}.Debug|x86.Build.0 = Debug|Win32
+		{E77DBFB9-7E3B-4025-9F4A-A05681E168F9}.Release|x86.ActiveCfg = Release|Win32
+		{E77DBFB9-7E3B-4025-9F4A-A05681E168F9}.Release|x86.Build.0 = Release|Win32
+		{980F9046-FA15-4EAC-B2FF-B4FEF0BBDA33}.Debug|x86.ActiveCfg = Debug|Win32
+		{980F9046-FA15-4EAC-B2FF-B4FEF0BBDA33}.Debug|x86.Build.0 = Debug|Win32
+		{980F9046-FA15-4EAC-B2FF-B4FEF0BBDA33}.Release|x86.ActiveCfg = Release|Win32
+		{980F9046-FA15-4EAC-B2FF-B4FEF0BBDA33}.Release|x86.Build.0 = Release|Win32
+		{C8A660BD-A785-45EB-B7E8-F67271C84F83}.Debug|x86.ActiveCfg = Debug|Win32
+		{C8A660BD-A785-45EB-B7E8-F67271C84F83}.Debug|x86.Build.0 = Debug|Win32
+		{C8A660BD-A785-45EB-B7E8-F67271C84F83}.Release|x86.ActiveCfg = Release|Win32
+		{C8A660BD-A785-45EB-B7E8-F67271C84F83}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D8C99EAD-7361-49B6-80D5-5C90426866D4} = {212923EA-307C-4D25-8C37-818FC3905410}
+		{E77DBFB9-7E3B-4025-9F4A-A05681E168F9} = {212923EA-307C-4D25-8C37-818FC3905410}
+		{980F9046-FA15-4EAC-B2FF-B4FEF0BBDA33} = {8A0468D2-A8E0-4B49-B736-8F1079042BD5}
+		{C8A660BD-A785-45EB-B7E8-F67271C84F83} = {8A0468D2-A8E0-4B49-B736-8F1079042BD5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D0BD37D-D6A0-46DE-AE31-AFF547DF3556}
+	EndGlobalSection
+EndGlobal
