@@ -1,0 +1,55 @@
+/// MFC 기본 개념 //////////////////////////////////////////////////////
+------------
+1.	MFC.
+------------
+	1.	정의
+		-	Microsoft Foundation Class의 약자
+		-	Win API를 사용하기 쉽게 클래스화 한 것.
+	
+
+	2.	구조
+	
+		1)	https://msdn.microsoft.com/ko-kr/library/ws8s10w4.aspx
+			https://msdn.microsoft.com/ko-kr/library/bk77x1wx.aspx
+		
+		
+		2)	핵심 구조
+			CObject		-	CCmdTarget		-		CWinThread	-		CWinApp		-	CMyFirstMFCApp
+
+											-		CWnd		-		CFrameWnd	-	CMainFrame
+
+																-		CView		-	CMyFirstMFCView
+																	
+																-		CDialog		-	CDialogEx	-	CAboutDlg
+									
+											-		CDocument	-		CMyFirstMFCDoc
+		
+
+			1)	CObject		:	MFC의 모든클래스의 부모 클래스.
+			
+			2)	CCmdTarget	:	커멘드 메시지를 처리하는 클래스의 부모 클래스.
+								이벤트를 받는 기능.
+								윈도우 메시지를 처리하는 클래스는 모두 이 클래스를 상속 받음.
+			
+			3)	CWinThread	:	스레드 관리.
+
+				CWnd		:	윈도우 표현, 메시지 처리에 관련된 클래스들의 부모 클래스.
+
+				CDocument	:	어플리케이션의 데이터를 관리하는 클래스.
+								주로 파일 처리, 데이터 구조 관리등에 사용.
+
+			4)	CWinApp 	:	어플리케이션에 대한 인스턴스를 초기화, 메시지 루프를 설정.
+
+				CFrameWnd	:	메인 윈도우를 표현하는 클래스.
+								윈도우의 크기, 위치, 상태 등을 설정.
+
+				CView		:	클라이언트 영역을 표현하거나 CDocument의 정보를 표현.
+
+				CDialog		:	모든 대화상자의 부모 클래스.
+				
+
+
+			
+
+		
+
