@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="euc-kr"?>
+	<Body>
+		<Info>
+			<Filename>box_bone.max</Filename>
+			<ObjectCount>7</ObjectCount>
+			<MeshCount>3</MeshCount>
+			<AnimationStart>0f</AnimationStart>
+			<AnimationEnd>100f</AnimationEnd>
+			<KeyType>Keyframe</KeyType>
+			<Object>
+				<Value ID="0">NULL</Value>
+				<Value ID="1">Bone01</Value>
+				<Value ID="2">Bone02</Value>
+				<Value ID="3">Box02</Value>
+				<Value ID="4">Box01</Value>
+				<Value ID="5">Bone03</Value>
+				<Value ID="6">Box03</Value>
+			</Object>
+			<Bone>
+				<Value BoneID="0" ID="0">NULL</Value>
+				<Value BoneID="1" ID="1">Bone01</Value>
+				<Value BoneID="2" ID="2">Bone02</Value>
+				<Value BoneID="3" ID="5">Bone03</Value>
+			</Bone>
+		</Info>
+		<Material>
+			<Slot Index="0">
+				<Diffuse>(color 149.94 149.94 149.94)</Diffuse>
+				<Ambient>(color 149.94 149.94 149.94)</Ambient>
+				<Specular>(color 229.5 229.5 229.5)</Specular>
+				<Emissive>(color 0 0 0)</Emissive>
+				<Opacity>100.0</Opacity>
+				<Power>0.0</Power>
+			</Slot>
+			<Slot Index="1">
+				<Diffuse>(color 150 150 150)</Diffuse>
+				<Ambient>(color 150 150 150)</Ambient>
+				<Specular>(color 229.5 229.5 229.5)</Specular>
+				<Emissive>(color 0 0 0)</Emissive>
+				<Opacity>100.0</Opacity>
+				<Power>0.0</Power>
+			</Slot>
+			<Slot Index="2">
+				<Diffuse>(color 150 150 150)</Diffuse>
+				<Ambient>(color 150 150 150)</Ambient>
+				<Specular>(color 229.5 229.5 229.5)</Specular>
+				<Emissive>(color 0 0 0)</Emissive>
+				<Opacity>100.0</Opacity>
+				<Power>0.0</Power>
+			</Slot>
+			<Slot Index="3">
+				<Diffuse>(color 150 220 233)</Diffuse>
+				<Ambient>(color 150 220 233)</Ambient>
+				<Specular>(color 229.5 229.5 229.5)</Specular>
+				<Emissive>(color 0 0 0)</Emissive>
+				<Opacity>100.0</Opacity>
+				<Power>0.0</Power>
+			</Slot>
+		</Material>
+		<Object ID="0" Name="NULL" Class="Dummy">
+			<Parent ID="-1" Name="undefined">
+			</Parent>
+			<LocalTM>
+				<Value>[1.0,0.0,0.0,0.0]</Value>
+				<Value>[0.0,1.0,0.0,0.0]</Value>
+				<Value>[0.0,0.0,1.0,0.0]</Value>
+				<Value>[0.0,0.0,0.0,1.0]</Value>
+			</LocalTM>
+			<WorldTM>
+				<Value>[1.0,0.0,0.0,0.0]</Value>
+				<Value>[0.0,1.0,0.0,0.0]</Value>
+				<Value>[0.0,0.0,1.0,0.0]</Value>
+				<Value>[0.0,0.0,0.0,1.0]</Value>
+			</WorldTM>
+			<BoundingBox>
+				<Max>[5,5,5]</Max>
+				<Min>[-5,-5,-5]</Min>
+				<Center>[0,0,0]</Center>
+			</BoundingBox>
+		</Object>
+		<Object ID="1" Name="Bone01" Class="BoneGeometry">
+			<Parent ID="-1" Name="undefined">
+			</Parent>
+			<LocalTM>
+				<Value>[1.0,0.0,0.0,0.0]</Value>
+				<Value>[0.0,1.0,0.0,0.0]</Value>
+				<Value>[0.0,0.0,1.0,0.0]</Value>
+				<Value>[-40.0,0.0,0.0,1.0]</Value>
+			</LocalTM>
+			<WorldTM>
+				<Value>[1.0,0.0,0.0,0.0]</Value>
+				<Value>[0.0,1.0,0.0,0.0]</Value>
+				<Value>[0.0,0.0,1.0,0.0]</Value>
+				<Value>[-40.0,0.0,0.0,1.0]</Value>
+			</WorldTM>
+			<BoundingBox>
+				<Max>[50,5,5]</Max>
+				<Min>[0,-5,-5]</Min>
+				<Center>[25,0,0]</Center>
+			</BoundingBox>
+			<Key>
+				<Quaternion>
+					<Value Frame="0f">[0.0,0.0,0.0,1.0]</Value>
+					<Value Frame="50f">[0.0,-0.410559,0.0,0.911834]</Value>
+					<Value Frame="100f">[0.0,0.410737,0.0,0.911754]</Value>
+				</Quaternion>
+			</Key>
+		</Object>
+		<Object ID="2" Name="Bone02" Class="BoneGeometry">
+			<Parent ID="1" Name="Bone01">
+			</Parent>
+			<LocalTM>
+				<Value>[1.0,0.0,0.0,0.0]</Value>
+				<Value>[0.0,1.0,0.0,0.0]</Value>
+				<Value>[0.0,0.0,1.0,0.0]</Value>
+				<Value>[50.0,0.0,0.0,1.0]</Value>
+			</LocalTM>
+			<WorldTM>
+				<Value>[1.0,0.0,0.0,0.0]</Value>
+				<Value>[0.0,1.0,0.0,0.0]</Value>
+				<Value>[0.0,0.0,1.0,0.0]</Value>
+				<Value>[10.0,0.0,0.0,1.0]</Value>
+			</WorldTM>
+			<BoundingBox>
+				<Max>[70,5,5]</Max>
+				<Min>[0,-5,-5]</Min>
+				<Center>[35,0,0]</Center>
+			</BoundingBox>
+			<Key>
+				<Quaternion>
+					<Value Frame="0f">[0.0,0.0,0.0,1.0]</Value>
+					<Value Frame="50f">[0.0,0.0,0.430511,0.902585]</Value>
+					<Value Frame="100f">[0.0,0.0,-0.430511,0.902585]</Value>
+				</Quaternion>
+			</Key>
+		</Object>
+		<Object ID="3" Name="Box02" Class="Editable_mesh">
+			<Parent ID="2" Name="Bone02">
+			</Parent>
+			<LocalTM>
+				<Value>[0.999918,-0.00922825,-0.00885962,0.0]</Value>
+				<Value>[0.00922861,0.999957,-2.26298e-007,0.0]</Value>
+				<Value>[0.00885924,-8.15357e-005,0.999961,0.0]</Value>
+				<Value>[39.9948,-0.369107,-0.79737,1.0]</Value>
+			</LocalTM>
+			<WorldTM>
+				<Value>[0.999918,-0.00922825,-0.00885962,0.0]</Value>
+				<Value>[0.00922861,0.999957,-2.26298e-007,0.0]</Value>
+				<Value>[0.00885924,-8.15357e-005,0.999961,0.0]</Value>
+				<Value>[49.9948,-0.369107,-0.79737,1.0]</Value>
+			</WorldTM>
+			<BoundingBox>
+				<Max>[29.9902,30.5569,20.5315]</Max>
+				<Min>[-29.9902,-0.556933,-20.5315]</Min>
+				<Center>[-1.2458e-006,15,-1.35844e-007]</Center>
+			</BoundingBox>
+			<Vertex>
+				<Value Index="0">[-30,0,-20]</Value>
+				<Value Index="1">[30,0,-20]</Value>
+				<Value Index="2">[-30,0,20]</Value>
+				<Value Index="3">[30,0,20]</Value>
+				<Value Index="4">[-30,30,-20]</Value>
+				<Value Index="5">[30,30,-20]</Value>
+				<Value Index="6">[-30,30,20]</Value>
+				<Value Index="7">[30,30,20]</Value>
+			</Vertex>
+			<VertexNormal>
+				<Value Index="0">[-0.0144963,-1.57073,3.55468e-007]</Value>
+				<Value Index="1">[-0.0144963,-1.57073,3.55469e-007]</Value>
+				<Value Index="2">[-0.0144963,-1.57073,3.55469e-007]</Value>
+				<Value Index="3">[-0.0144963,-1.57073,3.55468e-007]</Value>
+				<Value Index="4">[0.0144963,1.57073,-3.55468e-007]</Value>
+				<Value Index="5">[0.0144963,1.57073,-3.55469e-007]</Value>
+				<Value Index="6">[0.0144963,1.57073,-3.55469e-007]</Value>
+				<Value Index="7">[0.0144963,1.57073,-3.55468e-007]</Value>
+			</VertexNormal>
+			<TriIndex MaterialCount="1">
+				<Value MaterialID="1">[0,3,2]</Value>
+				<Value MaterialID="1">[3,0,1]</Value>
+				<Value MaterialID="1">[4,7,5]</Value>
+				<Value MaterialID="1">[7,4,6]</Value>
+				<Value MaterialID="1">[0,5,1]</Value>
+				<Value MaterialID="1">[5,0,4]</Value>
+				<Value MaterialID="1">[1,7,3]</Value>
+				<Value MaterialID="1">[7,1,5]</Value>
+				<Value MaterialID="1">[3,6,2]</Value>
+				<Value MaterialID="1">[6,3,7]</Value>
+				<Value MaterialID="1">[2,4,0]</Value>
+				<Value MaterialID="1">[4,2,6]</Value>
+			</TriIndex>
+		</Object>
+		<Object ID="4" Name="Box01" Class="Editable_mesh">
+			<Parent ID="1" Name="Bone01">
+			</Parent>
+			<LocalTM>
+				<Value>[0.999961,0.0,-0.00885952,0.0]</Value>
+				<Value>[0.0,1.0,0.0,0.0]</Value>
+				<Value>[0.00885952,0.0,0.999961,0.0]</Value>
+				<Value>[19.9992,0.0,-0.177193,1.0]</Value>
+			</LocalTM>
+			<WorldTM>
+				<Value>[0.999961,0.0,-0.00885952,0.0]</Value>
+				<Value>[0.0,1.0,0.0,0.0]</Value>
+				<Value>[0.00885952,0.0,0.999961,0.0]</Value>
+				<Value>[-20.0008,0.0,-0.177193,1.0]</Value>
+			</WorldTM>
+			<BoundingBox>
+				<Max>[19.9969,30,20.3544]</Max>
+				<Min>[-19.9969,0,-20.3544]</Min>
+				<Center>[6.10152e-007,15,-2.65865e-007]</Center>
+			</BoundingBox>
+			<Vertex>
+				<Value Index="0">[-20,0,-20]</Value>
+				<Value Index="1">[20,0,-20]</Value>
+				<Value Index="2">[-20,0,20]</Value>
+				<Value Index="3">[20,0,20]</Value>
+				<Value Index="4">[-20,30,-20]</Value>
+				<Value Index="5">[20,30,-20]</Value>
+				<Value Index="6">[-20,30,20]</Value>
+				<Value Index="7">[20,30,20]</Value>
+			</Vertex>
+			<VertexNormal>
+				<Value Index="0">[0,-1.5708,0]</Value>
+				<Value Index="1">[0,-1.5708,0]</Value>
+				<Value Index="2">[0,-1.5708,0]</Value>
+				<Value Index="3">[0,-1.5708,0]</Value>
+				<Value Index="4">[0,1.5708,0]</Value>
+				<Value Index="5">[0,1.5708,0]</Value>
+				<Value Index="6">[0,1.5708,0]</Value>
+				<Value Index="7">[0,1.5708,0]</Value>
+			</VertexNormal>
+			<TriIndex MaterialCount="1">
+				<Value MaterialID="2">[0,3,2]</Value>
+				<Value MaterialID="2">[3,0,1]</Value>
+				<Value MaterialID="2">[4,7,5]</Value>
+				<Value MaterialID="2">[7,4,6]</Value>
+				<Value MaterialID="2">[0,5,1]</Value>
+				<Value MaterialID="2">[5,0,4]</Value>
+				<Value MaterialID="2">[1,7,3]</Value>
+				<Value MaterialID="2">[7,1,5]</Value>
+				<Value MaterialID="2">[3,6,2]</Value>
+				<Value MaterialID="2">[6,3,7]</Value>
+				<Value MaterialID="2">[2,4,0]</Value>
+				<Value MaterialID="2">[4,2,6]</Value>
+			</TriIndex>
+		</Object>
+		<Object ID="5" Name="Bone03" Class="BoneGeometry">
+			<Parent ID="1" Name="Bone01">
+			</Parent>
+			<LocalTM>
+				<Value>[-1.68596e-007,0.0,-1.0,0.0]</Value>
+				<Value>[0.0,1.0,0.0,0.0]</Value>
+				<Value>[1.0,0.0,-1.68569e-007,0.0]</Value>
+				<Value>[50.0,0.0,0.0,1.0]</Value>
+			</LocalTM>
+			<WorldTM>
+				<Value>[-1.68596e-007,0.0,-1.0,0.0]</Value>
+				<Value>[0.0,1.0,0.0,0.0]</Value>
+				<Value>[1.0,0.0,-1.68569e-007,0.0]</Value>
+				<Value>[10.0,0.0,0.0,1.0]</Value>
+			</WorldTM>
+			<BoundingBox>
+				<Max>[-1.6857e-006,5,5]</Max>
+				<Min>[70,-5,-5]</Min>
+				<Center>[35,0,1.788e-007]</Center>
+			</BoundingBox>
+			<Key>
+				<Quaternion>
+					<Value Frame="0f">[0.0,0.0,0.0,1.0]</Value>
+					<Value Frame="50f">[0.0,0.0,-0.529919,0.848048]</Value>
+					<Value Frame="100f">[0.0,0.0,-0.434445,0.900698]</Value>
+				</Quaternion>
+			</Key>
+		</Object>
+		<Object ID="6" Name="Box03" Class="Editable_mesh">
+			<Parent ID="5" Name="Bone03">
+			</Parent>
+			<LocalTM>
+				<Value>[-2.82087e-007,4.91551e-007,1.0,0.0]</Value>
+				<Value>[0.0,1.0,-4.69986e-007,0.0]</Value>
+				<Value>[-1.0,0.0,-2.8216e-007,0.0]</Value>
+				<Value>[55.0,0.0,9.27276e-006,1.0]</Value>
+			</LocalTM>
+			<WorldTM>
+				<Value>[1.0,4.91551e-007,0.0,0.0]</Value>
+				<Value>[-4.69986e-007,1.0,0.0,0.0]</Value>
+				<Value>[0.0,0.0,1.0,0.0]</Value>
+				<Value>[10.0,0.0,-55.0,1.0]</Value>
+			</WorldTM>
+			<BoundingBox>
+				<Max>[20,30,25]</Max>
+				<Min>[-20,0,-25]</Min>
+				<Center>[5.65351e-007,15,-3.57241e-006]</Center>
+			</BoundingBox>
+			<Vertex>
+				<Value Index="0">[-20,0,-25]</Value>
+				<Value Index="1">[20,0,-25]</Value>
+				<Value Index="2">[-20,0,25]</Value>
+				<Value Index="3">[20,0,25]</Value>
+				<Value Index="4">[-20,30,-25]</Value>
+				<Value Index="5">[20,30,-25]</Value>
+				<Value Index="6">[-20,30,25]</Value>
+				<Value Index="7">[20,30,25]</Value>
+			</Vertex>
+			<VertexNormal>
+				<Value Index="0">[7.38252e-007,-1.5708,0]</Value>
+				<Value Index="1">[7.38253e-007,-1.5708,0]</Value>
+				<Value Index="2">[7.38253e-007,-1.5708,0]</Value>
+				<Value Index="3">[7.38252e-007,-1.5708,0]</Value>
+				<Value Index="4">[-7.38252e-007,1.5708,0]</Value>
+				<Value Index="5">[-7.38253e-007,1.5708,0]</Value>
+				<Value Index="6">[-7.38253e-007,1.5708,0]</Value>
+				<Value Index="7">[-7.38252e-007,1.5708,0]</Value>
+			</VertexNormal>
+			<TriIndex MaterialCount="1">
+				<Value MaterialID="3">[0,3,2]</Value>
+				<Value MaterialID="3">[3,0,1]</Value>
+				<Value MaterialID="3">[4,7,5]</Value>
+				<Value MaterialID="3">[7,4,6]</Value>
+				<Value MaterialID="3">[0,5,1]</Value>
+				<Value MaterialID="3">[5,0,4]</Value>
+				<Value MaterialID="3">[1,7,3]</Value>
+				<Value MaterialID="3">[7,1,5]</Value>
+				<Value MaterialID="3">[3,6,2]</Value>
+				<Value MaterialID="3">[6,3,7]</Value>
+				<Value MaterialID="3">[2,4,0]</Value>
+				<Value MaterialID="3">[4,2,6]</Value>
+			</TriIndex>
+		</Object>
+	</Body>

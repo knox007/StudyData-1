@@ -1,0 +1,302 @@
+(date[07/07/05] time[17:14:38]) : F-Killer Logging Started...
+(date[07/07/05] time[17:14:38]) : Parsing Info
+(date[07/07/05] time[17:14:38]) : Objects[0] = NULL
+(date[07/07/05] time[17:14:38]) : Objects[1] = Teapot01
+(date[07/07/05] time[17:14:38]) : Objects[2] = Bone01
+(date[07/07/05] time[17:14:38]) : Objects[3] = Bone02
+(date[07/07/05] time[17:14:39]) : Objects[4] = Bone03
+(date[07/07/05] time[17:14:39]) : Objects[5] = Bone04
+(date[07/07/05] time[17:14:39]) : Bone[0] = NULL
+(date[07/07/05] time[17:14:39]) : Bone[1] = Bone01
+(date[07/07/05] time[17:14:39]) : Bone[2] = Bone02
+(date[07/07/05] time[17:14:39]) : Bone[3] = Bone03
+(date[07/07/05] time[17:14:39]) : Bone[4] = Bone04
+(date[07/07/05] time[17:14:39]) : Parsing Material
+(date[07/07/05] time[17:14:39]) : Parsing Objects...
+(date[07/07/05] time[17:14:39]) : Parsing [NULL]...
+(date[07/07/05] time[17:14:39]) : Parsing [Teapot01]...
+(date[07/07/05] time[17:14:39]) : Parsing [Bone01]...
+(date[07/07/05] time[17:14:39]) : Parsing [Bone02]...
+(date[07/07/05] time[17:14:39]) : Parsing [Bone03]...
+(date[07/07/05] time[17:14:39]) : Parsing [Bone04]...
+(date[07/07/05] time[17:17:37]) : F-Killer Logging Started...
+(date[07/07/05] time[17:17:37]) : Parsing Info
+(date[07/07/05] time[17:17:37]) : Objects[0] = NULL
+(date[07/07/05] time[17:17:37]) : Objects[1] = Teapot01
+(date[07/07/05] time[17:17:37]) : Objects[2] = Bone01
+(date[07/07/05] time[17:17:37]) : Objects[3] = Bone02
+(date[07/07/05] time[17:17:37]) : Objects[4] = Bone03
+(date[07/07/05] time[17:17:37]) : Objects[5] = Bone04
+(date[07/07/05] time[17:17:37]) : Bone[0] = NULL
+(date[07/07/05] time[17:17:37]) : Bone[1] = Bone01
+(date[07/07/05] time[17:17:37]) : Bone[2] = Bone02
+(date[07/07/05] time[17:17:37]) : Bone[3] = Bone03
+(date[07/07/05] time[17:17:37]) : Bone[4] = Bone04
+(date[07/07/05] time[17:17:37]) : Parsing Material
+(date[07/07/05] time[17:17:37]) : Parsing Objects...
+(date[07/07/05] time[17:17:37]) : Parsing [NULL]...
+(date[07/07/05] time[17:17:37]) : Parsing [Teapot01]...
+(date[07/07/05] time[17:17:37]) : Parsing [Bone01]...
+(date[07/07/05] time[17:17:37]) : Parsing [Bone02]...
+(date[07/07/05] time[17:17:37]) : Parsing [Bone03]...
+(date[07/07/05] time[17:17:37]) : Parsing [Bone04]...
+(date[07/07/05] time[17:18:29]) : F-Killer Logging Started...
+(date[07/07/05] time[17:18:29]) : Parsing Info
+(date[07/07/05] time[17:18:29]) : Objects[0] = NULL
+(date[07/07/05] time[17:18:29]) : Objects[1] = Teapot01
+(date[07/07/05] time[17:18:29]) : Objects[2] = Bone01
+(date[07/07/05] time[17:18:29]) : Objects[3] = Bone02
+(date[07/07/05] time[17:18:29]) : Objects[4] = Bone03
+(date[07/07/05] time[17:18:29]) : Objects[5] = Bone04
+(date[07/07/05] time[17:18:29]) : Bone[0] = NULL
+(date[07/07/05] time[17:18:29]) : Bone[1] = Bone01
+(date[07/07/05] time[17:18:29]) : Bone[2] = Bone02
+(date[07/07/05] time[17:18:29]) : Bone[3] = Bone03
+(date[07/07/05] time[17:18:29]) : Bone[4] = Bone04
+(date[07/07/05] time[17:18:29]) : Parsing Material
+(date[07/07/05] time[17:18:29]) : Parsing Objects...
+(date[07/07/05] time[17:18:29]) : Parsing [NULL]...
+(date[07/07/05] time[17:18:29]) : Parsing [NULL] successed
+(date[07/07/05] time[17:18:29]) : Parsing [Teapot01]...
+(date[07/07/05] time[17:18:30]) : Parsing [Teapot01] successed
+(date[07/07/05] time[17:18:30]) : Parsing [Bone01]...
+(date[07/07/05] time[17:18:30]) : Parsing [Bone01] successed
+(date[07/07/05] time[17:18:30]) : Parsing [Bone02]...
+(date[07/07/05] time[17:18:30]) : Parsing [Bone02] successed
+(date[07/07/05] time[17:18:30]) : Parsing [Bone03]...
+(date[07/07/05] time[17:18:30]) : Parsing [Bone03] successed
+(date[07/07/05] time[17:18:30]) : Parsing [Bone04]...
+(date[07/07/05] time[17:18:30]) : Parsing [Bone04] successed
+(date[07/07/05] time[17:20:12]) : F-Killer Logging Started...
+(date[07/07/05] time[17:20:13]) : Parsing Info
+(date[07/07/05] time[17:20:13]) : Objects[0] = NULL
+(date[07/07/05] time[17:20:13]) : Objects[1] = Teapot01
+(date[07/07/05] time[17:20:13]) : Objects[2] = Bone01
+(date[07/07/05] time[17:20:13]) : Objects[3] = Bone02
+(date[07/07/05] time[17:20:13]) : Objects[4] = Bone03
+(date[07/07/05] time[17:20:13]) : Objects[5] = Bone04
+(date[07/07/05] time[17:20:13]) : Bone[0] = NULL
+(date[07/07/05] time[17:20:13]) : Bone[1] = Bone01
+(date[07/07/05] time[17:20:13]) : Bone[2] = Bone02
+(date[07/07/05] time[17:20:13]) : Bone[3] = Bone03
+(date[07/07/05] time[17:20:13]) : Bone[4] = Bone04
+(date[07/07/05] time[17:20:13]) : Parsing Material
+(date[07/07/05] time[17:20:13]) : Parsing Objects...
+(date[07/07/05] time[17:20:13]) : Parsing [NULL]...
+(date[07/07/05] time[17:20:13]) : Parsing [NULL] successed
+(date[07/07/05] time[17:20:13]) : Parsing [Teapot01]...
+(date[07/07/05] time[17:20:13]) : Parsing [Teapot01] successed
+(date[07/07/05] time[17:20:13]) : Parsing [Bone01]...
+(date[07/07/05] time[17:20:13]) : Parsing [Bone01] successed
+(date[07/07/05] time[17:20:13]) : Parsing [Bone02]...
+(date[07/07/05] time[17:20:13]) : Parsing [Bone02] successed
+(date[07/07/05] time[17:20:13]) : Parsing [Bone03]...
+(date[07/07/05] time[17:20:13]) : Parsing [Bone03] successed
+(date[07/07/05] time[17:20:13]) : Parsing [Bone04]...
+(date[07/07/05] time[17:20:13]) : Parsing [Bone04] successed
+(date[07/07/05] time[17:20:13]) : Parsing XML Successed!
+(date[07/07/05] time[17:24:18]) : F-Killer Logging Started...
+(date[07/07/05] time[17:24:18]) : Parsing Info
+(date[07/07/05] time[17:24:18]) : Objects[0] = NULL
+(date[07/07/05] time[17:24:18]) : Objects[1] = Teapot01
+(date[07/07/05] time[17:24:18]) : Objects[2] = Bone01
+(date[07/07/05] time[17:24:18]) : Objects[3] = Bone02
+(date[07/07/05] time[17:24:18]) : Objects[4] = Bone03
+(date[07/07/05] time[17:24:18]) : Objects[5] = Bone04
+(date[07/07/05] time[17:24:18]) : Bone[0] = NULL
+(date[07/07/05] time[17:24:18]) : Bone[1] = Bone01
+(date[07/07/05] time[17:24:18]) : Bone[2] = Bone02
+(date[07/07/05] time[17:24:18]) : Bone[3] = Bone03
+(date[07/07/05] time[17:24:18]) : Bone[4] = Bone04
+(date[07/07/05] time[17:24:18]) : Parsing Material
+(date[07/07/05] time[17:24:18]) : Parsing Objects...
+(date[07/07/05] time[17:24:18]) : Parsing [NULL]...
+(date[07/07/05] time[17:24:18]) : Parsing [NULL] successed
+(date[07/07/05] time[17:24:18]) : Parsing [Teapot01]...
+(date[07/07/05] time[17:24:19]) : Parsing [Teapot01] successed
+(date[07/07/05] time[17:24:19]) : Parsing [Bone01]...
+(date[07/07/05] time[17:24:19]) : Parsing [Bone01] successed
+(date[07/07/05] time[17:24:19]) : Parsing [Bone02]...
+(date[07/07/05] time[17:24:19]) : Parsing [Bone02] successed
+(date[07/07/05] time[17:24:19]) : Parsing [Bone03]...
+(date[07/07/05] time[17:24:19]) : Parsing [Bone03] successed
+(date[07/07/05] time[17:24:19]) : Parsing [Bone04]...
+(date[07/07/05] time[17:24:19]) : Parsing [Bone04] successed
+(date[07/07/05] time[17:24:19]) : Parsing XML Successed!
+(date[07/07/05] time[17:25:02]) : F-Killer Logging Started...
+(date[07/07/05] time[17:25:02]) : Parsing Info
+(date[07/07/05] time[17:25:02]) : Objects[0] = NULL
+(date[07/07/05] time[17:25:02]) : Objects[1] = Teapot01
+(date[07/07/05] time[17:25:02]) : Objects[2] = Bone01
+(date[07/07/05] time[17:25:02]) : Objects[3] = Bone02
+(date[07/07/05] time[17:25:02]) : Objects[4] = Bone03
+(date[07/07/05] time[17:25:02]) : Objects[5] = Bone04
+(date[07/07/05] time[17:25:02]) : Bone[0] = NULL
+(date[07/07/05] time[17:25:02]) : Bone[1] = Bone01
+(date[07/07/05] time[17:25:02]) : Bone[2] = Bone02
+(date[07/07/05] time[17:25:02]) : Bone[3] = Bone03
+(date[07/07/05] time[17:25:02]) : Bone[4] = Bone04
+(date[07/07/05] time[17:25:02]) : Parsing Material
+(date[07/07/05] time[17:25:02]) : Parsing Objects...
+(date[07/07/05] time[17:25:02]) : Parsing [NULL]...
+(date[07/07/05] time[17:25:02]) : Parsing [NULL] successed
+(date[07/07/05] time[17:25:02]) : Parsing [Teapot01]...
+(date[07/07/05] time[17:25:03]) : Parsing [Teapot01] successed
+(date[07/07/05] time[17:25:03]) : Parsing [Bone01]...
+(date[07/07/05] time[17:25:03]) : Parsing [Bone01] successed
+(date[07/07/05] time[17:25:03]) : Parsing [Bone02]...
+(date[07/07/05] time[17:25:03]) : Parsing [Bone02] successed
+(date[07/07/05] time[17:25:03]) : Parsing [Bone03]...
+(date[07/07/05] time[17:25:03]) : Parsing [Bone03] successed
+(date[07/07/05] time[17:25:03]) : Parsing [Bone04]...
+(date[07/07/05] time[17:25:03]) : Parsing [Bone04] successed
+(date[07/07/05] time[17:25:03]) : Parsing XML Successed!
+(date[07/07/05] time[17:25:03]) : _SplitMeshByFaceMaterial() enter!
+(date[07/07/05] time[17:29:21]) : F-Killer Logging Started...
+(date[07/07/05] time[17:29:21]) : Parsing Info
+(date[07/07/05] time[17:29:21]) : Objects[0] = NULL
+(date[07/07/05] time[17:29:21]) : Objects[1] = Teapot01
+(date[07/07/05] time[17:29:21]) : Objects[2] = Bone01
+(date[07/07/05] time[17:29:21]) : Objects[3] = Bone02
+(date[07/07/05] time[17:29:21]) : Objects[4] = Bone03
+(date[07/07/05] time[17:29:21]) : Objects[5] = Bone04
+(date[07/07/05] time[17:29:21]) : Bone[0] = NULL
+(date[07/07/05] time[17:29:21]) : Bone[1] = Bone01
+(date[07/07/05] time[17:29:21]) : Bone[2] = Bone02
+(date[07/07/05] time[17:29:21]) : Bone[3] = Bone03
+(date[07/07/05] time[17:29:21]) : Bone[4] = Bone04
+(date[07/07/05] time[17:29:21]) : Parsing Material
+(date[07/07/05] time[17:29:21]) : Parsing Objects...
+(date[07/07/05] time[17:29:21]) : Parsing [NULL]...
+(date[07/07/05] time[17:29:21]) : Parsing [NULL] successed
+(date[07/07/05] time[17:29:21]) : Parsing [Teapot01]...
+(date[07/07/05] time[17:29:21]) : Parsing [Teapot01] successed
+(date[07/07/05] time[17:29:21]) : Parsing [Bone01]...
+(date[07/07/05] time[17:29:21]) : Parsing [Bone01] successed
+(date[07/07/05] time[17:29:21]) : Parsing [Bone02]...
+(date[07/07/05] time[17:29:21]) : Parsing [Bone02] successed
+(date[07/07/05] time[17:29:21]) : Parsing [Bone03]...
+(date[07/07/05] time[17:29:21]) : Parsing [Bone03] successed
+(date[07/07/05] time[17:29:21]) : Parsing [Bone04]...
+(date[07/07/05] time[17:29:21]) : Parsing [Bone04] successed
+(date[07/07/05] time[17:29:21]) : Parsing XML Successed!
+(date[07/07/05] time[17:29:21]) : _SplitMeshByFaceMaterial() enter!
+(date[07/07/05] time[17:29:21]) : [_SplitMeshByFaceMaterial()] 0: 0 
+(date[07/07/05] time[17:29:21]) : [_SplitMeshByFaceMaterial()] 1: 1 
+(date[07/07/05] time[17:29:21]) : [_SplitMeshByFaceMaterial()] 2: 5 
+(date[07/07/05] time[17:42:31]) : F-Killer Logging Started...
+(date[07/07/05] time[17:42:32]) : Parsing Info
+(date[07/07/05] time[17:42:32]) : Objects[0] = NULL
+(date[07/07/05] time[17:42:32]) : Objects[1] = Teapot01
+(date[07/07/05] time[17:42:32]) : Objects[2] = Box01
+(date[07/07/05] time[17:42:32]) : Objects[3] = Sphere01
+(date[07/07/05] time[17:42:32]) : Objects[4] = Camera01
+(date[07/07/05] time[17:42:32]) : Objects[5] = Camera01.Target
+(date[07/07/05] time[17:42:32]) : Bone[0] = NULL
+(date[07/07/05] time[17:42:32]) : Parsing Material
+(date[07/07/05] time[17:42:32]) : Parsing Objects...
+(date[07/07/05] time[17:42:32]) : Parsing [NULL]...
+(date[07/07/05] time[17:42:32]) : Parsing [Teapot01]...
+(date[07/07/05] time[17:42:32]) : Parsing [Box01]...
+(date[07/07/05] time[17:42:32]) : Parsing [Sphere01]...
+(date[07/07/05] time[17:42:32]) : Parsing XML Successed!
+(date[07/07/05] time[17:42:32]) : _SplitMeshByFaceMaterial() enter!
+(date[07/07/05] time[17:42:32]) : [_SplitMeshByFaceMaterial()] 0: 0 
+(date[07/07/05] time[17:42:32]) : _SplitMeshByFaceMaterial() leave
+(date[07/07/05] time[17:42:32]) : Parser Split process Successed!
+(date[07/07/05] time[17:42:32]) : Parsing Merge process Successed!
+(date[07/07/05] time[17:42:32]) : -------------------------------------
+(date[07/07/05] time[17:42:32]) : ID:[0,NULL]
+(date[07/07/05] time[17:42:32]) : Parent:[-1,undefined]
+(date[07/07/05] time[17:42:32]) : Vertex:[0]
+(date[07/07/05] time[17:42:32]) : Index:[0]
+(date[07/07/05] time[17:42:32]) : MergedVertex:[0]
+(date[07/07/05] time[17:42:32]) : Skin:[false]
+(date[07/07/05] time[17:42:32]) : -------------------------------------
+(date[07/07/05] time[17:42:32]) : -------------------------------------
+(date[07/07/05] time[17:42:32]) : ID:[1,Teapot01]
+(date[07/07/05] time[17:42:32]) : Parent:[-1,undefined]
+(date[07/07/05] time[17:42:32]) : Vertex:[530]
+(date[07/07/05] time[17:42:32]) : Index:[1024]
+(date[07/07/05] time[17:42:32]) : MergedVertex:[3072]
+(date[07/07/05] time[17:42:32]) : Skin:[false]
+(date[07/07/05] time[17:42:32]) : -------------------------------------
+(date[07/07/05] time[17:42:32]) : -------------------------------------
+(date[07/07/05] time[17:42:32]) : ID:[2,Box01]
+(date[07/07/05] time[17:42:32]) : Parent:[-1,undefined]
+(date[07/07/05] time[17:42:32]) : Vertex:[8]
+(date[07/07/05] time[17:42:32]) : Index:[12]
+(date[07/07/05] time[17:42:32]) : MergedVertex:[36]
+(date[07/07/05] time[17:42:32]) : Skin:[false]
+(date[07/07/05] time[17:42:32]) : -------------------------------------
+(date[07/07/05] time[17:42:32]) : -------------------------------------
+(date[07/07/05] time[17:42:32]) : ID:[3,Sphere01]
+(date[07/07/05] time[17:42:32]) : Parent:[-1,undefined]
+(date[07/07/05] time[17:42:32]) : Vertex:[482]
+(date[07/07/05] time[17:42:32]) : Index:[960]
+(date[07/07/05] time[17:42:32]) : MergedVertex:[2880]
+(date[07/07/05] time[17:42:32]) : Skin:[false]
+(date[07/07/05] time[17:42:32]) : -------------------------------------
+(date[07/07/05] time[17:42:32]) : FPS:0
+(date[07/07/05] time[17:42:32]) : FillMode:Solid
+(date[07/07/05] time[17:42:32]) : Animation:On
+(date[07/07/05] time[17:42:32]) : DrawMode:Mesh
+(date[07/07/05] time[17:42:32]) : BoundingBox:Off
+(date[07/07/05] time[17:42:37]) : F-Killer Logging Started...
+(date[07/07/05] time[17:42:37]) : Parsing Info
+(date[07/07/05] time[17:42:37]) : Objects[0] = NULL
+(date[07/07/05] time[17:42:37]) : Objects[1] = Teapot01
+(date[07/07/05] time[17:42:37]) : Objects[2] = Box01
+(date[07/07/05] time[17:42:37]) : Objects[3] = Sphere01
+(date[07/07/05] time[17:42:37]) : Objects[4] = Camera01
+(date[07/07/05] time[17:42:37]) : Objects[5] = Camera01.Target
+(date[07/07/05] time[17:42:37]) : Bone[0] = NULL
+(date[07/07/05] time[17:42:37]) : Parsing Material
+(date[07/07/05] time[17:42:37]) : Parsing Objects...
+(date[07/07/05] time[17:42:37]) : Parsing [NULL]...
+(date[07/07/05] time[17:42:37]) : Parsing [Teapot01]...
+(date[07/07/05] time[17:42:37]) : Parsing [Box01]...
+(date[07/07/05] time[17:42:37]) : Parsing [Sphere01]...
+(date[07/07/05] time[17:42:37]) : Parsing XML Successed!
+(date[07/07/05] time[17:42:37]) : _SplitMeshByFaceMaterial() enter!
+(date[07/07/05] time[17:42:37]) : [_SplitMeshByFaceMaterial()] 0: 0 
+(date[07/07/05] time[17:42:37]) : _SplitMeshByFaceMaterial() leave
+(date[07/07/05] time[17:42:37]) : Parser Split process Successed!
+(date[07/07/05] time[17:42:37]) : Parsing Merge process Successed!
+(date[07/07/05] time[17:42:37]) : -------------------------------------
+(date[07/07/05] time[17:42:37]) : ID:[0,NULL]
+(date[07/07/05] time[17:42:37]) : Parent:[-1,undefined]
+(date[07/07/05] time[17:42:37]) : Vertex:[0]
+(date[07/07/05] time[17:42:37]) : Index:[0]
+(date[07/07/05] time[17:42:37]) : MergedVertex:[0]
+(date[07/07/05] time[17:42:37]) : Skin:[false]
+(date[07/07/05] time[17:42:37]) : -------------------------------------
+(date[07/07/05] time[17:42:37]) : -------------------------------------
+(date[07/07/05] time[17:42:37]) : ID:[1,Teapot01]
+(date[07/07/05] time[17:42:37]) : Parent:[-1,undefined]
+(date[07/07/05] time[17:42:37]) : Vertex:[530]
+(date[07/07/05] time[17:42:37]) : Index:[1024]
+(date[07/07/05] time[17:42:37]) : MergedVertex:[3072]
+(date[07/07/05] time[17:42:37]) : Skin:[false]
+(date[07/07/05] time[17:42:37]) : -------------------------------------
+(date[07/07/05] time[17:42:37]) : -------------------------------------
+(date[07/07/05] time[17:42:37]) : ID:[2,Box01]
+(date[07/07/05] time[17:42:37]) : Parent:[-1,undefined]
+(date[07/07/05] time[17:42:37]) : Vertex:[8]
+(date[07/07/05] time[17:42:37]) : Index:[12]
+(date[07/07/05] time[17:42:37]) : MergedVertex:[36]
+(date[07/07/05] time[17:42:37]) : Skin:[false]
+(date[07/07/05] time[17:42:37]) : -------------------------------------
+(date[07/07/05] time[17:42:37]) : -------------------------------------
+(date[07/07/05] time[17:42:37]) : ID:[3,Sphere01]
+(date[07/07/05] time[17:42:37]) : Parent:[-1,undefined]
+(date[07/07/05] time[17:42:37]) : Vertex:[482]
+(date[07/07/05] time[17:42:37]) : Index:[960]
+(date[07/07/05] time[17:42:37]) : MergedVertex:[2880]
+(date[07/07/05] time[17:42:37]) : Skin:[false]
+(date[07/07/05] time[17:42:37]) : -------------------------------------
+(date[07/07/05] time[17:42:37]) : FPS:0
+(date[07/07/05] time[17:42:38]) : FillMode:Solid
+(date[07/07/05] time[17:42:38]) : Animation:On
+(date[07/07/05] time[17:42:38]) : DrawMode:Mesh
+(date[07/07/05] time[17:42:38]) : BoundingBox:Off

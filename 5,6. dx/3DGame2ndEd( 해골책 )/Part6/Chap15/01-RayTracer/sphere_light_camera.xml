@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="euc-kr"?>
+	<Body>
+		<Info>
+			<Filename></Filename>
+			<NodeCount>4</NodeCount>
+			<GeometryCount>0</GeometryCount>
+			<Object>
+				<Value ID="0">Sphere01</Value>
+				<Value ID="1">Omni01</Value>
+				<Value ID="2">Camera01</Value>
+				<Value ID="3">Camera01.Target</Value>
+			</Object>
+		</Info>
+		<Material>
+			<Slot Index="0">
+				<Diffuse>(color 149.94 149.94 149.94)</Diffuse>
+				<Ambient>(color 149.94 149.94 149.94)</Ambient>
+				<Specular>(color 229.5 229.5 229.5)</Specular>
+				<Emissive>(color 0 0 0)</Emissive>
+				<Opacity>100.0</Opacity>
+				<Power>0.0</Power>
+			</Slot>
+			<Slot Index="1">
+				<Diffuse>(color 248 99 0)</Diffuse>
+				<Ambient>(color 248 99 0)</Ambient>
+				<Specular>(color 229.5 229.5 229.5)</Specular>
+				<Emissive>(color 0 0 0)</Emissive>
+				<Opacity>100.0</Opacity>
+				<Power>0.0</Power>
+			</Slot>
+		</Material>
+		<Object ID="0" Name="Sphere01" Class="Sphere" Material="1">
+			<LocalTM>
+				<Value>[1.0,0.0,0.0,0.0]</Value>
+				<Value>[0.0,1.0,0.0,0.0]</Value>
+				<Value>[0.0,0.0,1.0,0.0]</Value>
+				<Value>[-0.36795,0.0,-0.416782,1.0]</Value>
+			</LocalTM>
+			<WorldTM>
+				<Value>[1.0,0.0,0.0,0.0]</Value>
+				<Value>[0.0,1.0,0.0,0.0]</Value>
+				<Value>[0.0,0.0,1.0,0.0]</Value>
+				<Value>[-0.36795,0.0,-0.416782,1.0]</Value>
+			</WorldTM>
+			<BoundingBox>
+				<Max>[30.8076,30.8076,30.8076]</Max>
+				<Min>[-30.8076,-30.8076,-30.8076]</Min>
+				<Center>[2.38419e-007,0,-1.49012e-007]</Center>
+			</BoundingBox>
+			<Material>2</Material>
+			<Radius>.5</Radius>
+		</Object>
+		<Object ID="1" Name="Omni01" Class="Omnilight" Material="0">
+			<LocalTM>
+				<Value>[1.0,0.0,0.0,0.0]</Value>
+				<Value>[0.0,0.0,-1.0,0.0]</Value>
+				<Value>[0.0,1.0,0.0,0.0]</Value>
+				<Value>[-0.383142,128.352,-5.61047e-006,1.0]</Value>
+			</LocalTM>
+			<WorldTM>
+				<Value>[1.0,0.0,0.0,0.0]</Value>
+				<Value>[0.0,0.0,-1.0,0.0]</Value>
+				<Value>[0.0,1.0,0.0,0.0]</Value>
+				<Value>[-0.383142,128.352,-5.61047e-006,1.0]</Value>
+			</WorldTM>
+			<BoundingBox>
+				<Max>[1.74075,-1.74075,1.74074]</Max>
+				<Min>[-1.74075,1.74075,-1.74075]</Min>
+				<Center>[0,0,0]</Center>
+			</BoundingBox>
+		</Object>
+		<Object ID="2" Name="Camera01" Class="Targetcamera" Material="0">
+			<LocalTM>
+				<Value>[0.999943,0.0,-0.0106862,0.0]</Value>
+				<Value>[-0.00928253,0.495433,-0.868596,0.0]</Value>
+				<Value>[0.0052943,0.868646,0.495405,0.0]</Value>
+				<Value>[-4.76203,111.017,-149.808,1.0]</Value>
+			</LocalTM>
+			<WorldTM>
+				<Value>[0.999943,0.0,-0.0106862,0.0]</Value>
+				<Value>[-0.00928253,0.495433,-0.868596,0.0]</Value>
+				<Value>[0.0052943,0.868646,0.495405,0.0]</Value>
+				<Value>[-4.76203,111.017,-149.808,1.0]</Value>
+			</WorldTM>
+			<BoundingBox>
+				<Max>[0,-169.079,96.4347]</Max>
+				<Min>[0,-55.0017,-96.4347]</Min>
+				<Center>[0,-112.041,1.71481e-006]</Center>
+			</BoundingBox>
+		</Object>
+		<Object ID="3" Name="Camera01.Target" Class="Targetobject" Material="0">
+			<LocalTM>
+				<Value>[1.0,0.0,0.0,0.0]</Value>
+				<Value>[0.0,1.0,0.0,0.0]</Value>
+				<Value>[0.0,0.0,1.0,0.0]</Value>
+				<Value>[-2.68199,0.0,44.8276,1.0]</Value>
+			</LocalTM>
+			<WorldTM>
+				<Value>[1.0,0.0,0.0,0.0]</Value>
+				<Value>[0.0,1.0,0.0,0.0]</Value>
+				<Value>[0.0,0.0,1.0,0.0]</Value>
+				<Value>[-2.68199,0.0,44.8276,1.0]</Value>
+			</WorldTM>
+			<BoundingBox>
+				<Max>[1.60425,1.60425,1.60425]</Max>
+				<Min>[-1.60425,-1.60425,-1.60425]</Min>
+				<Center>[0,0,0]</Center>
+			</BoundingBox>
+		</Object>
+	</Body>

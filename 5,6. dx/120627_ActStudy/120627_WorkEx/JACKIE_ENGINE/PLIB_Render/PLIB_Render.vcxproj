@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{229F3204-EEDE-47A4-8A9A-66DC81DA7E2B}</ProjectGuid>
+    <RootNamespace>JLIB_Render</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27428.2015</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>../../Libs\</OutDir>
+    <IntDir>../../obj/$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>../../Libs\</OutDir>
+    <IntDir>../../obj/$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\PLIB_Util;..\DShow\BaseClasses;..\DShow\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)_D.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\PLIB_Util;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_SECURE_SCL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="PRCamera.h" />
+    <ClInclude Include="PRCommonFunc.h" />
+    <ClInclude Include="PRCommonTypeDef.h" />
+    <ClInclude Include="PRCommonVtxInfo.h" />
+    <ClInclude Include="PRCore.h" />
+    <ClInclude Include="PRDShowImage.h" />
+    <ClInclude Include="PRDShowTexture.h" />
+    <ClInclude Include="PreDef_Render.h" />
+    <ClInclude Include="PRFont.h" />
+    <ClInclude Include="PRInput.h" />
+    <ClInclude Include="PRLight.h" />
+    <ClInclude Include="PRMdlAse.h" />
+    <ClInclude Include="PRMdlXFile.h" />
+    <ClInclude Include="PRObject.h" />
+    <ClInclude Include="PRObjGrid.h" />
+    <ClInclude Include="PRSound.h" />
+    <ClInclude Include="PRVmr9.h" />
+    <ClInclude Include="PRXFileCommon.h" />
+    <ClInclude Include="PRXMeshHierachy.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PRCamera.cpp" />
+    <ClCompile Include="PRCommonFuncAlpha.cpp" />
+    <ClCompile Include="PRCommonFuncEtc.cpp" />
+    <ClCompile Include="PRCommonFuncRender.cpp" />
+    <ClCompile Include="PRCommonFuncRState.cpp" />
+    <ClCompile Include="PRCommonFuncShader.cpp" />
+    <ClCompile Include="PRCommonFuncTransf.cpp" />
+    <ClCompile Include="PRCommonFuncTSState.cpp" />
+    <ClCompile Include="PRCommonFuncVecMat.cpp" />
+    <ClCompile Include="PRCommonFuncVtxIdx.cpp" />
+    <ClCompile Include="PRCommonVtxInfo.cpp" />
+    <ClCompile Include="PRCore.cpp" />
+    <ClCompile Include="PRDShowImage.cpp" />
+    <ClCompile Include="PRDShowTexture.cpp" />
+    <ClCompile Include="PRFont.cpp" />
+    <ClCompile Include="PRInput.cpp" />
+    <ClCompile Include="PRLight.cpp" />
+    <ClCompile Include="PRMdlAse.cpp" />
+    <ClCompile Include="PRMdlXFile.cpp" />
+    <ClCompile Include="PRObjGrid.cpp" />
+    <ClCompile Include="PRSound.cpp" />
+    <ClCompile Include="PRVmr9.cpp" />
+    <ClCompile Include="PRXMeshHierachy.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

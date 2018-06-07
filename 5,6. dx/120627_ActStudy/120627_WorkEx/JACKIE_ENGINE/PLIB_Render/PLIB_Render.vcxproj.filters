@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\RenderObj">
+      <UniqueIdentifier>{c0b7bcbc-2b9d-40ec-b5e7-24166755ab29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\RenderObj\Etc">
+      <UniqueIdentifier>{47f5d1c8-e6ba-4d78-9c7c-af42a0754a9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\RenderObj\DShow">
+      <UniqueIdentifier>{c66f13ea-000d-4ad7-86aa-58f960b81911}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\RenderObj\3DOBJ">
+      <UniqueIdentifier>{10382cf9-2ab8-49dd-b822-d60dcd8de0c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\RenderObj\3DOBJ\ASE">
+      <UniqueIdentifier>{1040ae96-9ba9-422a-be3c-561dc10652f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\RenderObj\3DOBJ\XFile">
+      <UniqueIdentifier>{d1daebfa-2aad-4ea2-b166-6d278da0b332}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Camera">
+      <UniqueIdentifier>{a82f9dc2-b841-4e89-bd2b-83ae6c1304e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Light">
+      <UniqueIdentifier>{c3dac3dc-64f0-4add-920f-11387659a3a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Core">
+      <UniqueIdentifier>{b85b08de-4bb9-4632-97b2-f2d4931b767a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Core\PRCommonFunc">
+      <UniqueIdentifier>{1ace80a8-2441-44ef-b8b0-f2704676ab3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Input">
+      <UniqueIdentifier>{4e49d198-4f1f-4e92-a90e-677c9c944770}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Sound">
+      <UniqueIdentifier>{a39590dc-26cc-44f1-93d0-9d5d073970c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PreDef_Render.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="PRFont.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="PRObject.h">
+      <Filter>소스 파일\RenderObj</Filter>
+    </ClInclude>
+    <ClInclude Include="PRObjGrid.h">
+      <Filter>소스 파일\RenderObj\Etc</Filter>
+    </ClInclude>
+    <ClInclude Include="PRDShowImage.h">
+      <Filter>소스 파일\RenderObj\DShow</Filter>
+    </ClInclude>
+    <ClInclude Include="PRDShowTexture.h">
+      <Filter>소스 파일\RenderObj\DShow</Filter>
+    </ClInclude>
+    <ClInclude Include="PRVmr9.h">
+      <Filter>소스 파일\RenderObj\DShow</Filter>
+    </ClInclude>
+    <ClInclude Include="PRMdlAse.h">
+      <Filter>소스 파일\RenderObj\3DOBJ\ASE</Filter>
+    </ClInclude>
+    <ClInclude Include="PRMdlXFile.h">
+      <Filter>소스 파일\RenderObj\3DOBJ\XFile</Filter>
+    </ClInclude>
+    <ClInclude Include="PRXFileCommon.h">
+      <Filter>소스 파일\RenderObj\3DOBJ\XFile</Filter>
+    </ClInclude>
+    <ClInclude Include="PRXMeshHierachy.h">
+      <Filter>소스 파일\RenderObj\3DOBJ\XFile</Filter>
+    </ClInclude>
+    <ClInclude Include="PRCamera.h">
+      <Filter>소스 파일\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="PRLight.h">
+      <Filter>소스 파일\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="PRCommonTypeDef.h">
+      <Filter>소스 파일\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="PRCommonVtxInfo.h">
+      <Filter>소스 파일\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="PRCore.h">
+      <Filter>소스 파일\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="PRCommonFunc.h">
+      <Filter>소스 파일\Core\PRCommonFunc</Filter>
+    </ClInclude>
+    <ClInclude Include="PRInput.h">
+      <Filter>소스 파일\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="PRSound.h">
+      <Filter>소스 파일\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>리소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>리소스 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PRFont.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="PRObjGrid.cpp">
+      <Filter>소스 파일\RenderObj\Etc</Filter>
+    </ClCompile>
+    <ClCompile Include="PRDShowImage.cpp">
+      <Filter>소스 파일\RenderObj\DShow</Filter>
+    </ClCompile>
+    <ClCompile Include="PRDShowTexture.cpp">
+      <Filter>소스 파일\RenderObj\DShow</Filter>
+    </ClCompile>
+    <ClCompile Include="PRVmr9.cpp">
+      <Filter>소스 파일\RenderObj\DShow</Filter>
+    </ClCompile>
+    <ClCompile Include="PRMdlAse.cpp">
+      <Filter>소스 파일\RenderObj\3DOBJ\ASE</Filter>
+    </ClCompile>
+    <ClCompile Include="PRMdlXFile.cpp">
+      <Filter>소스 파일\RenderObj\3DOBJ\XFile</Filter>
+    </ClCompile>
+    <ClCompile Include="PRXMeshHierachy.cpp">
+      <Filter>소스 파일\RenderObj\3DOBJ\XFile</Filter>
+    </ClCompile>
+    <ClCompile Include="PRCamera.cpp">
+      <Filter>소스 파일\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="PRLight.cpp">
+      <Filter>소스 파일\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="PRCommonVtxInfo.cpp">
+      <Filter>소스 파일\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="PRCore.cpp">
+      <Filter>소스 파일\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="PRCommonFuncAlpha.cpp">
+      <Filter>소스 파일\Core\PRCommonFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="PRCommonFuncEtc.cpp">
+      <Filter>소스 파일\Core\PRCommonFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="PRCommonFuncRender.cpp">
+      <Filter>소스 파일\Core\PRCommonFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="PRCommonFuncRState.cpp">
+      <Filter>소스 파일\Core\PRCommonFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="PRCommonFuncShader.cpp">
+      <Filter>소스 파일\Core\PRCommonFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="PRCommonFuncTransf.cpp">
+      <Filter>소스 파일\Core\PRCommonFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="PRCommonFuncTSState.cpp">
+      <Filter>소스 파일\Core\PRCommonFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="PRCommonFuncVecMat.cpp">
+      <Filter>소스 파일\Core\PRCommonFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="PRCommonFuncVtxIdx.cpp">
+      <Filter>소스 파일\Core\PRCommonFunc</Filter>
+    </ClCompile>
+    <ClCompile Include="PRInput.cpp">
+      <Filter>소스 파일\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="PRSound.cpp">
+      <Filter>소스 파일\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>리소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>리소스 파일</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
