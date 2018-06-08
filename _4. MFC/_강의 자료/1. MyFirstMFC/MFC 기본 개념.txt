@@ -47,9 +47,5 @@
 
 				CDialog		:	모든 대화상자의 부모 클래스.
 				
-
-
 			
-
-		
-
+			*	이중 CWinApp / CFrameWnd / CDocument / CView 가 주요 클래스.

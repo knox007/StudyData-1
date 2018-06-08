@@ -75,4 +75,7 @@
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\MFC 기본 개념.txt" />
+  </ItemGroup>
 </Project>

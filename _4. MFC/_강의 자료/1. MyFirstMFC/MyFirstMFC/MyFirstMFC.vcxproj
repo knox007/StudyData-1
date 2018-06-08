@@ -210,6 +210,9 @@
     <Image Include="res\MyFirstMFCDoc.ico" />
     <Image Include="res\Toolbar.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\MFC 기본 개념.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
