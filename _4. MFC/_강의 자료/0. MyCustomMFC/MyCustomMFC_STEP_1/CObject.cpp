@@ -30,18 +30,18 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 //===================================================
 void CObject::InitInstance(TCHAR *pszName, HINSTANCE hInstance, PSTR szCmdLine, int iCmdShow)
 {
-	wndclass.style = CS_HREDRAW | CS_VREDRAW;
-	wndclass.lpfnWndProc = WndProc;
-	wndclass.cbClsExtra = 0;
-	wndclass.cbWndExtra = 0;
-	wndclass.hInstance = hInstance;
-	wndclass.hIcon = LoadIcon(NULL, IDI_APPLICATION);
-	wndclass.hCursor = LoadCursor(NULL, IDC_ARROW);
-	wndclass.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
-	wndclass.lpszMenuName = NULL;
-	wndclass.lpszClassName = pszName;
+	_wndClass.style = CS_HREDRAW | CS_VREDRAW;
+	_wndClass.lpfnWndProc = WndProc;
+	_wndClass.cbClsExtra = 0;
+	_wndClass.cbWndExtra = 0;
+	_wndClass.hInstance = hInstance;
+	_wndClass.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+	_wndClass.hCursor = LoadCursor(NULL, IDC_ARROW);
+	_wndClass.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
+	_wndClass.lpszMenuName = NULL;
+	_wndClass.lpszClassName = pszName;
 
-	RegisterClass(&wndclass);
+	RegisterClass(&_wndClass);
 
 	_hWnd = CreateWindow(pszName,
 		pszName,
@@ -61,14 +61,14 @@ void CObject::InitInstance(TCHAR *pszName, HINSTANCE hInstance, PSTR szCmdLine, 
 //===================================================
 void CObject::Run()
 {
-	while (GetMessage(&msg, NULL, 0, 0))
+	while (GetMessage(&_msg, NULL, 0, 0))
 	{
-		TranslateMessage(&msg);
-		DispatchMessage(&msg);
+		TranslateMessage(&_msg);
+		DispatchMessage(&_msg);
 
 	}//	while (GetMessage(&msg, NULL, 0, 0))
 
 }//	void CObject::Run()
 //===================================================
-WPARAM CObject::ExitInstance() { return msg.wParam; }
+WPARAM CObject::ExitInstance() { return _msg.wParam; }
 //===================================================

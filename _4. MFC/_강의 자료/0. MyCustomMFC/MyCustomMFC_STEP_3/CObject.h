@@ -6,8 +6,8 @@ class CObject
 {
 protected:
 	HWND        _hWnd;
-	MSG         msg;
-	WNDCLASS	wndclass;
+	MSG         _msg;
+	WNDCLASS	_wndClass;
 
 public:
 	void InitInstance( TCHAR *pszName, HINSTANCE hInstance, PSTR szCmdLine, int iCmdShow);
