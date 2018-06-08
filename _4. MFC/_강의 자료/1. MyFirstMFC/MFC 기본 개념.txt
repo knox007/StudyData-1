@@ -49,3 +49,27 @@
 				
 			
 			*	이중 CWinApp / CFrameWnd / CDocument / CView 가 주요 클래스.
+
+			
+
+
+------------
+2.	WIN Api와 비교.
+------------
+	
+	1.	WinMain() / WndProc()의 위치.
+		-	appmodule.cpp에서 호출.
+			-	CMyFirstMFCApp::InitInstance()에 브레이크 포인트 설정후 디버깅모드로 실행.
+			-	브레이크 포인트가 걸리면 콜스택 창에서 확인 가능.
+				-	WinMain()	:	winmain.cpp
+					WndProc()	:	afxstate.cpp
+					(2006년 전후 자료)
+
+
+------------
+3.	기능 추가 방법.
+------------
+	1.	기능을 추가하려는 클래스를 클래스 뷰에서 선택.
+	2.	속성창 - 메시지 클릭
+	3.	메시지 맵 & 핸들러(함수) 추가 확인.
+	4.	메시지 핸들러에서 작업.
