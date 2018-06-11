@@ -63,7 +63,7 @@
 			-	브레이크 포인트가 걸리면 콜스택 창에서 확인 가능.
 				-	WinMain()	:	winmain.cpp
 					WndProc()	:	afxstate.cpp
-					(2006년 전후 자료)
+					(2006년 자료)
 
 
 ------------
