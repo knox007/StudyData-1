@@ -49,12 +49,12 @@
 				
 			
 			*	이중 CWinApp / CFrameWnd / CDocument / CView 가 주요 클래스.
-
+				http://marcof.tistory.com/26
 			
 
 
 ------------
-2.	WIN Api와 비교.
+2.	참고
 ------------
 	
 	1.	WinMain() / WndProc()의 위치.
@@ -66,8 +66,106 @@
 					(2006년 자료)
 
 
+
+
+
+
+
+
 ------------
-3.	기능 추가 방법.
+3.	주요 클래스 이해하기( 1/2 )
+------------
+
+	1.	CMainFrame( CFrameWnd )
+
+		1)	BOOL PreCreateWindow(CREATESTRUCT& cs)
+			-	윈도우가 생성되기 바로 직전에 호출.
+			-	CREATESTRUCT를 사용하여 윈도우의 스타일과 크기등을 지정할 수 있음.
+			
+		2)	int OnCreate(LPCREATESTRUCT lpCreateStruct)
+			-	생성된 윈도우가 화면에 표시되기 바로 직전에 호출.
+			-	툴바, 상태바 등의 객체 생성.
+
+
+
+
+	2.	CMyFirstMFC( CWinApp )
+		
+		1)	BOOL InitInstance()
+			-	CMyFirstMFCView, CMainFrame, CMyFirstMFCDoc 등에 대한 동적할당.
+				-	ProcessShellCommand 에서 담당. 
+				-	함수 내부에서 OnFileNew()를 호출.
+
+	
+
+	
+	3.	CMyFirstMFCView( CView )
+		
+		1)	CMyFirstMFCDoc* GetDocument()
+			-	CMyFirstMFCDoc클래스의 객체 반환.
+				
+		2)	void OnDraw(CDC* pDC)
+			-	OnPaint를 사용한 출력 내용은 뷰( 클라이언트 영역 )에만 출력.
+			-	프린터 같은 다른 장치로 출력하기위한 작업 공간.
+
+	
+
+
+	4.	CMyFirstMFCDoc( CDocument )
+		
+		1)	BOOL OnNewDocument()
+			-	멤버 변수 초기화 작업 공간.
+			-	프로그램 시작시, 새 파일 메뉴 항목 선택시 호출.
+		
+		2)	void Serialize(CArchive& ar)
+			-	직렬화 함수. 파일 입출력과 관련된 작업을 위한 공간.
+			-	데이터 관련 멤버 변수들을 파일로 넣는 코드를 작성.
+
+
+			
+------------
+4.	주요 클래스 이해하기( 2/2 )
+------------
+
+	1.	CMainFrame( CFrameWnd )
+		1)	BOOL PreCreateWindow(CREATESTRUCT& cs)
+			-	윈도우의 위치와 크기 설정.(참고 1)
+			-	윈도우 스타일 설정.(참고 2)
+		
+		2)	void OnContextMenu(CWnd* pWnd, CPoint point);
+			-	윈도우 창에 마우스 우클릭.(참고 3)
+			
+		3)	int OnCreate(LPCREATESTRUCT lpCreateStruct)
+			-	툴바, 상태바 제어.(참고 4)
+
+
+
+	2.	CMyFirstMFC( CWinApp )
+		1)	BOOL InitInstance()
+			-	CMyFirstMFCView, CMainFrame, CMyFirstMFCDoc 의 객체 생성 및 연결.
+				(참고 5)
+			-	윈도우 최대/최소화.		(참고 6)
+
+	
+	
+	3.	CMyFirstMFCView( CView )
+		
+		1)	dc 출력
+			-	(참고 7), (참고 8), (참고 9)
+
+
+
+	4.	CMyFirstMFCDoc( CDocument )
+		1)	직렬화
+			(참고 10)
+	
+	
+	5.	응용.
+		1)	(참고 11)
+		
+
+------------
+.	기능 추가 방법.
 ------------
 	1.	기능을 추가하려는 클래스를 클래스 뷰에서 선택.
 	2.	속성창 - 메시지 클릭
