@@ -165,9 +165,38 @@
 		
 
 ------------
-.	기능 추가 방법.
+5.	기능 추가 방법.
 ------------
 	1.	기능을 추가하려는 클래스를 클래스 뷰에서 선택.
 	2.	속성창 - 메시지 클릭
 	3.	메시지 맵 & 핸들러(함수) 추가 확인.
 	4.	메시지 핸들러에서 작업.
+
+
+
+
+------------
+6.	주요 클래스간 참조하기
+------------
+
+	http://yonghello.tistory.com/entry/%EA%B0%81-%ED%81%B4%EB%9E%98%EC%8A%A4%EC%97%90%EC%84%9C-%EA%B0%9D%EC%B2%B4-%EC%96%BB%EA%B8%B0
+
+
+	1) App 참조하기
+	
+		CTestApp *pApp = (CtestApp *) AfxGetApp();
+
+
+	2) Frame 참조하기
+
+		CMainFrame *pFrame = (CmainFrame *) AfxGetMainWnd();
+
+
+	3) View 참조하기
+	
+		CTestView *pView = (CTestView*)((CMainFrame *)AfxGetMainWnd())->GetActiveView();
+
+
+	4) Document 참조하기
+	
+		CTestDoc *pDoc = (CTestDoc*)((CMainFrame *)AfxGetMainWnd())->GetActiveDocument();
