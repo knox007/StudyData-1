@@ -15,14 +15,24 @@ ON_BN_CLICKED(IDC_BUTTON_ERASE, OnEraseButtonClicked)
 
 ON_WM_CLOSE()
 
+ON_NOTIFY(NM_DBLCLK, IDC_LISTVIEW_PERSONALS, &UpdatingForm::OnNMDblclkListviewPersonals)
+
 END_MESSAGE_MAP()
 
 UpdatingForm::UpdatingForm(CWnd *parent)
 :CDialog(UpdatingForm::IDD, parent) {
 	
 	this->addressBook = NULL;
-}
 
+}
+enum
+{
+	NUMBER,
+	NAME,
+	ADDRESS,
+	PHONE,
+	EMAIL
+};
 BOOL UpdatingForm::OnInitDialog() {
 	
 	CDialog::OnInitDialog();		// Overriding
@@ -31,11 +41,14 @@ BOOL UpdatingForm::OnInitDialog() {
 	this->addressBook = new AddressBook;
 	
 	// 리스트뷰 헤더생성
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertColumn(0, "번호", LVCFMT_CENTER, 50);		// GetDlgItem은 CWnd * 반환형
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertColumn(1, "성명", LVCFMT_CENTER, 100);
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertColumn(2, "주소", LVCFMT_CENTER, 200);
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertColumn(3, "전화번호", LVCFMT_CENTER, 100);
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertColumn(4, "이메일주소", LVCFMT_CENTER, 200);
+	_listCtrlAddress = ((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS));
+	_listCtrlAddress->SetExtendedStyle(LVS_EX_FULLROWSELECT);
+
+	_listCtrlAddress->InsertColumn(NUMBER, "번호", LVCFMT_CENTER, 50);		// GetDlgItem은 CWnd * 반환형
+	_listCtrlAddress->InsertColumn(NAME, "성명", LVCFMT_CENTER, 100);
+	_listCtrlAddress->InsertColumn(ADDRESS, "주소", LVCFMT_CENTER, 200);
+	_listCtrlAddress->InsertColumn(PHONE, "전화번호", LVCFMT_CENTER, 100);
+	_listCtrlAddress->InsertColumn(EMAIL, "이메일주소", LVCFMT_CENTER, 200);
 	
 	return FALSE;
 }
@@ -85,12 +98,12 @@ void UpdatingForm::OnRecordButtonClicked() {
 	
 	CString number;
 	number.Format("%d", index + 1);
-	
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertItem(index, number);
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(index, 1, personal.GetName().c_str());
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(index, 2, personal.GetAddress().c_str());
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(index, 3, personal.GetTelephoneNumber().c_str());
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(index, 4, personal.GetEmailAddress().c_str());
+
+	_listCtrlAddress->InsertItem(index, number);	
+	_listCtrlAddress->SetItemText(index, NAME, personal.GetName().c_str());
+	_listCtrlAddress->SetItemText(index, ADDRESS, personal.GetAddress().c_str());
+	_listCtrlAddress->SetItemText(index, PHONE, personal.GetTelephoneNumber().c_str());
+	_listCtrlAddress->SetItemText(index, EMAIL, personal.GetEmailAddress().c_str());
 }
 
 void UpdatingForm::OnFindButtonClicked() {
@@ -117,7 +130,7 @@ void UpdatingForm::OnCorrectButtonClicked() {
 	CString emailAddress;
 	GetDlgItem(IDC_EDIT_EMAILADDRESS)->GetWindowText(emailAddress);
 	
-	index = ((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->GetSelectionMark();
+	index = _listCtrlAddress->GetSelectionMark();
 
 	if (index == -1)
 	{
@@ -125,14 +138,14 @@ void UpdatingForm::OnCorrectButtonClicked() {
 		return;
 	}
 	
-	index = this->addressBook->Correct(index, (LPCSTR)address, (LPCSTR)telephoneNumber, (LPCSTR)emailAddress);
+	index = this->addressBook->Correct(index, (LPCSTR)name, (LPCSTR)address, (LPCSTR)telephoneNumber, (LPCSTR)emailAddress);
 	
 	Personal personal = this->addressBook->GetAt(index);
-	
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(index, 1, personal.GetName().c_str());
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(index, 2, personal.GetAddress().c_str());
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(index, 3, personal.GetTelephoneNumber().c_str());
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(index, 4, personal.GetEmailAddress().c_str());
+
+	_listCtrlAddress->SetItemText(index, NAME, personal.GetName().c_str());
+	_listCtrlAddress->SetItemText(index, ADDRESS, personal.GetAddress().c_str());
+	_listCtrlAddress->SetItemText(index, PHONE, personal.GetTelephoneNumber().c_str());
+	_listCtrlAddress->SetItemText(index, EMAIL, personal.GetEmailAddress().c_str());
 }
 
 void UpdatingForm::OnEraseButtonClicked() {
@@ -140,7 +153,7 @@ void UpdatingForm::OnEraseButtonClicked() {
 	int index;
 	CString number;
 	
-	index = ((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->GetSelectionMark();
+	index = _listCtrlAddress->GetSelectionMark();
 
 	if (index == -1)
 	{
@@ -152,18 +165,18 @@ void UpdatingForm::OnEraseButtonClicked() {
 	index = this->addressBook->Erase(index);
 	
 	if(index == -1) {
-		((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->DeleteAllItems();
+		_listCtrlAddress->DeleteAllItems();
 		
 		for(int i = 0; i < this->addressBook->GetLength(); i++) {
 			Personal personal = this->addressBook->GetAt(i);
 			
 			number.Format("%d", i + 1);
-			((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertItem(i, number);
-			
-			((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(i, 1, personal.GetName().c_str());
-			((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(i, 2, personal.GetAddress().c_str());
-			((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(i, 3, personal.GetTelephoneNumber().c_str());
-			((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(i, 4, personal.GetEmailAddress().c_str());
+			_listCtrlAddress->InsertItem(i, number);
+
+			_listCtrlAddress->SetItemText(i, NAME, personal.GetName().c_str());
+			_listCtrlAddress->SetItemText(i, ADDRESS, personal.GetAddress().c_str());
+			_listCtrlAddress->SetItemText(i, PHONE, personal.GetTelephoneNumber().c_str());
+			_listCtrlAddress->SetItemText(i, EMAIL, personal.GetEmailAddress().c_str());
 		}
 	}
 }
@@ -173,19 +186,19 @@ void UpdatingForm::OnArrangeButtonClicked() {
 	// 주소록에서 정리
 	this->addressBook->Arrange();
 	
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->DeleteAllItems();
+	_listCtrlAddress->DeleteAllItems();
 	
 	CString number;
 	
 	for(int i = 0; i < this->addressBook->GetLength(); i++) {
 		Personal personal = this->addressBook->GetAt(i);
 		number.Format("%d", i + 1);
-		((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertItem(i, number);
+		_listCtrlAddress->InsertItem(i, number);
 		
-		((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(i, 1, personal.GetName().c_str());
-		((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(i, 2, personal.GetAddress().c_str());
-		((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(i, 3, personal.GetTelephoneNumber().c_str());
-		((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(i, 4, personal.GetEmailAddress().c_str());
+		_listCtrlAddress->SetItemText(i, NAME, personal.GetName().c_str());
+		_listCtrlAddress->SetItemText(i, ADDRESS, personal.GetAddress().c_str());
+		_listCtrlAddress->SetItemText(i, PHONE, personal.GetTelephoneNumber().c_str());
+		_listCtrlAddress->SetItemText(i, EMAIL, personal.GetEmailAddress().c_str());
 	}
 }
 
@@ -196,31 +209,36 @@ void UpdatingForm::OnClose() {
 	}
 	OnOK();
 }
-/*
-void UpdatingForm::OnHdnItemdblclickListviewPersonals(NMHDR *pNMHDR, LRESULT *pResult)
+
+void UpdatingForm::OnNMDblclkListviewPersonals(NMHDR *pNMHDR, LRESULT *pResult)
 {
-	LPNMHEADER phdr = reinterpret_cast<LPNMHEADER>(pNMHDR);
+	LPNMITEMACTIVATE pNMItemActivate = reinterpret_cast<LPNMITEMACTIVATE>(pNMHDR);
+
+	LPNMITEMACTIVATE pNMITEM = (LPNMITEMACTIVATE)pNMHDR;
+
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 
-	NM_LISTVIEW* pNMListView = (NM_LISTVIEW*)pNMHDR;
-	int index = pNMListView->iItem;
+	int index = pNMItemActivate->iItem;
+
+	if (index == -1)
+	{
+		AfxMessageBox(TEXT("데이터를 선택하세요"));
+		return;
+	}
 
 	CString name;
 	CString address;
 	CString telephoneNumber;
 	CString emailAddress;
 
-	name = ((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->GetItemText(index, 1);
-	address = ((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->GetItemText(index, 2);
-	telephoneNumber = ((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->GetItemText(index, 3);
-	emailAddress = ((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->GetItemText(index, 4);
+	name = _listCtrlAddress->GetItemText(index, NAME);
+	address = _listCtrlAddress->GetItemText(index, ADDRESS);
+	telephoneNumber = _listCtrlAddress->GetItemText(index, PHONE);
+	emailAddress = _listCtrlAddress->GetItemText(index, EMAIL);
 
 	GetDlgItem(IDC_EDIT_NAME)->SetWindowText(name);
 	GetDlgItem(IDC_EDIT_ADDRESS)->SetWindowText(address);
 	GetDlgItem(IDC_EDIT_TELEPHONENUMBER)->SetWindowText(telephoneNumber);
 	GetDlgItem(IDC_EDIT_EMAILADDRESS)->SetWindowText(emailAddress);
-
-
 	*pResult = 0;
 }
-//*/

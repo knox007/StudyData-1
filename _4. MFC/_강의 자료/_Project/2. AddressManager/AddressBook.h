@@ -17,7 +17,7 @@ public :
 
 	int Record(string name, string address, string telephoneNumber, string emailAddress);
 	void Find(string name, int* (*indexes), int *count);
-	int Correct(int index, string address, string telephoneNumber, string emailAddress);
+	int Correct(int index, string name, string address, string telephoneNumber, string emailAddress);
 	int Erase(int index);
 	void Arrange();
 	Personal& GetAt(int index);

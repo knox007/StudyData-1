@@ -56,9 +56,9 @@ void AddressBook::Find(string name, int* (*indexes), int *count) {
 	this->personals.LinearSearchDuplicate(&name, indexes, count, CompareByString);
 }
 
-int AddressBook::Correct(int index, string address, string telephonNumber, string emailAddress) {
+int AddressBook::Correct(int index,string name, string address, string telephonNumber, string emailAddress) {
 	
-	Personal personal(this->personals.GetAt(index).GetName(), address, telephonNumber, emailAddress);
+	Personal personal(name, address, telephonNumber, emailAddress);
 	index = this->personals.Modify(index, personal);
 	
 	return index;
