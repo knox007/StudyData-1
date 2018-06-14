@@ -21,6 +21,8 @@
 #define IDC_STATIC_FIND                 1013
 #define IDC_BUTTON_SAVE                 1013
 #define IDC_BUTTON_LOAD                 1014
+#define IDC_BUTTON_FIND2                1015
+#define IDC_BUTTON_CLEAR                1015
 #define IDC_BUTTON_PERSONAL             -1
 
 // Next default values for new objects

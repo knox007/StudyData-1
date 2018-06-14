@@ -26,6 +26,7 @@ class Array {
 		int Delete(int index);
 		int DeleteFromFront();
 		int DeleteFromRear();
+		void DeleteAll();
 
 		void SelectionSort(int (*compare)(void *, void *));
 		void InsertionSort(int (*compare)(void *, void *));
@@ -73,8 +74,15 @@ T& Array<T>::GetAt(int index) {
 template <typename T>
 Array<T>::~Array() {
 
-	if(this->front != 0) {
-		delete[] this->front;
+	DeleteAll();
+}
+
+template <typename T>
+void Array<T>::DeleteAll()
+{
+	if (this->front != 0) {
+		delete[] front;
+		front = nullptr;
 	}
 }
 

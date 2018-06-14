@@ -19,6 +19,7 @@ public :
 	void Find(string name, int* (*indexes), int *count);
 	int Correct(int index, string name, string address, string telephoneNumber, string emailAddress);
 	int Erase(int index);
+	void EraseAll();
 	void Arrange();
 	Personal& GetAt(int index);
 	Personal& operator [](int index);

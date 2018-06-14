@@ -25,11 +25,11 @@ BOOL FindingForm::OnInitDialog() {
 	CDialog::OnInitDialog();
 	
 	// 리스트뷰 헤더생성
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertColumn(0, "번호", LVCFMT_CENTER, 50);		// GetDlgItem은 CWnd * 반환형
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertColumn(1, "성명", LVCFMT_CENTER, 100);
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertColumn(2, "주소", LVCFMT_CENTER, 200);
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertColumn(3, "전화번호", LVCFMT_CENTER, 100);
-	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertColumn(4, "이메일주소", LVCFMT_CENTER, 200);
+	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertColumn(0, TEXT("번호"), LVCFMT_CENTER, 50);		// GetDlgItem은 CWnd * 반환형
+	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertColumn(1, TEXT("성명"), LVCFMT_CENTER, 100);
+	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertColumn(2, TEXT("주소"), LVCFMT_CENTER, 200);
+	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertColumn(3, TEXT("전화번호"), LVCFMT_CENTER, 100);
+	((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertColumn(4, TEXT("이메일주소"), LVCFMT_CENTER, 200);
 	
 	return FALSE;
 }
@@ -48,13 +48,13 @@ void FindingForm::OnFindButtonClicked() {
 	}
 
 	// 주소록 윈도우 찾음
-	UpdatingForm *updatingForm = (UpdatingForm *)CWnd::FindWindow("#32770", "주소록");
+	UpdatingForm *updatingForm = (UpdatingForm *)CWnd::FindWindow(TEXT("#32770"), TEXT("주소록"));
 	
 	if(this->indexes != NULL) {
 		delete[] this->indexes;
 	}
 	
-	updatingForm->addressBook->Find( (LPCSTR)name, &(this->indexes), &(this->count));
+	updatingForm->addressBook->Find( (LPCSTR)name.GetBuffer(), &(this->indexes), &(this->count));
 
 	if (count == 0 )
 	{
@@ -68,13 +68,13 @@ void FindingForm::OnFindButtonClicked() {
 	if(this->count > 0) {
 		for(int i = 0; i < this->count; i++) {
 			Personal personal = updatingForm->addressBook->GetAt(this->indexes[i]);	
-			number.Format("%d", i + 1);
+			number.Format(TEXT("%d"), i + 1);
 			
 			((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->InsertItem(i, number);
-			((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(i, 1, personal.GetName().c_str());
-			((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(i, 2, personal.GetAddress().c_str());
-			((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(i, 3, personal.GetTelephoneNumber().c_str());
-			((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(i, 4, personal.GetEmailAddress().c_str());
+			((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(i, 1, (LPCTSTR)personal.GetName().c_str());
+			((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(i, 2, (LPCTSTR)personal.GetAddress().c_str());
+			((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(i, 3, (LPCTSTR)personal.GetTelephoneNumber().c_str());
+			((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->SetItemText(i, 4, (LPCTSTR)personal.GetEmailAddress().c_str());
 		}
 	}
 }
@@ -83,7 +83,7 @@ void FindingForm::OnListViewItemDoubleClicked(NMHDR *lpNotifyStruct, LRESULT *re
 
 	int index = ((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->GetSelectionMark();
 
-	UpdatingForm *updatingForm = (UpdatingForm *)CWnd::FindWindow("#32770", "주소록");
+	UpdatingForm *updatingForm = (UpdatingForm *)CWnd::FindWindow(TEXT("#32770"), TEXT("주소록"));
 
 	CString name = ((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->GetItemText(index, 1);
 	CString address = ((CListCtrl *)GetDlgItem(IDC_LISTVIEW_PERSONALS))->GetItemText(index, 2);

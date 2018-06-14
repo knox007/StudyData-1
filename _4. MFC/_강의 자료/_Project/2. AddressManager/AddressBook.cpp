@@ -41,7 +41,12 @@ int AddressBook::Record(string name, string address, string telephoneNumber, str
 	this->length++;
 	return index;
 }
-
+void AddressBook::EraseAll()
+{
+	int length = personals.GetLength();
+	if( length > 0 )
+		personals.DeleteAll();
+}
 int AddressBook::Erase(int index) {
 	
 	index = this->personals.Delete(index);
