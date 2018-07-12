@@ -6,11 +6,11 @@
 #include "_StdAfx.h"
 
 
-CD3DApp*	g_pApp;
+CMain*	g_pApp;
 
 INT WINAPI WinMain( HINSTANCE hInst, HINSTANCE, LPSTR, INT )
 {
-	CD3DApp	d3dApp;
+	CMain	d3dApp;
 
 	g_pApp = &d3dApp;
 

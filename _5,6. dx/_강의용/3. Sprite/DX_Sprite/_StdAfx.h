@@ -31,11 +31,18 @@
 #include <time.h>
 #include <Mmsystem.h>
 
-#define SAFE_DELETE(p)       { if(p) { delete (p);     (p)=NULL; } }
-#define SAFE_DELETE_ARRAY(p) { if(p) { delete[] (p);   (p)=NULL; } }
-#define SAFE_RELEASE(p)      { if(p) { (p)->Release(); (p)=NULL; } }
+
+#define GMAIN			g_pApp
+#define GHINST			g_pApp->m_hInst
+#define GHWND			g_pApp->m_hWnd
+#define GDEVICE			g_pApp->m_pd3dDevice
 
 
+#include "McUtil.h"
 #include "D3DApp.h"
+
+
+
+#include "Main.h"
 
 #endif

@@ -30,9 +30,14 @@ public:
 	INT		Create(HINSTANCE hInst);
 	INT		Run();
 	void	Cleanup();
-	INT		Render();
+	INT		Render3D();
 
-	LRESULT MsgProc(HWND, UINT, WPARAM, LPARAM);
+	virtual INT		Init()				{		return 0;	}
+	virtual void	Destroy()			{					}
+	virtual INT		Render()			{		return 0;	}
+	virtual INT		FrameMove()			{		return 0;	}
+
+	virtual	LRESULT MsgProc(HWND, UINT, WPARAM, LPARAM);
 	static LRESULT WINAPI WndProc(HWND, UINT, WPARAM, LPARAM);
 
 protected:

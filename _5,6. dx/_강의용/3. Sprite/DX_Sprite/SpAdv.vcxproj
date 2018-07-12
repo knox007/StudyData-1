@@ -13,7 +13,8 @@
   <PropertyGroup Label="Globals">
     <SccProjectName />
     <SccLocalPath />
-    <ProjectGuid>{D0757E98-8538-4724-B514-4EF203DFB109}</ProjectGuid>
+    <ProjectGuid>{1CB24923-5599-46EA-A5DA-DFC67C4299D9}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -132,10 +133,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="D3DApp.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="McUtil.cpp" />
     <ClCompile Include="SpAdv.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D3DApp.h" />
+    <ClInclude Include="Main.h" />
+    <ClInclude Include="McUtil.h" />
     <ClInclude Include="_StdAfx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

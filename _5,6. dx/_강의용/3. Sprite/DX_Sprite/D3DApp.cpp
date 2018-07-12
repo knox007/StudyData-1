@@ -30,11 +30,6 @@ CD3DApp::CD3DApp()
 }
 
 
-LRESULT WINAPI CD3DApp::WndProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
-{
-	return g_pD3DApp->MsgProc(hWnd, msg, wParam, lParam);
-}
-
 INT CD3DApp::Create( HINSTANCE hInst)
 {
 	m_hInst	= hInst;
@@ -66,10 +61,10 @@ INT CD3DApp::Create( HINSTANCE hInst)
 	m_hWnd = CreateWindow( m_sCls
 		, m_sCls
 		, m_dWinStyle
-		,	(iScnSysW - (rc.right-rc.left))/2
-		,	(iScnSysH - (rc.bottom-rc.top))/2
-		,	(rc.right-rc.left)
-		,	(rc.bottom-rc.top)
+		, (iScnSysW - (rc.right-rc.left))/2
+		, (iScnSysH - (rc.bottom-rc.top))/2
+		, (rc.right  - rc.left)
+		, (rc.bottom - rc.top)
 		, NULL
 		, NULL
 		, m_hInst
@@ -132,16 +127,21 @@ INT CD3DApp::Create( HINSTANCE hInst)
 	UpdateWindow( m_hWnd );
 	::ShowCursor(m_bShowCusor);
 
+	if(FAILED(Init()))
+		return -1;
+
 	return 0;
 }
 
 
 void CD3DApp::Cleanup()
 {
+	Destroy();
 	// 디바이스를 릴리즈하기전에 먼저 스프라이트를 해제해야 한다.
 	SAFE_RELEASE(	m_pd3dSprite	);
 	SAFE_RELEASE(	m_pd3dDevice	);
 	SAFE_RELEASE(	m_pD3D			);
+
 }
 
 
@@ -159,7 +159,11 @@ INT CD3DApp::Run()
 		}
 		else
 		{
-			Render();
+			if(FAILED(Render3D()))
+				break;
+
+			// 후면버퍼 전면버퍼 교체( flipping)
+			m_pd3dDevice->Present( 0, 0, 0, 0);
 		}
 	}
 
@@ -170,17 +174,17 @@ INT CD3DApp::Run()
 
 
 
+LRESULT WINAPI CD3DApp::WndProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
+{
+	return g_pD3DApp->MsgProc(hWnd, msg, wParam, lParam);
+}
+
 
 
 LRESULT CD3DApp::MsgProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 {
 	switch( msg )
 	{
-		case WM_PAINT:
-		{
-			break;
-		}
-
 		case WM_KEYDOWN:
 		{
 
@@ -193,7 +197,7 @@ LRESULT CD3DApp::MsgProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 				}
 			}
 
-			return 0;
+			break;
 
 		}
 
@@ -201,7 +205,7 @@ LRESULT CD3DApp::MsgProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 		{
 			Cleanup();
 			PostQuitMessage( 0 );
-			return 0;
+			break;
 		}
 	}
 
@@ -210,34 +214,17 @@ LRESULT CD3DApp::MsgProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 
 
 
-INT CD3DApp::Render()
+INT CD3DApp::Render3D()
 {
 	if( NULL == m_pd3dDevice )
 		return -1;
 
-	// 실질적으로는 버퍼(백버퍼: 색상, 깊이, 스텐실)를 지우는 것이 아니라 채우는 것이다.
-	// D3DCLEAR_TARGET: 색상 버퍼를 지운다.
-	// D3DCLEAR_ZBUFFER: 깊이 버퍼를 지운다.
-	// Clear에서 D3DCLEAR_TARGET|D3DCLEAR_ZBUFFER 설정은 가장 흔한 방법이다.
-	m_pd3dDevice->Clear( 0, NULL, D3DCLEAR_TARGET|D3DCLEAR_ZBUFFER, D3DCOLOR_XRGB(0,120,160), 1.0f, 0 );
 
-
-	// BeginScene과 EndScene에 렌더링을 걸어주어야 된다.
-	if( FAILED( m_pd3dDevice->BeginScene() ) )
+	if(FAILED(FrameMove()))
 		return -1;
 
-	////////////////////////////////////////////////////////////////////////////
-	//
+	if(FAILED(Render()))
+		return -1;
 
-	// 렌더링
-
-	//
-	////////////////////////////////////////////////////////////////////////////
-
-
-	// EndScene
-	m_pd3dDevice->EndScene();
-
-	// 후면버퍼 전면버퍼 교체( flipping)
-	return m_pd3dDevice->Present( 0, 0, 0, 0);
+	return 0;
 }

@@ -94,6 +94,14 @@ SOURCE=.\D3DApp.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\Main.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\McUtil.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\SpAdv.cpp
 # End Source File
 # End Group
@@ -107,6 +115,14 @@ SOURCE=.\_StdAfx.h
 # Begin Source File
 
 SOURCE=.\D3DApp.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Main.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\McUtil.h
 # End Source File
 # End Group
 # Begin Group "Resource Files"

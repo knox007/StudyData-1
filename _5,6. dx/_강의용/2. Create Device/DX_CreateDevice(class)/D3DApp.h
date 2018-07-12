@@ -20,8 +20,6 @@ public:
 	D3DPRESENT_PARAMETERS	m_d3dpp		;
 	LPDIRECT3D9				m_pD3D		;			// D3D
 	LPDIRECT3DDEVICE9		m_pd3dDevice;			// Device
-	LPD3DXSPRITE			m_pd3dSprite;			// 2D Sprite
-
 
 public:
 	CD3DApp();

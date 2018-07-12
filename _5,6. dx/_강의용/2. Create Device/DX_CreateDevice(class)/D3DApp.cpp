@@ -25,8 +25,7 @@ CD3DApp::CD3DApp()
 	m_bWindow		= TRUE;			// Window mode
 
 	m_pD3D			= NULL;			// D3D
-	m_pd3dDevice	= NULL;			// Device
-	m_pd3dSprite	= NULL;			// 2D Sprite
+	m_pd3dDevice	= NULL;			// Device	
 }
 
 
@@ -113,15 +112,7 @@ INT CD3DApp::Create( HINSTANCE hInst)
 			return -1;
 		}
 	}
-
-	// DX의 스프라이트는 디바이스가 생성된 후에 만들어야 한다.
-	if(FAILED(D3DXCreateSprite(m_pd3dDevice, &m_pd3dSprite)))
-	{
-		SAFE_RELEASE(	m_pd3dDevice	);
-		SAFE_RELEASE(	m_pD3D			);
-		return -1;
-	}
-
+	 
 
 	ShowWindow( m_hWnd, SW_SHOW );
 	UpdateWindow( m_hWnd );
@@ -138,7 +129,6 @@ void CD3DApp::Cleanup()
 {
 	Destroy();
 	// 디바이스를 릴리즈하기전에 먼저 스프라이트를 해제해야 한다.
-	SAFE_RELEASE(	m_pd3dSprite	);
 	SAFE_RELEASE(	m_pd3dDevice	);
 	SAFE_RELEASE(	m_pD3D			);
 
