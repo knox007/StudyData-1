@@ -33,7 +33,8 @@ INT CD3DApp::Create( HINSTANCE hInst)
 {
 	m_hInst	= hInst;
 
-	WNDCLASS wc =								// Register the window class
+	// Register the window class
+	WNDCLASS wc =
 	{
 		CS_CLASSDC
 		, WndProc
@@ -49,8 +50,8 @@ INT CD3DApp::Create( HINSTANCE hInst)
 
 	RegisterClass( &wc );
 
-	RECT rc;									//Create the application's window
-
+	//Create the application's window
+	RECT rc;
 	SetRect( &rc, 0, 0, m_dScnX, m_dScnY);
 	AdjustWindowRect( &rc, m_dWinStyle, FALSE );
 
@@ -84,8 +85,6 @@ INT CD3DApp::Create( HINSTANCE hInst)
 
 	// 디바이스를 생성하기 위해서는 프리젠트 파라메터 구조체가 필요
 	// 전부 0으로 셋팅한다음 일부만 변수세팅
-
-
 	memset(&m_d3dpp, 0, sizeof(m_d3dpp));
 	m_d3dpp.Windowed				= m_bWindow;
 	m_d3dpp.SwapEffect				= D3DSWAPEFFECT_DISCARD;
@@ -151,7 +150,7 @@ INT CD3DApp::Run()
 		{
 			if(FAILED(Render3D()))
 				break;
-
+			
 			// 후면버퍼 전면버퍼 교체( flipping)
 			m_pd3dDevice->Present( 0, 0, 0, 0);
 		}
