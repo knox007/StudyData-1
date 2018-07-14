@@ -1,0 +1,66 @@
+/// 스프라이트 /////////////////////////////////////////
+
+https://docs.microsoft.com/ko-kr/windows/desktop/directx
+
+-----------------
+0.	스프라이트(LPD3DXSPRITE)
+-----------------
+	1.	정의	:	2D 이미지 처리 전용 인터페이스.
+
+		용도	:	UI나 평면 이미지를 그릴때 사용.
+				3D 카메라에 2D 이미지가 붙어 있다고 이해하면 좋다.
+	
+
+-----------------
+1.	LPD3DXSPRITE 객체 생성
+-----------------
+	1.	라이브러리 링크
+		#pragma comment(lib, "d3dx9.lib")
+
+	2.	헤더파일 인클루드
+		#include < d3dx9.h>
+
+	3.	객체 선언
+		LPD3DXSPRITE	m_pD3DSprite;
+
+	
+	4.	객체 생성
+		HRESULT D3DXCreateSprite(
+					  _In_  LPDIRECT3DDEVICE9 pDevice,
+					  _Out_ LPD3DXSPRITE      *ppSprite
+					);
+		
+		-	스프라이트 객체 생성
+
+		-	pDevice		:	디바이스 객체
+			ppSprite	:	스프라이트 객체 생성 성공시 반환될 메모리 버퍼.
+			리턴값		:	스프라이트 객체 생성 성공/실패 결과 반환.
+
+
+	5.	랜더링
+		-	디바이스의 BeginScene() 함수와 EndScene() 사이에서 
+			스프라이트의 Begin()함수와 End()함수 사이에서 Draw() 함수를 호출해야 한다.
+
+			if( FAILED( m_pD3DDevice->BeginScene() ) )
+				return -1;
+
+			if (FAILED(m_pD3DSprite->Begin(D3DXSPRITE_ALPHABLEND)))
+				return E_FAIL;
+
+			m_pD3DSprite->Draw(...);
+
+			m_pD3DSprite->End();
+
+			m_pD3DDevice->EndScene();
+			
+		
+
+	6.	객체 해제
+		-	COM을 상속 받으므로 Release() 함수를 통해서 해제
+		- 	D3D -> 디바이스 -> 스프라이트 순으로 생성했으므로 역순으로 해제한다.
+			( 스프라이트-> 디바이스-> D3D )
+		-	DX 관련 객체들은 생성과 해제의 순서를 꼭 지킬것.
+
+	
+
+	
