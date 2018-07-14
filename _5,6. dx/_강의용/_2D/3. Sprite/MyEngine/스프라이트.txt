@@ -44,14 +44,42 @@ https://docs.microsoft.com/ko-kr/windows/desktop/directx
 			if( FAILED( m_pD3DDevice->BeginScene() ) )
 				return -1;
 
-			if (FAILED(m_pD3DSprite->Begin(D3DXSPRITE_ALPHABLEND)))
+			if (FAILED(m_pD3DSprite->Begin(D3DXSPRITE_ALPHABLEND)))	//	스프라이트를 그리도록 디바이스에게 준비시킴.
 				return E_FAIL;
 
 			m_pD3DSprite->Draw(...);
 
+			m_pD3DSprite->Draw(...);
+
+			m_pD3DSprite->Draw(...);
+
+			.................
+
 			m_pD3DSprite->End();
 
 			m_pD3DDevice->EndScene();
+
+
+		
+		-	HRESULT Begin(
+  					[in] DWORD Flags
+				     );
+
+			Flags	
+				-	D3DXSPRITE_ALPHABLEND	:	알파 블렌딩 적용
+				-	D3DXSPRITE_OBJECTSPACE	:	3차원 좌표계 적용
+				-	D3DXSPRITE_SORT_TEXTURE	:	텍스쳐를 깊이값으로 정렬
+
+
+
+		-	HRESULT Draw(
+					  [in]       LPDIRECT3DTEXTURE9 pTexture,
+					  [in] const RECT               *pSrcRect,
+					  [in] const D3DXVECTOR3        *pCenter,
+					  [in] const D3DXVECTOR3        *pPosition,
+					  [in]       D3DCOLOR           Color
+				);
+
 			
 		
 

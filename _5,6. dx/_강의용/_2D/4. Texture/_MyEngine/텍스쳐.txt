@@ -9,7 +9,7 @@ https://docs.microsoft.com/ko-kr/windows/desktop/directx
 		-	2D, 3D의 장면 연출에 대한 모든 이미지를 연출하는데 사용.
 
 ---------------------
-0.	LPDIRECT3DTEXTURE9 사용
+1.	LPDIRECT3DTEXTURE9 사용
 ---------------------
 		
 	1.	객체 선언
@@ -67,4 +67,3 @@ https://docs.microsoft.com/ko-kr/windows/desktop/directx
 		-	DX 관련 객체들은 생성과 해제의 순서를 꼭 지킬것.
 			
 			
-		

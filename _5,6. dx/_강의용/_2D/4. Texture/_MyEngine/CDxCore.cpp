@@ -207,7 +207,6 @@ HRESULT CDxCore::OnRender()
 	if (FAILED(Render()))
 		return E_FAIL;
 
-
 	m_pD3DSprite->End();
 	
 	m_pD3DDevice->EndScene();
