@@ -100,9 +100,11 @@ HRESULT CDxCore::CreateDX()
 	m_D3DPp.EnableAutoDepthStencil = TRUE;
 	m_D3DPp.AutoDepthStencilFormat = D3DFMT_D16;
 
-	// D3DADAPTER_DEFAULT: 대부분의 그래픽카드는 모노 듀얼일 경우 이부분을 수정
-	// D3DDEVTYPE_HAL : 하드웨어 가속(가장 큰 속도)을 받을 것인가.. 하드웨어 지
-	// 원이 없을 경우 D3D는 소프트웨어로 이를 대체 할 수 있다.
+	//	D3DADAPTER_DEFAULT: 대부분의 그래픽카드는 모노 듀얼일 경우 이부분을 수정
+	//	D3DDEVTYPE_HAL : 하드웨어 가속(가장 큰 속도)을 받을 것인가.. 하드웨어 지원이 없을 경우 D3D는 소프트웨어로 이를 대체 할 수 있다.
+	//	D3DCREATE_HARDWARE_VERTEXPROCESSING	:	정점처리를 gpu에 맡김.
+	//	D3DCREATE_SOFTWARE_VERTEXPROCESSING :	CPU에 맡김.
+	//	D3DCREATE_MIXED_VERTEXPROCESSING    :	HVP, SVP간의 전환 가능.
 
 	if (FAILED(m_pD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, m_hWnd,
 		D3DCREATE_MIXED_VERTEXPROCESSING, &m_D3DPp, &m_pD3DDevice)))
