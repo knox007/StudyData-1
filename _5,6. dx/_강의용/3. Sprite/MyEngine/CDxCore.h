@@ -27,7 +27,7 @@ protected:
 	D3DPRESENT_PARAMETERS	m_D3DPp;
 	LPDIRECT3DDEVICE9		m_pD3DDevice;
 	//-------------------------------
-	LPD3DXSPRITE		m_pD3DSprite = NULL;			// 2D Sprite
+	LPD3DXSPRITE			m_pD3DSprite = NULL;			// 2D Sprite
 
 public:
 	//-------------------------------

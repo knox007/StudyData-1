@@ -183,8 +183,7 @@ INT CDxCore::Run()
 		{
 			if (FAILED(Idle()))
 				break;
-
-
+			
 		}//	~if (PeekMessage(&msg, NULL, 0U, 0U, PM_REMOVE))
 
 	}//	while (msg.message != WM_QUIT)
