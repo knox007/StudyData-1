@@ -19,8 +19,8 @@ INT		CMyGame::Init()
 		, 0
 		, D3DFMT_UNKNOWN
 		, D3DPOOL_MANAGED
-		, D3DX_DEFAULT				//	필터링
-		, D3DX_DEFAULT				//	밉 필터링
+		, D3DX_FILTER_NONE			//	필터링
+		, D3DX_FILTER_NONE			//	밉 필터링
 		, 0							//	컬러키
 		, &m_d3DImageInfo			//	텍스쳐 정보
 		, NULL

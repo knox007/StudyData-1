@@ -292,6 +292,8 @@ void Destroy()
 	while( m_Tex[i])
 	{
 		SAFE_RELEASE(	m_Tex[i]	);
+
+		++i;
 	}
 }
 
