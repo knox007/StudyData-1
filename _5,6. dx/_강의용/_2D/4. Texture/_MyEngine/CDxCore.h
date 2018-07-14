@@ -28,6 +28,7 @@ protected:
 	LPDIRECT3DDEVICE9		m_pD3DDevice;
 	//-------------------------------
 	LPD3DXSPRITE			m_pD3DSprite = NULL;			// 2D Sprite
+	D3DXIMAGE_INFO			m_d3DImageInfo;
 
 public:
 	//-------------------------------

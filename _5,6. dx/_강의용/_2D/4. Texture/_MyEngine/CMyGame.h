@@ -17,6 +17,11 @@ public:
 	virtual INT		FrameMove();
 	virtual void	Destroy();
 
+	virtual LRESULT MsgProc(HWND, UINT, WPARAM, LPARAM);
+
+	//	°´Ã¼ ¼±¾ð
+	LPDIRECT3DTEXTURE9	m_pD3DTxtr = NULL;
+
 };// class CMyGame :	public CDxCore
 
 extern CMyGame*	g_pApp;

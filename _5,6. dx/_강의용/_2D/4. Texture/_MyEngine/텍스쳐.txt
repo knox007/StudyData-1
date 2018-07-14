@@ -1,0 +1,70 @@
+/// 텍스쳐 /////////////////////////////////////////
+
+https://docs.microsoft.com/ko-kr/windows/desktop/directx
+
+---------------------
+0.	텍스쳐( LPDIRECT3DTEXTURE9 )
+---------------------
+	1.	용도
+		-	2D, 3D의 장면 연출에 대한 모든 이미지를 연출하는데 사용.
+
+---------------------
+0.	LPDIRECT3DTEXTURE9 사용
+---------------------
+		
+	1.	객체 선언
+		LPDIRECT3DTEXTURE9	m_pD3DTxtr;
+
+	2.	객체 생성
+
+		HRESULT D3DXCreateTextureFromFile(
+				  _In_  LPDIRECT3DDEVICE9  pDevice,
+				  _In_  LPCTSTR            pSrcFile,
+				  _Out_ LPDIRECT3DTEXTURE9 *ppTexture
+				);
+		-	D3DXCreateTextureFromFileEx와 같은 기능이나 텍스쳐의 크기가 2의 지수형이어야 함.
+
+		
+
+		HRESULT D3DXCreateTextureFromFileEx(
+				  _In_    LPDIRECT3DDEVICE9  pDevice,
+				  _In_    LPCTSTR            pSrcFile,
+				  _In_    UINT               Width,
+				  _In_    UINT               Height,
+				  _In_    UINT               MipLevels,	//	*밉맵 레벨
+				  _In_    DWORD              Usage,
+				  _In_    D3DFORMAT          Format,
+				  _In_    D3DPOOL            Pool,
+				  _In_    DWORD              Filter,
+				  _In_    DWORD              MipFilter,
+				  _In_    D3DCOLOR           ColorKey,
+				  _Inout_ D3DXIMAGE_INFO     *pSrcInfo,
+				  _Out_   PALETTEENTRY       *pPalette,
+				  _Out_   LPDIRECT3DTEXTURE9 *ppTexture
+				);
+		( 소스 참고 )
+
+
+		* 밉맵	
+			정의		:	하나의 텍스쳐를 일정한 크기로 축소시켜 여러장을 가지고 있다가 
+						현재 사이즈에 가장 적합한 이미지를 찾아서 사용하는 것.
+
+			사용배경	:	해상도가 큰 텍스쳐를 사용하는 커다란 물체가 카메라로 거리가 멀어져 작게 보이는 경우,
+						무수한 텍셀( 3D 모델에 적용된 텍스쳐의 픽셀 )정보를 계산해서 단지 몇개의 픽셀만을 사용하게 되므로 
+						계산이 비효율적이게 된다.
+
+			작동 방식	:	원본이미지의 캔버스 크기를 확장하여 남은 공간에 다양한 크기로 축소된 이미지를 배치하여
+						이중 적당한 텍스쳐를 골라 사용.			
+
+			주의 사항	:	밉맵을 사용하려면 텍스쳐의 크기가 2의 지수형( Power Of Two,POT )
+			
+					
+									
+	3.	객체 해제
+		-	COM을 상속 받으므로 Release() 함수를 통해서 해제
+		- 	D3D -> 디바이스 -> 스프라이트 순으로 생성했으므로 역순으로 해제한다.
+			( 스프라이트-> 디바이스-> D3D )
+		-	DX 관련 객체들은 생성과 해제의 순서를 꼭 지킬것.
+			
+			
+		
