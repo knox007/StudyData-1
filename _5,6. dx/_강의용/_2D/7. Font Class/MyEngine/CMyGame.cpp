@@ -10,7 +10,8 @@ INT		CMyGame::Init()
 	if (FAILED(m_dxTxtrTest.Create(m_pD3DDevice, "texture/myfamily.jpg")))
 		return -1;
 
-	if (FAILED(m_dxFont.Create(m_pD3DDevice, _T("굴림체"), 20)))
+	if (FAILED(m_dxFont.Create(m_pD3DDevice, _T("궁서체"), 20, FW_BOLD)))
+	//if (FAILED(m_dxFont.Create(m_pD3DDevice, _T("굴림체"), 20, FW_LIGHT)))
 		return E_FAIL;
 	
 	return 0;
@@ -29,7 +30,7 @@ INT		CMyGame::Render()
 	D3DXVECTOR3	vcPos(m_dwScrWidth * 0.5f, m_dwScrHeight * 0.5f, 0);
 	m_pD3DSprite->Draw(pTxTmp, &rt, &vcCenter, &vcPos, D3DXCOLOR(1, 1, 1, 1));
 
-	m_dxFont.DrawText(_T("재키짱"), 20, 20, 100, 30, D3DXCOLOR(1, 1, 0, 1));
+	m_dxFont.Draw(NULL, _T("우리 가족 입니다 ^^"), 0, 0, 300, 50, D3DXCOLOR(1, 1, 0, 1), DT_LEFT);
 
 	return 0;
 
