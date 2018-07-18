@@ -5,8 +5,8 @@ using UnityEngine;
 //====================================================================
 public class DataType : MonoBehaviour
 {
-    int _intVal;
-    bool _boolVal;
+    int _intVal = 0;
+    bool _boolVal = false;
 
     const int MAXVALUE = 1000;
     //const int MAXVALUE;
