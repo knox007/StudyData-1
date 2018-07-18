@@ -11,16 +11,7 @@ CDxTexture::CDxTexture()
 //========================================================
 CDxTexture::~CDxTexture() {	Destroy(); }
 //========================================================
-void CDxTexture::Destroy()
-{
-	if(m_pTx)
-	{
-		m_pTx->Release();
-		m_pTx= NULL;
-	
-	}//	if(m_pTx)
-
-}//	void CDxTexture::Destroy()
+void CDxTexture::Destroy() { SAFE_RELEASE(m_pTx); }
 //========================================================
 INT CDxTexture::Create(LPDIRECT3DDEVICE9 pDev, char* sFile)
 {
