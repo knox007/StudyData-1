@@ -36,7 +36,7 @@ protected:
 
 	DWORD		m_dTimeDC;					// Double Click Time Interval
 	DWORD		m_dBtnBgn[MAX_INPUT_BTN];	// Double Click Start
-	
+	INT			m_dBtnCnt[MAX_INPUT_BTN];	// Double Click Count
 
 
 public:
@@ -59,8 +59,6 @@ public:
 
 	D3DXVECTOR3 GetMousePos();
 	D3DXVECTOR3 GetMouseEps();
-
-	INT			m_dBtnCnt[MAX_INPUT_BTN];	// Double Click Count
 
 };//	class CInputManager
 //=================================================================

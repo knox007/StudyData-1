@@ -37,18 +37,6 @@ INT		CMyGame::Render()
 	//	폰트 출력.
 	m_dxFont.Draw(m_pD3DSprite, _T("우리 가족 입니다 ^^"), 0, 0, 300, 50, D3DXCOLOR(1, 1, 0, 1), DT_LEFT);
 
-	if (m_pInputManager)
-	{
-		int n0 = m_pInputManager->m_dBtnCnt[0];
-		int n1 = m_pInputManager->m_dBtnCnt[1];
-		int n2 = m_pInputManager->m_dBtnCnt[2];
-
-		TCHAR	tszMsg[128];
-		sprintf(tszMsg, "Mouse L: %d  R: %d  M:%d", n0, n1, n2);
-
-		m_dxFont.Draw(m_pD3DSprite, tszMsg, 100, 400, 250, 50, D3DXCOLOR(1, 1, 0, 1), DT_CENTER);
-	}
-
 	return 0;
 
 }//	INT		CMyGame::Render()
