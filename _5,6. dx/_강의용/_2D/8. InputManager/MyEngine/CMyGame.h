@@ -17,9 +17,14 @@ public:
 	virtual INT		FrameMove();
 	virtual void	Destroy();
 
+	virtual LRESULT MsgProc(HWND, UINT, WPARAM, LPARAM);
+
 
 	CDxTexture		m_dxTxtrTest;
 	CDxFont			m_dxFont;
+	TCHAR			m_tszMouseMsg[128];
+	TCHAR			m_tszKbdMsg[128];
+	TCHAR			m_tszMouseWheelMsg[128];
 
 };// class CMyGame :	public CDxCore
 
