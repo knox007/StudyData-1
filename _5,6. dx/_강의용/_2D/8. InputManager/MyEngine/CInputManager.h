@@ -5,7 +5,7 @@
 #define _INPUTMANAGER_H_
 //=================================================================
 #define MAX_INPUT_KEY	256
-#define MAX_INPUT_BTN	8
+#define MAX_INPUT_BTN	3
 //=================================================================
 class CInputManager
 {
@@ -22,20 +22,22 @@ public:
 protected:
 	HWND		m_hWnd;
 
-	BYTE		m_kbdBttnCur[MAX_INPUT_KEY];	// 키보드 현재 상태
-	BYTE		m_kbdBttnOld[MAX_INPUT_KEY];	// 키보드 이전 상태
-	BYTE		m_kbdBttnMap[MAX_INPUT_KEY];	// 키보드 맵
+	BYTE		m_kbdBttnCur[MAX_INPUT_KEY];	//	키보드 현재 상태
+	BYTE		m_kbdBttnOld[MAX_INPUT_KEY];	//	키보드 이전 상태
+	BYTE		m_kbdBttnMap[MAX_INPUT_KEY];	//	키보드 맵
+												//	m_kbdBttnCur, m_kbdBttnOld의 결과를 비교하여
+												//	최종 결과를 적용하기 위한 버퍼.
 
 	BYTE		m_mouseBtttnCur[MAX_INPUT_BTN];	// 마우스 현재 상태
 	BYTE		m_mouseBtttnOld[MAX_INPUT_BTN];	// 마우스 이전 상태
 	BYTE		m_mouseBtttnMap[MAX_INPUT_BTN];	// 마우스 맵
 
-	D3DXVECTOR3	m_vcCur;						// 휠 마우스
-	D3DXVECTOR3 m_vcOld;
-	D3DXVECTOR3 m_vcEps;
+	D3DXVECTOR3	m_vcCur;						//	현재 프레임의 마우스 좌표및 휠의 옵셋 값.
+	D3DXVECTOR3 m_vcOld;						//	이전
+	D3DXVECTOR3 m_vcEps;						//	현재 프레임과 이전 프레임의 마우스 정보 변화량.
 
-	DWORD		m_dTimeDC;					// Double Click Time Interval
-	DWORD		m_dBtnBgn[MAX_INPUT_BTN];	// Double Click Start
+	DWORD		m_dTimeDC;						//	시스템상의 마우스 더블클릭 인식유효 시간.
+	DWORD		m_dBtnBgn[MAX_INPUT_BTN];		//	각 마우스 버튼의 클릭 시간.
 	
 
 
