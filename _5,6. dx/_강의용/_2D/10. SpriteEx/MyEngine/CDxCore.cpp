@@ -100,6 +100,12 @@ HRESULT CDxCore::CreateDX()
 	m_D3DPp.BackBufferWidth = m_dwScrWidth;
 	m_D3DPp.BackBufferHeight = m_dwScrHeight;
 	m_D3DPp.EnableAutoDepthStencil = TRUE;
+	//	http://telnet.or.kr/directx/graphics/reference/d3d/constants/d3dpresent.htm
+	//	런타임은 윈도우 클라이언트 영역을 즉시 갱신한다.
+	//	어댑터 리프레쉬 간격중에 2 회 이상 이 갱신을 실시하는 일이 있다.
+	//	이것은, DirectX 8.0 의 D3DSWAPEFFECT_COPY 를 사용하는 것에 동일하다. 
+	//	IDirect3DDevice9::Present 에 직접 영향을 주는 경우가 있다. 이 옵션은, 윈도우 스왑 체인 및 풀 스크린 스왑 체인의 양쪽 모두로 항상 사용할 수 있다.
+	m_D3DPp.PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
 	m_D3DPp.AutoDepthStencilFormat = D3DFMT_D16;
 
 	//	D3DADAPTER_DEFAULT: 대부분의 그래픽카드는 모노 듀얼일 경우 이부분을 수정

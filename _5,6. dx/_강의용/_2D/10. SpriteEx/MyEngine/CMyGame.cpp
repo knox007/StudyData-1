@@ -1,6 +1,6 @@
 //============================================
 #include "Global.h"
-#define MOVEOFFSET 2.25f
+#define MOVEOFFSET 0.25f
 //============================================
 CMyGame::CMyGame()
 {	
