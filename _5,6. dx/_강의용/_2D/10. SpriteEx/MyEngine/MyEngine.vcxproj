@@ -121,6 +121,7 @@
   <ItemGroup>
     <ClInclude Include="CDxCore.h" />
     <ClInclude Include="CDxFont.h" />
+    <ClInclude Include="CDxSprite.h" />
     <ClInclude Include="CDxTexture.h" />
     <ClInclude Include="CMyGame.h" />
     <ClInclude Include="Global.h" />
@@ -130,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="CDxCore.cpp" />
     <ClCompile Include="CDxFont.cpp" />
+    <ClCompile Include="CDxSprite.cpp" />
     <ClCompile Include="CDxTexture.cpp" />
     <ClCompile Include="CMyGame.cpp" />
     <ClCompile Include="CInputManager.cpp" />

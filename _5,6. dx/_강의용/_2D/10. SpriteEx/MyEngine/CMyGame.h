@@ -19,12 +19,12 @@ public:
 
 	virtual LRESULT MsgProc(HWND, UINT, WPARAM, LPARAM);
 
+	CDxTexture*		m_pDxTexture1;
+	CDxTexture*		m_pDxTexture2;
+	D3DXVECTOR2		m_vec3Pos1;
+	D3DXVECTOR2		m_vec3Pos2;
 
-	CDxTexture		m_dxTxtrTest;
-	CDxFont			m_dxFont;
-	TCHAR			m_tszMouseMsg[128];
-	TCHAR			m_tszKbdMsg[128];
-	TCHAR			m_tszMouseWheelMsg[128];
+	CDxFont			m_dxFont;	
 
 };// class CMyGame :	public CDxCore
 

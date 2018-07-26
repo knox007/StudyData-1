@@ -121,17 +121,17 @@ HRESULT CDxCore::CreateDX()
 	}//	if (FAILED(m_pD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, m_hWnd, D3DCREATE_MIXED_VERTEXPROCESSING, &m_D3DPp, &m_pD3DDevice)))
 	
 	// DX의 스프라이트는 디바이스가 생성된 후에 만들어야 한다.
-	if (FAILED(D3DXCreateSprite(m_pD3DDevice, &m_pD3DSprite)))
+	m_pDxSpriteManager = new CDxSprite();
+	if (FAILED(m_pDxSpriteManager->Create(m_pD3DDevice)))
 	{
-		m_pD3DDevice->Release();
-		m_pD3DDevice = NULL;
+		SAFE_DELETE(m_pDxSpriteManager);
 
-		m_pD3D->Release();
-		m_pD3D = NULL;
+		SAFE_RELEASE(m_pD3DDevice);
+		SAFE_RELEASE(m_pD3D);
 
 		return E_FAIL;
+	}
 
-	}//	if (FAILED(D3DXCreateSprite(m_pD3DDevice, &m_pD3DSprite)))
 
 	return S_OK;
 
@@ -150,6 +150,10 @@ BOOL CDxCore::Create(HINSTANCE hInst)
 	ShowWindow(m_hWnd, SW_SHOW);
 	UpdateWindow(m_hWnd);
 	ShowCursor(m_bShowCursor);
+	
+	//	입력 관리자.
+	m_pInputManager = new CInputManager();
+	m_pInputManager->Create(m_hWnd);
 
 	if (FAILED(Init()))
 		return FALSE;
@@ -162,7 +166,8 @@ void CDxCore::CleanUp()
 {
 	Destroy();
 
-	SAFE_RELEASE(m_pD3DSprite);	
+	SAFE_DELETE(m_pInputManager);
+	SAFE_DELETE(m_pDxSpriteManager);
 	SAFE_RELEASE(m_pD3DDevice);
 	SAFE_RELEASE(m_pD3D);
 	
@@ -202,15 +207,9 @@ HRESULT CDxCore::OnRender()
 
 	if (FAILED(m_pD3DDevice->BeginScene()))
 		return E_FAIL;
-
-	if (FAILED(m_pD3DSprite->Begin(D3DXSPRITE_ALPHABLEND)))
-		return E_FAIL;
-
+	
 	if (FAILED(Render()))
 		return E_FAIL;
-
-
-	m_pD3DSprite->End();
 	
 	m_pD3DDevice->EndScene();
 

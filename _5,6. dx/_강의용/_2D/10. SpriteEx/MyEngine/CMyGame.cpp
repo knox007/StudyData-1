@@ -1,116 +1,52 @@
 //============================================
 #include "Global.h"
+#define MOVEOFFSET 2.25f
 //============================================
 CMyGame::CMyGame()
-{
-	memset(m_tszMouseMsg, 0, sizeof(m_tszMouseMsg));
-	memset(m_tszKbdMsg, 0, sizeof(m_tszKbdMsg));
-	
+{	
 }//	CMyGame::CMyGame()
 //============================================
 CMyGame::~CMyGame()	{}
 //============================================
 INT		CMyGame::Init()
 {
-	if (FAILED(m_dxTxtrTest.Create(m_pD3DDevice, "texture/myfamily.jpg")))
+	m_pDxTexture1 = new CDxTexture;
+	if (FAILED(m_pDxTexture1->Create(m_pD3DDevice, "texture/A.png")))
 		return -1;
 
-	if (FAILED(m_dxFont.Create(m_pD3DDevice, _T("궁서체"), 20, FW_BOLD)))
-	//if (FAILED(m_dxFont.Create(m_pD3DDevice, _T("굴림체"), 20, FW_LIGHT)))
+	m_pDxTexture2 = new CDxTexture;
+	if (FAILED(m_pDxTexture2->Create(m_pD3DDevice, "texture/B.png")))
+		return -1;
+		
+	if (FAILED(m_dxFont.Create(m_pD3DDevice, _T("궁서체"), 20, FW_BOLD)))	
 		return E_FAIL;
-
-	m_pInputManager = new CInputManager();
-
-	m_pInputManager->Create(m_hWnd);
 	
+	m_vec3Pos1 = D3DXVECTOR2(150, 30);
+	m_vec3Pos2 = D3DXVECTOR2(400, 300);
+
 	return 0;
 
 }//	INT		CMyGame::Init()
 //============================================
 INT		CMyGame::Render()
 {
-	RECT rt;
-	//	이미지 영역
-	m_dxTxtrTest.GetImageRect(&rt);
-	LPDIRECT3DTEXTURE9 pTxTmp = m_dxTxtrTest.GetTexture();
+	m_pDxSpriteManager->Begin();
+	
+	RECT	rc;
 
-	//	이미지 너비 & 높이
-	D3DXVECTOR3	vcCenter((LONG)m_dxTxtrTest.GetImageWidth() * 0.5f, (LONG)m_dxTxtrTest.GetImageHeight() * 0.5f, 0);
-	D3DXVECTOR3	vcPos(m_dwScrWidth * 0.5f, m_dwScrHeight * 0.5f, 0);
-	m_pD3DSprite->Draw(pTxTmp, &rt, &vcCenter, &vcPos, D3DXCOLOR(1, 1, 1, 1));
+	m_pDxTexture1->GetImageRect(&rc);
+	m_pDxSpriteManager->Draw(m_pDxTexture1->GetTexture(), &rc, NULL, NULL, 0, &m_vec3Pos1, D3DXCOLOR(1, 1, 1, 1));
+
+	m_pDxTexture2->GetImageRect(&rc);
+	m_pDxSpriteManager->Draw(m_pDxTexture2->GetTexture(), &rc, NULL, NULL, 0, &m_vec3Pos2, D3DXCOLOR(1, 1, 1, 1));
 
 	//	폰트 출력.
-	m_dxFont.Draw(m_pD3DSprite, _T("우리 가족 입니다 ^^"), 0, 0, 300, 50, D3DXCOLOR(1, 1, 0, 1), DT_LEFT);
+	m_dxFont.Draw(m_pDxSpriteManager->GetSprite(), _T("우리 가족 입니다 ^^"), 20, 450, 300, 50, D3DXCOLOR(1, 1, 0, 1), DT_LEFT);
 
-	if (m_pInputManager)
-	{
-		//	마우스 버튼
-		memset(m_tszMouseMsg, 0, sizeof(m_tszMouseMsg));
-		m_dxFont.Draw(m_pD3DSprite, _T("현재 클릭한 마우스 버튼 : "), 0, 50, 300, 50, D3DXCOLOR(0, 0, 0, 1), DT_LEFT);
-		if (m_pInputManager->BtnPress(0))
-		{
-			sprintf(m_tszMouseMsg, "마우스 왼쪽 버튼 클릭!!");
-			m_dxFont.Draw(m_pD3DSprite, m_tszMouseMsg, 280, 50, 220, 50, D3DXCOLOR(1, 0.2f, 0, 1), DT_LEFT);
-		}
-		
-		if (m_pInputManager->BtnPress(1))
-		{
-			sprintf(m_tszMouseMsg, "마우스 우측 버튼 클릭!!");
-			m_dxFont.Draw(m_pD3DSprite, m_tszMouseMsg, 280, 50, 220, 50, D3DXCOLOR(1, 0.2f, 0, 1), DT_LEFT);
-		}
+	m_pDxSpriteManager->End();
 
-		if (m_pInputManager->BtnPress(2))
-		{
-			sprintf(m_tszMouseMsg, "마우스 가운데 버튼 클릭!!");
-			m_dxFont.Draw(m_pD3DSprite, m_tszMouseMsg, 280, 50, 220, 50, D3DXCOLOR(1, 0.2f, 0, 1), DT_LEFT);
-		}
-				
-		//	키보드
-		memset(m_tszKbdMsg, 0, sizeof(m_tszKbdMsg));
-		int curIdx = 0;
-		for (curIdx = 0; curIdx < 256; ++curIdx)
-		{
-			if (m_pInputManager->KeyDown(curIdx))
-			{
-				sprintf(m_tszKbdMsg, "Key Down : %c / %d", curIdx, curIdx);
-				m_dxFont.Draw(m_pD3DSprite, m_tszKbdMsg, 280, 350, 220, 50, D3DXCOLOR(1, 0.2f, 0, 1), DT_LEFT);
-			}
-		}
-		
-		for (curIdx = 0; curIdx < 256; ++curIdx)
-		{
-			if (m_pInputManager->KeyUp(curIdx))
-			{
-				sprintf(m_tszKbdMsg, "Key Up : %c / %d", curIdx, curIdx);
-				m_dxFont.Draw(m_pD3DSprite, m_tszKbdMsg, 280, 450, 220, 50, D3DXCOLOR(1, 0.2f, 0, 1), DT_LEFT);
-			}
-		}
-		
-		for (curIdx = 0; curIdx < 256; ++curIdx)
-		{
-			if (m_pInputManager->KeyPress(curIdx))
-			{
-				sprintf(m_tszKbdMsg, "Key Press : %c / %d", curIdx, curIdx);
-				m_dxFont.Draw(m_pD3DSprite, m_tszKbdMsg, 280, 400, 220, 50, D3DXCOLOR(1, 0.2f, 0, 1), DT_LEFT);
-			}
-		}
-
-		//	마우스 좌표		
-		sprintf(m_tszMouseMsg, "마우스 좌표 x : %f, y : %f", m_pInputManager->GetMousePos().x, m_pInputManager->GetMousePos().y);
-		m_dxFont.Draw(m_pD3DSprite, m_tszMouseMsg, 0, 100, 500, 50, D3DXCOLOR(1, 0, 1, 1),DT_LEFT);
-
-
-
-		static RECT rc = { 0,200,500,130 };
-		D3DXVECTOR3	vcEps = m_pInputManager->GetMouseEps();
-		rc.top += long(vcEps.z / 40);
-		rc.bottom = rc.top + 30;
-		sprintf(m_tszMouseWheelMsg, "마우스 이동 옵셋(%.f, %.f, %.f), 휠: %d", vcEps.x, vcEps.y, vcEps.z, rc.top);
-
-		m_dxFont.GetFont()->DrawText(m_pD3DSprite, m_tszMouseWheelMsg, -1, &rc, 0, D3DXCOLOR(0, 0, 1, 1));
-		
-
-	}//	if (m_pInputManager)
+	//	폰트 출력.
+	//m_dxFont.Draw(NULL, _T("우리 가족 입니다 ^^"), 20, 450, 300, 50, D3DXCOLOR(1, 1, 0, 1), DT_LEFT);
 
 	return 0;
 
@@ -122,25 +58,58 @@ INT		CMyGame::FrameMove()
 	{
 		m_pInputManager->FrameMove();
 
-		if (CInputManager::DBLCLK == m_pInputManager->BtnState(0))
+		D3DXVECTOR2 tmpPos = m_vec3Pos1;
+
+		//--------------------------------------
+		//	컨트롤
+		if (m_pInputManager->KeyPress(VK_RIGHT))
+			tmpPos.x += MOVEOFFSET;
+
+		if (m_pInputManager->KeyPress(VK_LEFT))
+			tmpPos.x -= MOVEOFFSET;
+
+		if (m_pInputManager->KeyPress(VK_UP))
+			tmpPos.y -= MOVEOFFSET;
+
+		if (m_pInputManager->KeyPress(VK_DOWN))
+			tmpPos.y += MOVEOFFSET;
+
+		//--------------------------------------
+		//	충돌영역 설정
+		RECT rcCol1;
+		SetRect(&rcCol1, INT(tmpPos.x)
+			, INT(tmpPos.y)
+			, INT(tmpPos.x) + m_pDxTexture1->GetImageWidth()
+			, INT(tmpPos.y) + m_pDxTexture1->GetImageHeight()
+		);
+
+		RECT rcCol2;
+		SetRect(&rcCol2, INT(m_vec3Pos2.x)
+			, INT(m_vec3Pos2.y)
+			, INT(m_vec3Pos2.x) + m_pDxTexture2->GetImageWidth()
+			, INT(m_vec3Pos2.y) + m_pDxTexture2->GetImageHeight()
+		);
+
+		//--------------------------------------
+		//	충돌 체크
+		bool isCollision = false;
+
+		if (rcCol1.left <= rcCol2.right &&
+			rcCol1.right >= rcCol2.left  &&
+
+			rcCol1.top <= rcCol2.bottom &&
+			rcCol1.bottom >= rcCol2.top)
 		{
-			TCHAR	sMsg[1024] = { 0 };
-			sprintf(sMsg, _T("마우스 좌측 버튼 더블 클릭!!"));
-			SetWindowText(m_hWnd, sMsg);
+			isCollision = true;
+			SetWindowText(m_hWnd, "충돌!!!");
 		}
 
-		if (CInputManager::DBLCLK == m_pInputManager->BtnState(1))
+		//--------------------------------------
+		//	충돌 결과에 따른 동작설정.
+		if (!isCollision)
 		{
-			TCHAR	sMsg[1024] = { 0 };
-			sprintf(sMsg, _T("마우스 우측 버튼 따블 클릭!!"));
-			SetWindowText(m_hWnd, sMsg);
-		}
-
-		if (CInputManager::DBLCLK == m_pInputManager->BtnState(2))
-		{
-			TCHAR	sMsg[1024] = { 0 };
-			sprintf(sMsg, _T("마우스 가운데 버튼 따블 클릭!!"));
-			SetWindowText(m_hWnd, sMsg);
+			SetWindowText(m_hWnd, "방향키를 누르면 박스가 움직입니다.");
+			m_vec3Pos1 = tmpPos;
 		}
 
 
@@ -152,9 +121,9 @@ INT		CMyGame::FrameMove()
 //============================================
 void	CMyGame::Destroy()
 {
-	SAFE_DELETE(m_pInputManager);
+	SAFE_DELETE(m_pDxTexture1);
+	SAFE_DELETE(m_pDxTexture2);
 
-	m_dxTxtrTest.Destroy();
 	m_dxFont.Destroy();
 }
 //============================================
