@@ -1,0 +1,26 @@
+*dfasfasdf
+*GEOMOBJECT {
+	*NODE_NAME "Pyramid01"
+	*MESH {
+		*MESH_NUMVERTEX 6
+		*MESH_NUMFACES 8
+		*MESH_VERTEX_LIST {
+			*MESH_VERTEX    0	19.6581		-24.7863	66.1019
+			*MESH_VERTEX    1	-28.2051	-68.6610	0.0050
+			*MESH_VERTEX    2	67.5214		-68.6610	0.0050
+			*MESH_VERTEX    3	67.5214		19.0883		0.0050
+			*MESH_VERTEX    4	-28.2051	19.0883		0.0050
+			*MESH_VERTEX    5	19.6581		-24.7863	0.0050
+		}
+		*MESH_FACE_LIST {
+			*MESH_FACE    0:    A:    0 B:    1 C:    2 AB:    1 BC:    1 CA:    1	 *MESH_SMOOTHING 3 	*MESH_MTLID 0
+			*MESH_FACE    1:    A:    0 B:    2 C:    3 AB:    1 BC:    1 CA:    1	 *MESH_SMOOTHING 2 	*MESH_MTLID 0
+			*MESH_FACE    2:    A:    0 B:    3 C:    4 AB:    1 BC:    1 CA:    1	 *MESH_SMOOTHING 5 	*MESH_MTLID 0
+			*MESH_FACE    3:    A:    0 B:    4 C:    1 AB:    1 BC:    1 CA:    1	 *MESH_SMOOTHING 6 	*MESH_MTLID 0
+			*MESH_FACE    4:    A:    1 B:    5 C:    2 AB:    1 BC:    1 CA:    1	 *MESH_SMOOTHING 4 	*MESH_MTLID 0
+			*MESH_FACE    5:    A:    2 B:    5 C:    3 AB:    1 BC:    1 CA:    1	 *MESH_SMOOTHING 4 	*MESH_MTLID 0
+			*MESH_FACE    6:    A:    3 B:    5 C:    4 AB:    1 BC:    1 CA:    1	 *MESH_SMOOTHING 4 	*MESH_MTLID 0
+			*MESH_FACE    7:    A:    4 B:    5 C:    1 AB:    1 BC:    1 CA:    1	 *MESH_SMOOTHING 4 	*MESH_MTLID 0
+		}
+	}
+}
