@@ -72,14 +72,14 @@ int		CDxTexture::GetBytePerPixel()
 		D3DSURFACE_DESC		d3dDesc;
 		D3DLOCKED_RECT		d3dRc;
 
-		m_pTx->GetLevelDesc(0, &d3dDesc);
-		m_pTx->LockRect(0, &d3dRc, NULL, 0);
+		m_pTx->GetLevelDesc(0, &d3dDesc);			//	텍스쳐 정보 얻기.
+		m_pTx->LockRect(0, &d3dRc, NULL, 0);		//	텍스쳐 픽셀 정보 얻기.
 
-		int nPitch = d3dRc.Pitch;
+		int nPitch = d3dRc.Pitch;					//	픽셀 간격.
 
-		m_nBytePerPixel = nPitch / d3dDesc.Width;
+		m_nBytePerPixel = nPitch / d3dDesc.Width;	//	1픽셀당 바이트 계산.
 
-		m_pTx->UnlockRect(0);
+		m_pTx->UnlockRect(0);						//	LockRect 이후 처리 필수.
 	}
 
 	return m_nBytePerPixel;
