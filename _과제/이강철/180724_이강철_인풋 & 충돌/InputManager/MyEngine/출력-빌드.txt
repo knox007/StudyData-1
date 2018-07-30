@@ -1,0 +1,12 @@
+﻿1>------ 빌드 시작: 프로젝트: MyEngine, 구성: Debug Win32 ------
+1>CDxCore.cpp
+1>CDxFont.cpp
+1>CDxTexture.cpp
+1>CInputManager.cpp
+1>CMyGame.cpp
+1>c:\users\administrator\desktop\dx\8. inputmanager_study\myengine\cmygame.cpp(46): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+1>WinMain.cpp
+1>코드를 생성하고 있습니다...
+1>MyEngine.vcxproj -> C:\Users\Administrator\Desktop\DX\8. InputManager_study\MyEngine\Debug\MyEngine.exe
+1>"MyEngine.vcxproj" 프로젝트를 빌드했습니다.
+========== 빌드: 성공 1, 실패 0, 최신 0, 생략 0 ==========
