@@ -83,7 +83,88 @@ int		CDxTexture::GetBytePerPixel()
 
 }//	int		CDxTexture::GetBytePerPixel()
 //========================================================
-void CDxTexture::SetColor(float fR, float fG, float fB, float fA)
+void CDxTexture::SetRGBA_Default(DWORD* pdwBits, float fR, float fG, float fB, float fA )
+{
+	D3DXCOLOR tmpColor = *pdwBits;
+
+	tmpColor.r *= fR;
+	tmpColor.g *= fG;
+	tmpColor.b *= fB;
+	tmpColor.a *= fA;
+
+	*pdwBits = tmpColor;
+
+}//	void CDxTexture::SetRGBA_Default(DWORD* pdwBits, float fR, float fG, float fB, float fA )
+//========================================================
+void CDxTexture::SetRGBA_Mono(DWORD* pdwBits, float fR, float fG, float fB, float fA)
+{
+	D3DXCOLOR pdwColor = *pdwBits;
+
+	float fColor = pdwColor.r * 0.3f +
+		pdwColor.g * 0.59f +
+		pdwColor.b * 0.11f;
+
+	*pdwBits = D3DXCOLOR(fColor, fColor, fColor, pdwColor.a);
+
+}//	void CDxTexture::SetRGBA_Mono(DWORD* pdwBits, float fR, float fG, float fB, float fA)
+//========================================================
+void CDxTexture::SetRGBA_InverseColor(DWORD* pdwBits, float fR, float fG, float fB, float fA)
+{
+	D3DXCOLOR pdwColor = *pdwBits;
+
+	pdwColor.r = 1 - pdwColor.r;
+	pdwColor.g = 1 - pdwColor.g;
+	pdwColor.b = 1 - pdwColor.b;
+
+	*pdwBits = pdwColor;
+
+}//	void CDxTexture::SetRGBA_InverseColor(DWORD* pdwBits, float fR, float fG, float fB, float fA)
+//========================================================
+void CDxTexture::SetRGBA_Gamma(DWORD* pdwBits, float fR, float fG, float fB, float fA)
+{
+	D3DXCOLOR pdwColor = *pdwBits;
+
+	pdwColor.r = powf(pdwColor.r, 1.f / fR);
+	pdwColor.g = powf(pdwColor.g, 1.f / fG);
+	pdwColor.b = powf(pdwColor.b, 1.f / fB);
+
+	*pdwBits = pdwColor;
+
+}//	void CDxTexture::SetRGBA_Gamma(DWORD* pdwBits, float fR, float fG, float fB, float fA)
+//========================================================
+void CDxTexture::SetRGBA_BitPlannerSlicing(DWORD* pdwBits, float fR, float fG, float fB, float fA)
+{
+	D3DXCOLOR pdwColor = *pdwBits;
+
+	DWORD dwR = DWORD(pdwColor.r * 255);
+	DWORD dwG = DWORD(pdwColor.g * 255);
+	DWORD dwB = DWORD(pdwColor.b * 255);
+
+	int nBit = 3;
+	
+	//*
+	dwR >>= (8 - nBit);
+	dwG >>= (8 - nBit);
+	dwB >>= (8 - nBit);
+	//*/
+	//*
+	dwR <<= (8 - nBit);
+	dwG <<= (8 - nBit);
+	dwB <<= (8 - nBit);
+	//*/
+
+	*pdwBits = D3DXCOLOR(dwR / 255.f, dwG / 255.f, dwB / 255.f, 1.f);
+	
+
+}//	void SetRGBA_BitPlannerSlicing(DWORD* pdwBits, float fR, float fG, float fB, float fA)
+//========================================================
+void CDxTexture::SetBits(SetBitsFuncPtr pFunc, DWORD* pdwBits, float fR, float fG, float fB, float fA)
+{
+	m_pfFunc = pFunc;
+	(this->*m_pfFunc)(pdwBits, fR, fG, fB, fA);
+}
+//========================================================
+void CDxTexture::SetRGBA(eEFFMODE eMode, float fR, float fG, float fB, float fA)
 {
 	int nBytePerPixel = GetBytePerPixel();
 
@@ -105,53 +186,32 @@ void CDxTexture::SetColor(float fR, float fG, float fB, float fA)
 				int idx = hei * width + wid;
 				DWORD* pdwColor = pColorDst;
 
-				D3DXCOLOR tmpColor = pdwColor[idx];
-				tmpColor.r *= fR;
-				tmpColor.g *= fG;
-				tmpColor.b *= fB;
-				tmpColor.a *= fA;
+				switch (eMode)
+				{
+				case COLOR:
+					SetBits(&CDxTexture::SetRGBA_Default, (pdwColor + idx), fR, fG, fB, fA);
+					break;
 
-				pdwColor[idx] = tmpColor;
+				case MONO:
+					SetBits(&CDxTexture::SetRGBA_Mono, (pdwColor + idx), fR, fG, fB, fA);
+					break;
 
-			}//	for (int hei = 0; hei < height; ++hei)
+				case INVERSECOLOR:
+					SetBits(&CDxTexture::SetRGBA_InverseColor, (pdwColor + idx), fR, fG, fB, fA);
+					break;
 
-		}//	for (int wid = 0; wid < width; ++wid)
+				case GAMMA:
+					SetBits(&CDxTexture::SetRGBA_Gamma, (pdwColor + idx), fR, fG, fB, fA);
+					break;
+					
+				case BITPLANNERSLICING:
+					SetBits(&CDxTexture::SetRGBA_BitPlannerSlicing, (pdwColor + idx), fR, fG, fB, fA);
+					break;
+					
 
-		m_pTx->UnlockRect(0);
+				}
+				
 
-	}//	if (nBytePerPixel == 4)
-	else
-		MessageBox(NULL, "BPP 4바이트만 지원합니다.", "알림", MB_OK | MB_ICONWARNING);
-
-}//	void	CDxTexture::SetColor(float fR, float fG, float fB)
-//========================================================
-void CDxTexture::SetMono()
-{
-	int nBytePerPixel = GetBytePerPixel();
-
-	if (nBytePerPixel == 4)
-	{
-		m_pTx->LockRect(0, &m_d3dRc, NULL, 0);
-
-		DWORD* pColorDst = NULL;
-
-		pColorDst = (DWORD*)m_d3dRc.pBits;
-
-		int width = m_d3dDesc.Width;
-		int height = m_d3dDesc.Height;
-
-		for (int hei = 0; hei < height; ++hei)
-		{
-			for (int wid = 0; wid < width; ++wid)
-			{
-				int idx = hei * width + wid;
-				D3DXCOLOR pdwColor = pColorDst[idx];
-
-				float fColor =	pdwColor.r * 0.3f +
-								pdwColor.g * 0.59f +
-								pdwColor.b * 0.11f;
-
-				pColorDst[idx] = D3DXCOLOR(fColor, fColor, fColor, pdwColor.a);
 
 			}//	for (int hei = 0; hei < height; ++hei)
 
@@ -163,7 +223,7 @@ void CDxTexture::SetMono()
 	else
 		MessageBox(NULL, "BPP 4바이트만 지원합니다.", "알림", MB_OK | MB_ICONWARNING);
 
-}//	void CDxTexture::SetMono()
+}//	void	CDxTexture::SetRGBA(float fR, float fG, float fB)
 //========================================================
 void CDxTexture::SetInverseColor()
 {
@@ -204,4 +264,9 @@ void CDxTexture::SetInverseColor()
 		MessageBox(NULL, "BPP 4바이트만 지원합니다.", "알림", MB_OK | MB_ICONWARNING);
 
 }//	void CDxTexture::SetInverseColor()
+//========================================================
+void CDxTexture::SetGamma()
+{
+
+}
 //========================================================
