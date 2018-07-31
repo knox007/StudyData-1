@@ -21,7 +21,9 @@ int main(void)
 	int num1 = 3, num2 = 4;
 	double divResult = num1 / num2;
 	//	다음과 같이 수정.
-	//	double divResult = (double)num1 / num2;
+	//double divResult = (double)num1 / num2;
+	//double divResult = num1 / (double)num2;
+	
 	printf("%d / %d = %f\n", num1, num2, divResult);
 	
 	return 0;
