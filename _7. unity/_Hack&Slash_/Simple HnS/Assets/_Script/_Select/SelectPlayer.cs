@@ -20,7 +20,8 @@ public class SelectPlayer : MonoBehaviour
         if (true == Input.GetMouseButtonDown(0))
         {
             GameObject tmp = GetClickedObject();
-            if (tmp)
+
+            if (tmp == gameObject)
             {
                 PlayerStateManager tmpState = tmp.GetComponent<PlayerStateManager>();
 
@@ -28,7 +29,7 @@ public class SelectPlayer : MonoBehaviour
 
                 _selectStateManager._selectUIManager._descInfo.text = tmpState._info;
 
-                _playerStateManager.ChangeState(PlayerStateStraightPunch.Instance);
+                tmpState.ChangeState(PlayerStateStraightPunch.Instance);
 
             }
         }

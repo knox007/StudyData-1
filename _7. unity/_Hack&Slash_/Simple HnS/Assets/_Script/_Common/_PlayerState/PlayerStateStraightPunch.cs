@@ -6,9 +6,9 @@ public class PlayerStateStraightPunch : FSMSingleton<PlayerStateStraightPunch>, 
 {
     public void Enter(PlayerStateManager e)
     {
-        //e._myAnimator.SetInteger("act", 1);
+        e._myAnimator.SetInteger("act", 1);
 
-        //StartCoroutine(e.CheckAnimationState("Base Layer.Straight Punch", PlayerStateIdle.Instance));
+        StartCoroutine(e.CheckAnimationState("Base Layer.Straight Punch", PlayerStateIdle.Instance));
     }
     public void Execute(PlayerStateManager e)
     {
@@ -20,7 +20,7 @@ public class PlayerStateStraightPunch : FSMSingleton<PlayerStateStraightPunch>, 
     }
     public void Exit(PlayerStateManager e)
     {
-        //e._myAnimator.SetInteger("act", 0);
+        e._myAnimator.SetInteger("act", 0);
     }
     public void Skip(PlayerStateManager e)
     {
