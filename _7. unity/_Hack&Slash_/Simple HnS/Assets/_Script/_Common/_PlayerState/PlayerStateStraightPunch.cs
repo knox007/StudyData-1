@@ -8,7 +8,7 @@ public class PlayerStateStraightPunch : FSMSingleton<PlayerStateStraightPunch>, 
     {
         e._myAnimator.SetInteger("act", 1);
 
-        StartCoroutine(e.CheckAnimationState("Base Layer.Straight Punch", PlayerStateIdle.Instance));
+        //StartCoroutine(e.CheckAnimationState("Base Layer.Straight Punch", PlayerStateIdle.Instance));
     }
     public void Execute(PlayerStateManager e)
     {

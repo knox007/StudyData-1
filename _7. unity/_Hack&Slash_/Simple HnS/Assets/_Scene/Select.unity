@@ -188,8 +188,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1924658063}
-        m_MethodName: OnLoad
+      - m_Target: {fileID: 262450000}
+        m_MethodName: OnStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -275,6 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selectUIManager: {fileID: 1924658064}
+  _selectedPlayer: {fileID: 0}
 --- !u!1 &469061158
 GameObject:
   m_ObjectHideFlags: 0

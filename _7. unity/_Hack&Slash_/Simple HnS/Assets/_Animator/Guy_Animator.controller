@@ -268,7 +268,7 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
+  - m_ConditionMode: 6
     m_ConditionEvent: act
     m_EventTreshold: 7
   m_DstStateMachine: {fileID: 0}
