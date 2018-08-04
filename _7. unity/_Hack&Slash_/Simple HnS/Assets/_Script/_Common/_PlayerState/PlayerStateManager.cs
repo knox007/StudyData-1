@@ -8,14 +8,58 @@ public class PlayerStateManager : FSM <PlayerStateManager>
     //---------------------------------
     public Animator _myAnimator;
     //---------------------------------
+    public int _idx;
     public float _moveSpeed;
     public float _pow;
     public float _hp;
     public string _info;
     //---------------------------------
+    public Transform _myTransf;
+    //---------------------------------
+    public GameStateManager _gameStateManager;
+    //---------------------------------
+    public LayerMask _moveTargetLayer;
+    //---------------------------------
+    [HideInInspector]
+    public Vector3 _clickedPoint;    
+    //---------------------------------
     void Start () { Initialize(this, PlayerStateIdle.Instance); }
     //---------------------------------
-    void Update () { FSMUpdate(); }
+    void Update ()
+    {
+        FSMUpdate();
+
+
+        if ( Input.GetMouseButtonUp(0))
+        {
+            Ray ray = _gameStateManager._mainCamera.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit hitInfo;
+
+            if (Physics.Raycast(ray, out hitInfo, 100f))
+            {
+                int layerNumber = (int)Mathf.Log((float)_moveTargetLayer.value, 2);
+
+                if (hitInfo.transform.gameObject.layer.Equals(layerNumber))
+                {
+                    _clickedPoint = hitInfo.point;
+
+                    ChangeState(PlayerStateMove.Instance);
+                }
+            }
+
+        }// if ( Input.GetMouseButtonUp(0))
+
+    }// void Update ()
+    //---------------------------------
+    public void SetData( int idx, float moveSpeed, float pow, float hp, string info )
+    {
+        _idx = idx;
+        _moveSpeed = moveSpeed;
+        _pow = pow;
+        _hp = hp;
+        _info = info;
+    }
     //---------------------------------
     public IEnumerator CheckAnimationState( string aniName, IFSMState<PlayerStateManager> state )
     {

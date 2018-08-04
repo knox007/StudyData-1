@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour {
 	void Update () 
 	{
 		DestroyBullet();
-		MoveBullet();        
+		MoveBullet();
 	}
 
 	private void DestroyBullet()
