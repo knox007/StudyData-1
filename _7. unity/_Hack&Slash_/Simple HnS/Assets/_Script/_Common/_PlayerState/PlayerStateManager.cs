@@ -13,6 +13,7 @@ public class PlayerStateManager : FSM <PlayerStateManager>
     public float _pow;
     public float _hp;
     public string _info;
+    public float _rotSpeed = 2f;
     //---------------------------------
     public Transform _myTransf;
     //---------------------------------
@@ -32,21 +33,27 @@ public class PlayerStateManager : FSM <PlayerStateManager>
 
         if ( Input.GetMouseButtonUp(0))
         {
-            Ray ray = _gameStateManager._mainCamera.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit hitInfo;
-
-            if (Physics.Raycast(ray, out hitInfo, 100f))
+            if (_gameStateManager)
             {
-                int layerNumber = (int)Mathf.Log((float)_moveTargetLayer.value, 2);
+                Ray ray = _gameStateManager._mainCamera.ScreenPointToRay(Input.mousePosition);
 
-                if (hitInfo.transform.gameObject.layer.Equals(layerNumber))
+                RaycastHit hitInfo;
+
+                if (Physics.Raycast(ray, out hitInfo, 100f))
                 {
-                    _clickedPoint = hitInfo.point;
+                    int layerNumber = (int)Mathf.Log((float)_moveTargetLayer.value, 2);
 
-                    ChangeState(PlayerStateMove.Instance);
-                }
-            }
+                    if (hitInfo.transform.gameObject.layer.Equals(layerNumber))
+                    {
+                        _clickedPoint = hitInfo.point;
+
+                        ChangeState(PlayerStateMove.Instance);
+
+                    }// if (hitInfo.transform.gameObject.layer.Equals(layerNumber))
+
+                }// if (Physics.Raycast(ray, out hitInfo, 100f))
+
+            }// if (_gameStateManager)
 
         }// if ( Input.GetMouseButtonUp(0))
 
