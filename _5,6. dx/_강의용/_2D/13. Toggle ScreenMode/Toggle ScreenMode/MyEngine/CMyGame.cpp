@@ -16,11 +16,11 @@ INT		CMyGame::Init()
 	if (FAILED(m_pDxTexture1->Create(m_pD3DDevice, "texture/myfamily.jpg", 0xFF000000, D3DFMT_A8R8G8B8)))
 		return -1;
 	
-	m_pDxTexture1->SetRGBA(COLOR, 0.0f, 1.0f, 0.0f);
-	//m_pDxTexture1->SetRGBA(MONO);
-	//m_pDxTexture1->SetRGBA(INVERSECOLOR);
-	//m_pDxTexture1->SetRGBA(GAMMA, 0.5f, 0.5f, 0.5f);
-	//m_pDxTexture1->SetRGBA(BITPLANNERSLICING, 0.5f, 0.5f, 0.5f);
+	//m_pDxTexture1->SetEffect_ColorShift(0.9f, 0.9f, 0.5f);
+	//m_pDxTexture1->SetEffect_Mono();
+	//m_pDxTexture1->SetEffect_InverseColor();
+	//m_pDxTexture1->SetEffect_Gamma();
+	//m_pDxTexture1->SetEffect_BitPlannerSlicing(2);
 
 	m_pDxTexture2 = new CDxTexture;
 	if (FAILED(m_pDxTexture2->Create(m_pD3DDevice, "texture/myfamily.jpg", 0xFF000000, D3DFMT_A1R5G5B5)))

@@ -58,8 +58,8 @@ public:
 	void SetEffect_ColorShift(float fR = 1.0f, float fG = 1.0f, float fB = 1.0f, float fA = 1.0f)	{ SetRGBA(COLORSHIFT, fR, fG, fB, fA); }
 	void SetEffect_Mono()	{ SetRGBA(MONO, 0.3f, 0.59f, 0.11f); }//{ SetRGBA(MONO, 0.333f, 0.333f, 0.333f); }
 	void SetEffect_InverseColor()	{ SetRGBA(INVERSECOLOR); }
-	void SetEffect_Gamma(float fR = 1.0f, float fG = 1.0f, float fB = 1.0f, float fA = 1.0f)	{ SetRGBA(GAMMA, 0.5f, 0.5f, 0.5f); }
-	void SetEffect_BitPlannerSlicing(int nBit) { SetRGBA(BITPLANNERSLICING, 0.5f, 0.5f, 0.5f, 1.0f, nBit); }
+	void SetEffect_Gamma(float fR = 0.5f, float fG = 0.5f, float fB = 0.5f, float fA = 1.0f)	{ SetRGBA(GAMMA, fR, fG, fB,fA); }
+	void SetEffect_BitPlannerSlicing(int nBit) { SetRGBA(BITPLANNERSLICING, 1.0f, 1.0f, 1.0f, 1.0f, nBit); }
 	
 public:
 	INT		GetImageWidth();
