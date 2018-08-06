@@ -333,9 +333,9 @@ LRESULT CDxCore::MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 //-------------------------------
 INT CDxCore::Reset3D()
 {
-	Invalidate();
-
 	m_bWindowMode ^= 1;
+
+	Invalidate();	
 
 	if (m_pDxSpriteManager->GetSprite())
 		m_pDxSpriteManager->GetSprite()->OnLostDevice();
@@ -345,10 +345,7 @@ INT CDxCore::Reset3D()
 
 	if (FAILED(m_pD3DDevice->Reset(&m_D3DPp)))
 		return E_FAIL;
-
-	if (m_pDxSpriteManager->GetSprite())
-		m_pDxSpriteManager->GetSprite()->OnResetDevice();
-
+	
 	if (m_bWindowMode)
 	{
 		SetWindowLong(m_hWnd, GWL_STYLE, m_dwWinStyle);
@@ -364,6 +361,9 @@ INT CDxCore::Reset3D()
 		SetWindowLong(m_hWnd, GWL_STYLE, WS_POPUP | WS_SYSMENU | WS_VISIBLE);
 	
 	Sleep(100);
+
+	if (m_pDxSpriteManager->GetSprite())
+		m_pDxSpriteManager->GetSprite()->OnResetDevice();
 
 	Restore();
 
