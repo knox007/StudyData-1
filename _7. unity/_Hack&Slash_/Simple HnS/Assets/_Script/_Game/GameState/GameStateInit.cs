@@ -53,6 +53,20 @@ public class GameStateInit : FSMSingleton<GameStateInit>, IFSMState<GameStateMan
             }
             e._playerList[0].gameObject.SetActive(true);
 
+			//  인덱스가 같은 캐릭터를 찾아서 게임에서 컨트롤 할 캐릭터로 설정한다.
+			e._myPlayer = e._playerList[0];
+
+			//  active true
+			e._myPlayer.gameObject.SetActive(true);
+
+			//  데이터를 세팅한다.
+			e._myPlayer.SetData(
+				tmpPlayerInfo.GetIdx(),
+				tmpPlayerInfo.GetMoveSpeed(),
+				tmpPlayerInfo.GetPow(),
+				tmpPlayerInfo.GetHP(),
+				tmpPlayerInfo.GetInfo());
+
         }// ~if( tmpPlayerInfo != null)
 
 

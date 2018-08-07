@@ -30,7 +30,6 @@ public class PlayerStateManager : FSM <PlayerStateManager>
     {
         FSMUpdate();
 
-
         if ( Input.GetMouseButtonUp(0))
         {
             if (_gameStateManager)

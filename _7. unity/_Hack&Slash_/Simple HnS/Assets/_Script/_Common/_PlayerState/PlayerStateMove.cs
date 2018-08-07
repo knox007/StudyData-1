@@ -18,8 +18,14 @@ public class PlayerStateMove : FSMSingleton<PlayerStateMove>, IFSMState<PlayerSt
 
         e._myTransf.position += e.transform.forward * e._moveSpeed * Time.deltaTime;
 
-        if (Vector3.Distance(e._myTransf.position, e._clickedPoint) <= 0.01f)
+        if (Vector3.Distance(e._myTransf.position, e._clickedPoint) <= 0.05f)
+        {
             e.ChangeState(PlayerStateIdle.Instance);
+
+            e._myTransf.position = e._clickedPoint;
+
+        }
+            
 
     }
     public void Exit(PlayerStateManager e)
