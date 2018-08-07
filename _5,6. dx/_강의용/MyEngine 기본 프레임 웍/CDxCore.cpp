@@ -145,6 +145,7 @@ HRESULT CDxCore::CreateDX()
 		return E_FAIL;
 	}
 
+	m_pDxFont = new CDxFont();
 
 	return S_OK;
 
@@ -182,6 +183,7 @@ void CDxCore::CleanUp()
 {
 	Destroy();
 
+	SAFE_DELETE(m_pDxFont);
 	SAFE_DELETE(m_pInputManager);
 	SAFE_DELETE(m_pDxSpriteManager);
 	SAFE_RELEASE(m_pD3DDevice);
@@ -333,9 +335,12 @@ LRESULT CDxCore::MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 //-------------------------------
 INT CDxCore::Reset3D()
 {
+	m_bWindowMode ^= 1;
+
 	Invalidate();
 
-	m_bWindowMode ^= 1;
+	if(m_pDxFont->GetFont())
+		m_pDxFont->GetFont()->OnLostDevice();
 
 	if (m_pDxSpriteManager->GetSprite())
 		m_pDxSpriteManager->GetSprite()->OnLostDevice();
@@ -348,6 +353,9 @@ INT CDxCore::Reset3D()
 
 	if (m_pDxSpriteManager->GetSprite())
 		m_pDxSpriteManager->GetSprite()->OnResetDevice();
+
+	if(m_pDxFont->GetFont())
+		m_pDxFont->GetFont()->OnResetDevice();
 
 	if (m_bWindowMode)
 	{
@@ -366,6 +374,8 @@ INT CDxCore::Reset3D()
 	Sleep(100);
 
 	Restore();
+
+	return S_OK;
 
 }//	INT CDxCore::Reset3D()
 //-------------------------------

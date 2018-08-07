@@ -21,15 +21,11 @@ public:
 	virtual void	Invalidate();
 
 	virtual LRESULT MsgProc(HWND, UINT, WPARAM, LPARAM);
-
-	CDxTexture*		m_pDxTexture1;
-	CDxTexture*		m_pDxTexture2;
-	D3DXVECTOR2		m_vec3Pos1;
-	D3DXVECTOR2		m_vec3Pos2;
-
-	CDxFont			m_dxFont;
-
+	
+	
 	TCHAR			m_tszMessage[256];
+
+
 
 };// class CMyGame :	public CDxCore
 

@@ -30,6 +30,7 @@ protected:
 	D3DPRESENT_PARAMETERS	m_D3DPp;
 	LPDIRECT3DDEVICE9		m_pD3DDevice;
 	CDxSprite*				m_pDxSpriteManager;
+	CDxFont*				m_pDxFont;
 	//-------------------------------
 	//	etc
 	CInputManager*	m_pInputManager;

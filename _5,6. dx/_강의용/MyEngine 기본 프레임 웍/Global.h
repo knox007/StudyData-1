@@ -19,9 +19,9 @@
 #include "Util.h"
 #include "CInputManager.h"
 #include "CDxSprite.h"
-#include "CDxCore.h"
-#include "CDxTexture.h"
 #include "CDxFont.h"
+#include "CDxTexture.h"
+#include "CDxCore.h"
 //========================================================
 #include "CMyGame.h"
 //========================================================
