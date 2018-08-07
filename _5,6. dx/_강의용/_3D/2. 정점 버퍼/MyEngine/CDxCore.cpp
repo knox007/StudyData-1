@@ -182,7 +182,7 @@ BOOL CDxCore::Create(HINSTANCE hInst)
 void CDxCore::CleanUp()
 {
 	Destroy();
-
+	
 	SAFE_DELETE(m_pDxFont);
 	SAFE_DELETE(m_pInputManager);
 	SAFE_DELETE(m_pDxSpriteManager);
