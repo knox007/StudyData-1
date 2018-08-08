@@ -19,14 +19,14 @@ public class GameStateInit : FSMSingleton<GameStateInit>, IFSMState<GameStateMan
             for (int cur = 0; cur < e._playerList.Length; ++cur)
             {
                 //  선택한 플레이어의 인덱스와 비교한다.
-                if (tmpPlayerInfo.GetIdx() == e._playerList[cur]._idx)
+                if (tmpPlayerInfo.GetIdx() == e._playerList[cur]._property._idx)
                 {
                     //  인덱스가 같은 캐릭터를 찾아서 게임에서 컨트롤 할 캐릭터로 설정한다.
                     e._myPlayer = e._playerList[cur];
 
                     //  active true
                     e._myPlayer.gameObject.SetActive(true);
-
+                    
                     //  데이터를 세팅한다.
                     e._myPlayer.SetData(
                         tmpPlayerInfo.GetIdx(),
@@ -59,6 +59,7 @@ public class GameStateInit : FSMSingleton<GameStateInit>, IFSMState<GameStateMan
 			//  active true
 			e._myPlayer.gameObject.SetActive(true);
 
+            /*
 			//  데이터를 세팅한다.
 			e._myPlayer.SetData(
 				tmpPlayerInfo.GetIdx(),
@@ -66,6 +67,7 @@ public class GameStateInit : FSMSingleton<GameStateInit>, IFSMState<GameStateMan
 				tmpPlayerInfo.GetPow(),
 				tmpPlayerInfo.GetHP(),
 				tmpPlayerInfo.GetInfo());
+                */
 
         }// ~if( tmpPlayerInfo != null)
 

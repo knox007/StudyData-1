@@ -5,7 +5,7 @@ using System.Collections.Generic;
 //==========================================================
 [AddComponentMenu("Custom/PoolingSystem")]
 //==========================================================
-public sealed class PoolingSystem : MonoBehaviour
+public class PoolingSystem : MonoBehaviour
 {
 	//-----------------------------
 	[System.Serializable]

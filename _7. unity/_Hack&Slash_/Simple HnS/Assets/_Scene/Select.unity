@@ -483,6 +483,41 @@ Prefab:
       propertyPath: _moveSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114948851575734892, guid: 831dc90da57b0174d803fc3cc6b48e29,
+        type: 2}
+      propertyPath: _property._idx
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114948851575734892, guid: 831dc90da57b0174d803fc3cc6b48e29,
+        type: 2}
+      propertyPath: _property._moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114948851575734892, guid: 831dc90da57b0174d803fc3cc6b48e29,
+        type: 2}
+      propertyPath: _property._pow
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114948851575734892, guid: 831dc90da57b0174d803fc3cc6b48e29,
+        type: 2}
+      propertyPath: _property._hp
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114948851575734892, guid: 831dc90da57b0174d803fc3cc6b48e29,
+        type: 2}
+      propertyPath: _property._info
+      value: "\uD30C\uB780 \uB118"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114948851575734892, guid: 831dc90da57b0174d803fc3cc6b48e29,
+        type: 2}
+      propertyPath: _property._rotSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114948851575734892, guid: 831dc90da57b0174d803fc3cc6b48e29,
+        type: 2}
+      propertyPath: _validOffset
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 831dc90da57b0174d803fc3cc6b48e29, type: 2}
   m_IsPrefabParent: 0
@@ -630,6 +665,41 @@ Prefab:
         type: 2}
       propertyPath: _moveSpeed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586964633569154, guid: 65395a7c0618d564ea2fcb962a86fad6,
+        type: 2}
+      propertyPath: _property._idx
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586964633569154, guid: 65395a7c0618d564ea2fcb962a86fad6,
+        type: 2}
+      propertyPath: _property._moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586964633569154, guid: 65395a7c0618d564ea2fcb962a86fad6,
+        type: 2}
+      propertyPath: _property._pow
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586964633569154, guid: 65395a7c0618d564ea2fcb962a86fad6,
+        type: 2}
+      propertyPath: _property._hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586964633569154, guid: 65395a7c0618d564ea2fcb962a86fad6,
+        type: 2}
+      propertyPath: _property._info
+      value: "\uB179\uC0C9 \uB118"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586964633569154, guid: 65395a7c0618d564ea2fcb962a86fad6,
+        type: 2}
+      propertyPath: _property._rotSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586964633569154, guid: 65395a7c0618d564ea2fcb962a86fad6,
+        type: 2}
+      propertyPath: _validOffset
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65395a7c0618d564ea2fcb962a86fad6, type: 2}
@@ -962,6 +1032,41 @@ Prefab:
         type: 2}
       propertyPath: _moveSpeed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114272759295175708, guid: c1c144003a617ce458c293975057b019,
+        type: 2}
+      propertyPath: _property._idx
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114272759295175708, guid: c1c144003a617ce458c293975057b019,
+        type: 2}
+      propertyPath: _property._moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114272759295175708, guid: c1c144003a617ce458c293975057b019,
+        type: 2}
+      propertyPath: _property._pow
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114272759295175708, guid: c1c144003a617ce458c293975057b019,
+        type: 2}
+      propertyPath: _property._hp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114272759295175708, guid: c1c144003a617ce458c293975057b019,
+        type: 2}
+      propertyPath: _property._info
+      value: "\uBE68\uAC04 \uB118"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114272759295175708, guid: c1c144003a617ce458c293975057b019,
+        type: 2}
+      propertyPath: _property._rotSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114272759295175708, guid: c1c144003a617ce458c293975057b019,
+        type: 2}
+      propertyPath: _validOffset
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1c144003a617ce458c293975057b019, type: 2}

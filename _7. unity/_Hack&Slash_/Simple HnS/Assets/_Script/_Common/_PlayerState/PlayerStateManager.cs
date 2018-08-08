@@ -6,14 +6,11 @@ using UnityEngine;
 public class PlayerStateManager : FSM <PlayerStateManager>
 {
     //---------------------------------
-    public Animator _myAnimator;
+    public Animator _myAnimator;    
     //---------------------------------
-    public int _idx;
-    public float _moveSpeed;
-    public float _pow;
-    public float _hp;
-    public string _info;
-    public float _rotSpeed = 2f;
+    public CharProper _property;
+    //---------------------------------
+    public float _validOffset = 0.2f;
     //---------------------------------
     public Transform _myTransf;
     //---------------------------------
@@ -60,33 +57,30 @@ public class PlayerStateManager : FSM <PlayerStateManager>
     //---------------------------------
     public void SetData( int idx, float moveSpeed, float pow, float hp, string info )
     {
-        _idx = idx;
-        _moveSpeed = moveSpeed;
-        _pow = pow;
-        _hp = hp;
-        _info = info;
+        _property._idx = idx;
+        _property._moveSpeed = moveSpeed;
+        _property._pow = pow;
+        _property._hp = hp;
+        _property._info = info;
     }
     //---------------------------------
-    public IEnumerator CheckAnimationState( string aniName, IFSMState<PlayerStateManager> state )
+    public IEnumerator CheckAnimationState(string aniName, IFSMState<PlayerStateManager> state)
     {
-
-        while (!_myAnimator.GetCurrentAnimatorStateInfo(0).IsName(aniName))
+        if (_myAnimator.GetCurrentAnimatorStateInfo(0).IsName(aniName))
         {
-            //전환 중일 때 실행되는 부분
-            yield return null;
+            while (_myAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+            {
+                //애니메이션 재생 중 실행되는 부분
+                yield return null;
+            }
+
+            //애니메이션 완료 후 실행되는 부분
+            ChangeState(state);
+
         }
+        yield return null;
 
-        while (_myAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
-        {
-            //애니메이션 재생 중 실행되는 부분
-            yield return null;
-        }
-
-        //애니메이션 완료 후 실행되는 부분
-        ChangeState(state);
-
-    }
-
+    }// public IEnumerator CheckAnimationState(string aniName, IFSMState<PlayerStateManager> state)
     //---------------------------------
 
 }// public class PlayerStateManager : FSM <PlayerStateManager>

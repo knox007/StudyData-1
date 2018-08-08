@@ -4,21 +4,27 @@ using System.Collections.Generic;
 using UnityEngine;
 //============================================================
 public class GlobalPlayerInfo : Singleton<GlobalPlayerInfo>
-{
+{   
     //--------------------------
-    private int _idx = -1;
-    private float _moveSpeed;
-    private float _pow;
-    private float _hp;
-    private string _info;
-	//--------------------------
-	public void SetData( int idx, float moveSpeed, float pow, float hp, string info )
+    CharProper _charProperty;
+    //--------------------------
+    public GlobalPlayerInfo()
+    {
+        _charProperty._idx = -1;
+        _charProperty._moveSpeed = 0f;
+        _charProperty._pow = 0f;
+        _charProperty._hp = 0f;
+        _charProperty._info = "";
+        _charProperty._rotSpeed = 0f;
+    }
+    //--------------------------
+    public void SetData( int idx, float moveSpeed, float pow, float hp, string info )
 	{
-        _idx        = idx;
-		_moveSpeed 	= moveSpeed;
-		_pow 		= pow;
-		_hp 		= hp;
-		_info 		= info;
+        _charProperty._idx          = idx;
+        _charProperty._moveSpeed 	= moveSpeed;
+        _charProperty._pow 		    = pow;
+        _charProperty._hp 		    = hp;
+        _charProperty._info 		= info;
 	
 	}//	public void SetData( float moveSpeed, float pow, float hp, string info )
 	//--------------------------
@@ -26,7 +32,12 @@ public class GlobalPlayerInfo : Singleton<GlobalPlayerInfo>
 	{
 		GlobalPlayerInfo tmpInfo = new GlobalPlayerInfo();
 
-        tmpInfo.SetData(_idx, _moveSpeed, _pow, _hp, _info);
+        tmpInfo.SetData(
+            _charProperty._idx,
+            _charProperty._moveSpeed,
+            _charProperty._pow,
+            _charProperty._hp,
+            _charProperty._info);
 
 		return tmpInfo;
 	
@@ -34,15 +45,15 @@ public class GlobalPlayerInfo : Singleton<GlobalPlayerInfo>
 	//--------------------------
 	public void Clear()	{ SetData (-1, 0f, 0f, 0f, "");	}
     //--------------------------
-    public int GetIdx() { return _idx; }
+    public int GetIdx() { return _charProperty._idx; }
     //--------------------------
-    public float GetMoveSpeed() { return _moveSpeed; }
+    public float GetMoveSpeed() { return _charProperty._moveSpeed; }
     //--------------------------
-    public float GetPow() { return _pow; }
+    public float GetPow() { return _charProperty._pow; }
     //--------------------------
-    public float GetHP() { return _hp; }
+    public float GetHP() { return _charProperty._hp; }
     //--------------------------
-    public string GetInfo() { return _info; }
+    public string GetInfo() { return _charProperty._info; }
     //--------------------------
 
 }//	public class GlobalPlayerInfo : Singleton<GlobalPlayerInfo>
