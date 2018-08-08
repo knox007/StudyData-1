@@ -96,7 +96,7 @@ INT		CMyGame::Render()
 	);
 	m_pD3DDevice->SetFVF(D3DFVF_CUSTOMVERTEX);
 	m_pD3DDevice->DrawPrimitive(
-		D3DPT_TRIANGLELIST,		//	그리기 타입 설정
+		D3DPT_TRIANGLELIST,		//	그리기 타입 설정		https://blog.naver.com/znfgkro1/80174814358
 		0,						//	시작 버텍스의 인덱스
 		1						//	렌더링하는 기본 도형의 수.
 	);
