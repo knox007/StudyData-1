@@ -115,10 +115,10 @@ INT		CMyGame::FrameMove()
 	{
 		m_pInputManager->FrameMove();
 		
-		D3DXVECTOR3 dirLeft(-2, 0, 0);
-		D3DXVECTOR3	dirRight(2, 0, 0);
-		D3DXVECTOR3	dirUp(0, -2, 0);
-		D3DXVECTOR3	dirDown(0, 2, 0);
+		D3DXVECTOR3 dirLeft(-0.5f, 0, 0);
+		D3DXVECTOR3	dirRight(0.5f, 0, 0);
+		D3DXVECTOR3	dirUp(0, -0.5f, 0);
+		D3DXVECTOR3	dirDown(0, 0.5f, 0);
 
 		if (m_pInputManager->KeyPress(VK_RIGHT))
 		{
