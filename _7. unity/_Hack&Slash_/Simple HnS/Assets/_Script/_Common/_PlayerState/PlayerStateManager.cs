@@ -6,11 +6,9 @@ using UnityEngine;
 public class PlayerStateManager : FSM <PlayerStateManager>
 {
     //---------------------------------
-    public Animator _myAnimator;    
+    public Animator _myAnimator;
     //---------------------------------
     public CharProper _property;
-    //---------------------------------
-    public float _validOffset = 0.2f;
     //---------------------------------
     public Transform _myTransf;
     //---------------------------------

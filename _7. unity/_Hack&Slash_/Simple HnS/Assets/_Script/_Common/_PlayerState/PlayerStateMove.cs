@@ -8,7 +8,10 @@ public class PlayerStateMove : FSMSingleton<PlayerStateMove>, IFSMState<PlayerSt
     //---------------------------------
     Quaternion newRot;
     //---------------------------------
-    public void Enter(PlayerStateManager e) { e._myAnimator.SetInteger("act", 2); }
+    public void Enter(PlayerStateManager e)
+	{
+		e._myAnimator.SetInteger("act", 2);
+	}
     //---------------------------------
     public void Execute(PlayerStateManager e)
     {
@@ -16,7 +19,7 @@ public class PlayerStateMove : FSMSingleton<PlayerStateMove>, IFSMState<PlayerSt
 
         e._myTransf.position += e.transform.forward * e._property._moveSpeed * Time.deltaTime;
 
-        if (Vector3.Distance(e._myTransf.position, e._clickedPoint) <= e._validOffset)
+		if (Vector3.Distance(e._myTransf.position, e._clickedPoint) <= e._property._validMoveOffset)
         {
             e._myTransf.position = e._clickedPoint;            
 

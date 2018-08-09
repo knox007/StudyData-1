@@ -13,6 +13,7 @@ public struct CharProper
     public float _hp;
     public string _info;
     public float _rotSpeed;
+	public float _validMoveOffset;
     //--------------------------
 
 }// public struct CharProper

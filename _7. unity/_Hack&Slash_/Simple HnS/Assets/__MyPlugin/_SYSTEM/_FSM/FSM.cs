@@ -33,6 +33,11 @@ public class FSM <T>  : MonoBehaviour
 	
 	}//	public void  ChangeState(IState<T> newState)
 	//--------------------------------------- 
+	public void	RepeatCurState()
+	{
+		ChangeState (currentState);
+	}
+	//---------------------------------------
 	public void  RevertState()
 	{
 		if (previousState != null)

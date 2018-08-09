@@ -10,6 +10,7 @@ public class EnemyGenerator : MonoBehaviour
 {
     //----------------------------
     [Header("[ 최소 등장시간 ]")]
+	[Tooltip("[ 최소 등장시간이랑께롱!! ]")]
     public float _minGeneratorTime = 1f;
     //----------------------------
     [Header("[ 등장 간격 ]")]
@@ -26,7 +27,10 @@ public class EnemyGenerator : MonoBehaviour
     //----------------------------
     public enum eENEMY
     {
-        ENEMY
+        ENEMY_A,
+		ENEMY_B,
+
+		SIZE
     }
     //----------------------------
     [Header("[ 등장 위치]")]
@@ -35,6 +39,8 @@ public class EnemyGenerator : MonoBehaviour
     int _spawnPointCount;
     //  현재 스폰 포인트 인덱스.
     int _curSpawnPointIdx;
+
+	int _curEnemyIdx;
     //----------------------------    
     //  참조할 오브젝트 풀.
     PoolingSystem _myPoolingSystem;
@@ -52,6 +58,9 @@ public class EnemyGenerator : MonoBehaviour
 
         _curSpawnPointIdx = Random.Range(0, _spawnPointCount);
 
+		_curEnemyIdx = Random.Range (0, (int)eENEMY.SIZE);
+
+
     }// void Awake()
     //----------------------------
     private void Start()
@@ -65,7 +74,7 @@ public class EnemyGenerator : MonoBehaviour
         {
             yield return new WaitForSeconds(_curGeneratorTime);
 
-            _myPoolingSystem.InstantiateAPS("Enemy", _spawnPoint[_curSpawnPointIdx].transform.position, Quaternion.identity);
+			_myPoolingSystem.InstantiateAPS(_enemyNames[_curEnemyIdx], _spawnPoint[_curSpawnPointIdx].transform.position, Quaternion.identity);
 
 
             if (_isRandom)
@@ -74,6 +83,8 @@ public class EnemyGenerator : MonoBehaviour
                 _curGeneratorTime = _minGeneratorTime;
 
             _curSpawnPointIdx = Random.Range(0, _spawnPointCount);
+
+			_curEnemyIdx = Random.Range (0, (int)eENEMY.SIZE);
 
         }// while(true)
 

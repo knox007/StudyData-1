@@ -511,12 +511,17 @@ Prefab:
     - target: {fileID: 114948851575734892, guid: 831dc90da57b0174d803fc3cc6b48e29,
         type: 2}
       propertyPath: _property._rotSpeed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114948851575734892, guid: 831dc90da57b0174d803fc3cc6b48e29,
         type: 2}
       propertyPath: _validOffset
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114948851575734892, guid: 831dc90da57b0174d803fc3cc6b48e29,
+        type: 2}
+      propertyPath: _property._validMoveOffset
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 831dc90da57b0174d803fc3cc6b48e29, type: 2}
@@ -694,12 +699,17 @@ Prefab:
     - target: {fileID: 114586964633569154, guid: 65395a7c0618d564ea2fcb962a86fad6,
         type: 2}
       propertyPath: _property._rotSpeed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114586964633569154, guid: 65395a7c0618d564ea2fcb962a86fad6,
         type: 2}
       propertyPath: _validOffset
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586964633569154, guid: 65395a7c0618d564ea2fcb962a86fad6,
+        type: 2}
+      propertyPath: _property._validMoveOffset
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65395a7c0618d564ea2fcb962a86fad6, type: 2}
@@ -1061,12 +1071,17 @@ Prefab:
     - target: {fileID: 114272759295175708, guid: c1c144003a617ce458c293975057b019,
         type: 2}
       propertyPath: _property._rotSpeed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114272759295175708, guid: c1c144003a617ce458c293975057b019,
         type: 2}
       propertyPath: _validOffset
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114272759295175708, guid: c1c144003a617ce458c293975057b019,
+        type: 2}
+      propertyPath: _property._validMoveOffset
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1c144003a617ce458c293975057b019, type: 2}
