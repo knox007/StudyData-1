@@ -220,6 +220,7 @@ INT		CMyGame::FrameMove()
 		else if (m_pInputManager->KeyPress('2'))
 			_rotY += 0.05f;
 
+		//	dx는 Radian 으로 회전 처리.
 		float fRadian = D3DXToRadian(_rotY);
 		//	Y축에 대한 회전 행렬을 구한다.
 		D3DXMATRIX mtRot;	// 회전 행렬
@@ -260,12 +261,19 @@ INT		CMyGame::FrameMove()
 
 
 		//---------------------------------
-		// 뷰 변환
+		// 투영 변환
 		//---------------------------------
 		D3DXMATRIX m_mtPrj;
 		FLOAT	fScreenW = (FLOAT)800;
 		FLOAT	fScreenH = (FLOAT)600;
-		FLOAT	fFOV = D3DX_PI / 4.0f;
+		FLOAT	fFOV = D3DX_PI / 4.0f;	//	fov가 커지면
+										//	-	화면에 표현되는 오브젝트수 증가( 어안렌즈, 물고기 눈 )
+										//	-	어지러움 정도가 심해짐.
+
+										//	fov가 작으면
+										//	-	화면에 표현되는 오브젝트수 줄어듬.
+										//	-	어지러움 정도가 적어짐.
+
 		FLOAT	fAspect = fScreenW / fScreenH;
 		FLOAT	fNear = 1.f;
 		FLOAT	fFar = 5000.f;
