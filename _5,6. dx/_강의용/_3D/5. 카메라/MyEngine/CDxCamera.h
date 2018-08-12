@@ -21,7 +21,8 @@ protected:
 	float m_fRotSpeed;
 	//----------------------------
 	void MoveForward(float fSpeed);
-	void MoveSide(float fSpeed);	
+	void MoveSide(float fSpeed);
+	void MoveUp(float fSpeed);
 	void Rotate(D3DXVECTOR3 *pvecDelta, float fSpeed);
 	//----------------------------
 public:	

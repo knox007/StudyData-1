@@ -38,15 +38,18 @@ int CDxCamera::FrameMove()
 {
 	if (g_pMyGame->GetInput()->KeyPress('W'))
 		MoveForward(m_fMoveSpeed);
-
 	if (g_pMyGame->GetInput()->KeyPress('S'))
 		MoveForward(-m_fMoveSpeed);
 
 	if (g_pMyGame->GetInput()->KeyPress('A'))
 		MoveSide(-m_fMoveSpeed);
-
 	if (g_pMyGame->GetInput()->KeyPress('D'))
 		MoveSide(m_fMoveSpeed);
+		
+	if (g_pMyGame->GetInput()->KeyPress('Q'))
+		MoveUp(m_fMoveSpeed);
+	if (g_pMyGame->GetInput()->KeyPress('Z'))
+		MoveUp(-m_fMoveSpeed);
 
 	if (g_pMyGame->GetInput()->BtnPress(1))
 	{
@@ -77,8 +80,7 @@ void CDxCamera::MoveForward(float fSpeed)
 }//	void CDxCamera::MoveForward(float fSpeed)
 //-------------------------------
 void CDxCamera::MoveSide(float fSpeed)
-{
-	//D3DXVECTOR3 dirX(m_matView._11, m_matView._21, m_matView._31);
+{	
 	D3DXVECTOR3 dirX(m_matView._11, 0, m_matView._31);
 	D3DXVec3Normalize(&dirX, &dirX);
 
@@ -86,6 +88,13 @@ void CDxCamera::MoveSide(float fSpeed)
 	m_vecLookAt += dirX * fSpeed;
 
 }//	void CDxCamera::MoveSide(float fSpeed)
+//-------------------------------
+void CDxCamera::MoveUp(float fSpeed)
+{
+	D3DXVECTOR3 dirY = D3DXVECTOR3(0, 1, 0);
+	m_vecEyePos += dirY * fSpeed;
+	m_vecLookAt += dirY * fSpeed;
+}
 //-------------------------------
 void CDxCamera::Rotate(D3DXVECTOR3 *pvecDelta, float fSpeed)
 {
