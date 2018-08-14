@@ -22,7 +22,7 @@
 #include "CDxFont.h"
 #include "CDxTexture.h"
 #include "CDxCamera.h"
-#include "McGrid.h"
+#include "CDxGrid.h"
 #include "CDxCore.h"
 //========================================================
 #include "CMyGame.h"
