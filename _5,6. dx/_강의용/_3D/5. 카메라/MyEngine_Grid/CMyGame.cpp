@@ -132,7 +132,7 @@ INT	CMyGame::Init()
 	
 	InitVB();
 
-	m_pGrid = new CMcGrid();
+	m_pGrid = new CDxGrid();
 	m_pGrid->Create(m_pD3DDevice);
 	
 	return 0;
