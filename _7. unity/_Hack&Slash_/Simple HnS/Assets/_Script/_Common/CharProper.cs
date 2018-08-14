@@ -7,6 +7,18 @@ using UnityEngine;
 public struct CharProper
 {
     //--------------------------
+	public enum eANIMSTATE
+	{
+		IDLE,
+        MOVEFORWARD,
+
+        STRAIGHTPUNCH,		
+		HOOKLEFTTIRAMIS,
+        UPPERRIGHT,
+
+		WIN,
+	}
+	//--------------------------
     public int _idx;
     public float _moveSpeed;
     public float _pow;
@@ -14,6 +26,8 @@ public struct CharProper
     public string _info;
     public float _rotSpeed;
 	public float _validMoveOffset;
+	public float _attackTargetDistOffset;
+	public float _stopToAttackDist;
     //--------------------------
 
 }// public struct CharProper

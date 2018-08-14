@@ -759,12 +759,16 @@ MonoBehaviour:
     _pow: 0
     _hp: 0
     _info: 
-    _rotSpeed: 4
-    _validMoveOffset: 0
+    _rotSpeed: 5
+    _validMoveOffset: 0.05
+    _attackTargetDistOffset: 5
+    _stopToAttackDist: 1
   _myTransf: {fileID: 0}
+  _moveTargetOffset: {x: 0, y: 0, z: 0}
   _moveTargetPos: {x: 0, y: 0, z: 0}
   _minOffset: {x: -5, y: -5}
   _maxOffset: {x: 5, y: 5}
+  _gameStateManager: {fileID: 0}
 --- !u!137 &137849060865359344
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

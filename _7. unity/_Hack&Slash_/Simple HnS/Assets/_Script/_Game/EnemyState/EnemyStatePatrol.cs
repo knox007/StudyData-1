@@ -8,28 +8,42 @@ public class EnemyStatePatrol : FSMSingleton<EnemyStatePatrol>, IFSMState<EnemyS
 	//---------------------------------
 	public void Enter(EnemyStateManager e)
 	{
-		e._myAnimator.SetInteger("act", 2);
+		e._myAnimator.SetInteger("act", (int)CharProper.eANIMSTATE.MOVEFORWARD);
 		
 		float xPos = Random.Range (e._minOffset.x, e._maxOffset.x);
 		float yPos = 0f;
 		float zPos = Random.Range (e._minOffset.y, e._maxOffset.y);
 
-		e._moveTargetPos = new Vector3 (xPos, yPos, zPos);
+		e._moveTargetOffset = new Vector3 (xPos, yPos, zPos);
+
+		e._moveTargetPos = e._myTransf.position + e._moveTargetOffset;
 	
 	}//	public void Enter(EnemyStateManager e)
 	//---------------------------------
 	public void Execute(EnemyStateManager e)
 	{
-		e._myTransf.rotation = Quaternion.Slerp(e._myTransf.rotation, Quaternion.LookRotation(e._moveTargetPos - e._myTransf.position), e._property._rotSpeed * Time.deltaTime);
+		//	이동 목표지점 체크.
+		float distTarget = Vector3.Distance (e._myTransf.position, e._moveTargetPos);
 
-		e._myTransf.position += e.transform.forward * e._property._moveSpeed * Time.deltaTime;
-
-		if (Vector3.Distance (e._myTransf.position, e._moveTargetPos) <= e._property._validMoveOffset)
+		if (distTarget > e._property._validMoveOffset)
 		{
-			e.RepeatCurState ();
-		}
+			e._myTransf.rotation = Quaternion.Slerp (e._myTransf.rotation, Quaternion.LookRotation (e._moveTargetPos - e._myTransf.position), e._property._rotSpeed * Time.deltaTime);
+			e._myTransf.position += e.transform.forward * e._property._moveSpeed * Time.deltaTime;
 
-	}
+		}//	if (Vector3.Distance (e._myTransf.position, e._moveTargetPos) > e._property._validMoveOffset)
+		else
+		{
+			e._myTransf.position = e._moveTargetPos;
+			e.RepeatCurState ();
+
+		}//	~if (Vector3.Distance (e._myTransf.position, e._moveTargetPos) > e._property._validMoveOffset)
+
+		//	플레이어 추적 범위 체크.
+		float distPlayer = Vector3.Distance (e._myTransf.position, e._gameStateManager._myPlayer.transform.position );
+		if (distPlayer <= e._property._attackTargetDistOffset)
+			e.ChangeState (EnemyStateTrace.Instance);
+
+	}//	public void Execute(EnemyStateManager e)
 	//---------------------------------
 	public void Exit(EnemyStateManager e)
 	{

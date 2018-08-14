@@ -8,6 +8,9 @@ public class GameStateInit : FSMSingleton<GameStateInit>, IFSMState<GameStateMan
     //--------------------------------
     public void Enter(GameStateManager e)
     {
+        //  적 생성기 비활성화.
+        e._enemyGenerator.gameObject.SetActive(false);
+
         //  선택씬에서 선택한 플레이어 정보를 가져온다.
         GlobalPlayerInfo tmpPlayerInfo = GlobalPlayerInfo.Instance.GetData();
         if( tmpPlayerInfo.GetIdx() != -1)
@@ -59,18 +62,9 @@ public class GameStateInit : FSMSingleton<GameStateInit>, IFSMState<GameStateMan
 			//  active true
 			e._myPlayer.gameObject.SetActive(true);
 
-            /*
-			//  데이터를 세팅한다.
-			e._myPlayer.SetData(
-				tmpPlayerInfo.GetIdx(),
-				tmpPlayerInfo.GetMoveSpeed(),
-				tmpPlayerInfo.GetPow(),
-				tmpPlayerInfo.GetHP(),
-				tmpPlayerInfo.GetInfo());
-                */
-
         }// ~if( tmpPlayerInfo != null)
 
+        e.ChangeState(GameStateCountDown.Instance);
 
     }// public void Enter(GameStateManager e)
     //--------------------------------

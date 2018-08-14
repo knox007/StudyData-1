@@ -19,17 +19,40 @@ public class GameStateManager : FSM<GameStateManager>
     //  메인 카메라.
     public Camera _mainCamera;
     //--------------------------------------
+    //  적 생성기.
+    public EnemyGenerator _enemyGenerator;
+    //--------------------------------------
     // Use this for initialization
     void Start ()
     {
         Initialize(this, GameStateInit.Instance);
 	}
-	
-	// Update is called once per frame
-	void Update ()
+    //--------------------------------------
+    // Update is called once per frame
+    void Update ()
     {
         FSMUpdate();
 	}
+    //--------------------------------------
+    public IEnumerator CountDown(int destTime)
+    {
+        yield return new WaitForSeconds(3);
+
+        int time = destTime;
+        while(time > 0)
+        {
+            _gameUIManager._desc.text = time.ToString();
+            yield return new WaitForSeconds(1);
+
+            --time;
+        }
+        _gameUIManager._desc.text = "Start!!";
+        yield return new WaitForSeconds(2);
+        _gameUIManager._desc.text = "";
+
+        ChangeState(GameStateIdle.Instance);
+    }
+    //--------------------------------------
 
 }// public class GameStateManager : FSM<GameStateManager>
-//==========================================================================
+ //==========================================================================

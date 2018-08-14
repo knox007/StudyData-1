@@ -41,10 +41,13 @@ public class EnemyGenerator : MonoBehaviour
     int _curSpawnPointIdx;
 
 	int _curEnemyIdx;
-    //----------------------------    
+    //----------------------------
     //  참조할 오브젝트 풀.
     PoolingSystem _myPoolingSystem;
     //----------------------------
+	[Header("[ 게임 상태 매니져 ] ")]
+	public GameStateManager _gameStateManager;
+	//----------------------------
     private void Awake()
     {
         _myPoolingSystem = GetComponent<PoolingSystem>();
@@ -74,15 +77,22 @@ public class EnemyGenerator : MonoBehaviour
         {
             yield return new WaitForSeconds(_curGeneratorTime);
 
-			_myPoolingSystem.InstantiateAPS(_enemyNames[_curEnemyIdx], _spawnPoint[_curSpawnPointIdx].transform.position, Quaternion.identity);
+			GameObject tmp = _myPoolingSystem.InstantiateAPS(_enemyNames[_curEnemyIdx], _spawnPoint[_curSpawnPointIdx].transform.position, Quaternion.identity);
 
+			if (tmp != null)
+			{
+				EnemyStateManager enemyState = tmp.GetComponent<EnemyStateManager> ();
 
-            if (_isRandom)
-                _curGeneratorTime = Random.Range(_minGeneratorTime, _minGeneratorTime + _intervalTime);
-            else
-                _curGeneratorTime = _minGeneratorTime;
+				enemyState._gameStateManager = _gameStateManager;
 
-            _curSpawnPointIdx = Random.Range(0, _spawnPointCount);
+			}//	if (tmp != null)
+
+			if (_isRandom)
+				_curGeneratorTime = Random.Range(_minGeneratorTime, _minGeneratorTime + _intervalTime);
+			else
+				_curGeneratorTime = _minGeneratorTime;
+
+			_curSpawnPointIdx = Random.Range(0, _spawnPointCount);
 
 			_curEnemyIdx = Random.Range (0, (int)eENEMY.SIZE);
 

@@ -5,6 +5,8 @@ using UnityEngine;
 //============================================================
 public class GlobalPlayerInfo : Singleton<GlobalPlayerInfo>
 {   
+	//--------------------------
+	public List<string>	_aniNameList;
     //--------------------------
     CharProper _charProperty;
     //--------------------------
@@ -16,8 +18,23 @@ public class GlobalPlayerInfo : Singleton<GlobalPlayerInfo>
         _charProperty._hp = 0f;
         _charProperty._info = "";
         _charProperty._rotSpeed = 0f;
+
+		_aniNameList = new List<string> ();
+		_aniNameList.Add("Base Layer.Idle");		
+		_aniNameList.Add("Base Layer.Move Forward");
+
+        _aniNameList.Add("Base Layer.Straight Punch");
+        _aniNameList.Add("Base Layer.Hook Left Tiramis");
+        _aniNameList.Add("Base Layer.Upper Right");
+
+        _aniNameList.Add("Base Layer.Win");
     }
     //--------------------------
+	public void SetData( CharProper charProperty )
+	{
+		_charProperty = charProperty;
+	}
+	//--------------------------
     public void SetData( int idx, float moveSpeed, float pow, float hp, string info )
 	{
         _charProperty._idx          = idx;

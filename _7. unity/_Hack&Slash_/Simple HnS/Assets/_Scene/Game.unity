@@ -552,6 +552,7 @@ MonoBehaviour:
   - {fileID: 1429276564}
   _myPlayer: {fileID: 0}
   _mainCamera: {fileID: 747443838}
+  _enemyGenerator: {fileID: 290953413}
 --- !u!1001 &272386877
 Prefab:
   m_ObjectHideFlags: 0
@@ -680,11 +681,8 @@ MonoBehaviour:
   - name: Enemy_a
     _prefObj: {fileID: 1837644197484750, guid: d875dda17d6859041ab49aa0007e15e7, type: 2}
     _amount: 0
-  - name: Enemy_b
-    _prefObj: {fileID: 1837644197484750, guid: e4af04624d400f645bf47b0438eb1f14, type: 2}
-    _amount: 0
-  _defPoolAmount: 10
-  _canPoolExpand: 1
+  _defPoolAmount: 1
+  _canPoolExpand: 0
 --- !u!114 &290953413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,7 +696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minGeneratorTime: 1
   _intervalTime: 1.1
-  _isRandom: 1
+  _isRandom: 0
   _enemyNames:
   - Enemy_1
   - Enemy_2
@@ -710,6 +708,7 @@ MonoBehaviour:
   - {fileID: 93530932}
   - {fileID: 1188380271}
   - {fileID: 1250407389}
+  _gameStateManager: {fileID: 262450000}
 --- !u!4 &290953414
 Transform:
   m_ObjectHideFlags: 0

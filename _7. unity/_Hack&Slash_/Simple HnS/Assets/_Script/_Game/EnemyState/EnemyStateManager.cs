@@ -15,11 +15,19 @@ public class EnemyStateManager : FSM<EnemyStateManager>
 	//---------------------------------
 	[Header("------- 이동관련 변수 -------")]
 	[HideInInspector]
+	public Vector3	_moveTargetOffset;
+	[HideInInspector]
 	public Vector3	_moveTargetPos;
 	[Header("-- 이동 옵셋 --")]
 	public Vector2	_minOffset = new Vector3(-5f, -5f);
 	public Vector2	_maxOffset = new Vector3(5f, 5f);
 	//---------------------------------
+	[HideInInspector]
+	public GameStateManager _gameStateManager;
+    //---------------------------------
+    [HideInInspector]
+    public int _curAttackIdx;
+    //---------------------------------
     void OnEnable ()
     {
 		_myTransf = GetComponent<Transform> ();

@@ -7,7 +7,7 @@ public class PlayerStateWin : FSMSingleton<PlayerStateWin>, IFSMState<PlayerStat
 {
     public void Enter(PlayerStateManager e)
     {
-        e._myAnimator.SetInteger("act", 7);
+		e._myAnimator.SetInteger("act", (int)CharProper.eANIMSTATE.WIN);
     }
     public void Execute(PlayerStateManager e)
     {

@@ -10,26 +10,28 @@ public class PlayerStateMove : FSMSingleton<PlayerStateMove>, IFSMState<PlayerSt
     //---------------------------------
     public void Enter(PlayerStateManager e)
 	{
-		e._myAnimator.SetInteger("act", 2);
+		e._myAnimator.SetInteger("act", (int)CharProper.eANIMSTATE.MOVEFORWARD);
 	}
     //---------------------------------
     public void Execute(PlayerStateManager e)
     {
-        e._myTransf.rotation = Quaternion.Slerp(e._myTransf.rotation, Quaternion.LookRotation(e._clickedPoint - e._myTransf.position), e._property._rotSpeed * Time.deltaTime);
+		if (Vector3.Distance (e._myTransf.position, e._clickedPoint) > e._property._validMoveOffset)
+		{
+			e._myTransf.rotation = Quaternion.Slerp (e._myTransf.rotation, Quaternion.LookRotation (e._clickedPoint - e._myTransf.position), e._property._rotSpeed * Time.deltaTime);
 
-        e._myTransf.position += e.transform.forward * e._property._moveSpeed * Time.deltaTime;
+			e._myTransf.position += e.transform.forward * e._property._moveSpeed * Time.deltaTime;
 
-		if (Vector3.Distance(e._myTransf.position, e._clickedPoint) <= e._property._validMoveOffset)
-        {
-            e._myTransf.position = e._clickedPoint;            
+		}
+		else
+		{
+			e._myTransf.position = e._clickedPoint;            
 
-            e.ChangeState(PlayerStateIdle.Instance);
-
-        }
+			e.ChangeState(PlayerStateIdle.Instance);
+		}
 
     }// public void Execute(PlayerStateManager e)
     //---------------------------------
-    public void Exit(PlayerStateManager e) { e._myAnimator.SetInteger("act", 0); }
+	public void Exit(PlayerStateManager e) { e._myAnimator.SetInteger("act", (int)CharProper.eANIMSTATE.IDLE); }
     //---------------------------------
     public void Skip(PlayerStateManager e) { }
     //---------------------------------
