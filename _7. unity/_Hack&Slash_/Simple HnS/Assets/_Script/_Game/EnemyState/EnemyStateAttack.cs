@@ -15,6 +15,7 @@ public class EnemyStateAttack : FSMSingleton<EnemyStateAttack>, IFSMState<EnemyS
         int attackIdxMax = (int)CharProper.eANIMSTATE.UPPERRIGHT + 1;
         e._curAttackIdx = Random.Range(attackIdxMin, attackIdxMax);
         print(e._curAttackIdx);
+
         //	2.	Apply Idx
         e._myAnimator.SetInteger("act", e._curAttackIdx);
     }

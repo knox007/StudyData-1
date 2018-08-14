@@ -8,6 +8,7 @@ public class GameStateCountDown : FSMSingleton<GameStateCountDown>, IFSMState<Ga
     //--------------------------------
     public void Enter(GameStateManager e)
     {
+		//e.ChangeState(GameStateIdle.Instance);
         StartCoroutine(e.CountDown(5));
     }
     //--------------------------------
