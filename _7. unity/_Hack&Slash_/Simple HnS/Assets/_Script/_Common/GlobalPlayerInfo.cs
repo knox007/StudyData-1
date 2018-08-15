@@ -18,6 +18,9 @@ public class GlobalPlayerInfo : Singleton<GlobalPlayerInfo>
         _charProperty._hp = 0f;
         _charProperty._info = "";
         _charProperty._rotSpeed = 0f;
+		_charProperty._validMoveOffset = 0f;
+		_charProperty._attackTargetDistOffset = 0f;
+		_charProperty._stopToAttackDist = 0f;
 
 		_aniNameList = new List<string> ();
 		_aniNameList.Add("Base Layer.Idle");		
@@ -35,33 +38,18 @@ public class GlobalPlayerInfo : Singleton<GlobalPlayerInfo>
 		_charProperty = charProperty;
 	}
 	//--------------------------
-    public void SetData( int idx, float moveSpeed, float pow, float hp, string info )
-	{
-        _charProperty._idx          = idx;
-        _charProperty._moveSpeed 	= moveSpeed;
-        _charProperty._pow 		    = pow;
-        _charProperty._hp 		    = hp;
-        _charProperty._info 		= info;
-	
-	}//	public void SetData( float moveSpeed, float pow, float hp, string info )
-	//--------------------------
 	public GlobalPlayerInfo GetData()
 	{
 		GlobalPlayerInfo tmpInfo = new GlobalPlayerInfo();
 
-        tmpInfo.SetData(
-            _charProperty._idx,
-            _charProperty._moveSpeed,
-            _charProperty._pow,
-            _charProperty._hp,
-            _charProperty._info);
+        tmpInfo.SetData( _charProperty );
 
 		return tmpInfo;
 	
 	}//	public GlobalPlayerInfo GetData()
 	//--------------------------
-	public void Clear()	{ SetData (-1, 0f, 0f, 0f, "");	}
-    //--------------------------
+	public CharProper GetProper() { return _charProperty; }
+	//--------------------------
     public int GetIdx() { return _charProperty._idx; }
     //--------------------------
     public float GetMoveSpeed() { return _charProperty._moveSpeed; }

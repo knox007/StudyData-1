@@ -31,12 +31,7 @@ public class GameStateInit : FSMSingleton<GameStateInit>, IFSMState<GameStateMan
                     e._myPlayer.gameObject.SetActive(true);
                     
                     //  데이터를 세팅한다.
-                    e._myPlayer.SetData(
-                        tmpPlayerInfo.GetIdx(),
-                        tmpPlayerInfo.GetMoveSpeed(),
-                        tmpPlayerInfo.GetPow(),
-                        tmpPlayerInfo.GetHP(),
-                        tmpPlayerInfo.GetInfo());
+					e._myPlayer.SetData( tmpPlayerInfo.GetProper() );
 
                 }// if(tmpPlayerInfo.GetIdx() == e._playerList[cur]._idx )
                 else

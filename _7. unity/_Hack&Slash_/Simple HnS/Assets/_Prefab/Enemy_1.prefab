@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 114588555434068524}
   m_Layer: 0
   m_Name: Enemy_1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -769,6 +769,7 @@ MonoBehaviour:
   _minOffset: {x: -5, y: -5}
   _maxOffset: {x: 5, y: 5}
   _gameStateManager: {fileID: 0}
+  _curAttackIdx: 0
 --- !u!137 &137849060865359344
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

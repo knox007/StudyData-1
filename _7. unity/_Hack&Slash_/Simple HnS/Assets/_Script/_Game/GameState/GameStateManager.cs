@@ -22,6 +22,9 @@ public class GameStateManager : FSM<GameStateManager>
     //  적 생성기.
     public EnemyGenerator _enemyGenerator;
     //--------------------------------------
+	[HideInInspector]
+	public EnemyStateManager _selectedEnemy;
+	//--------------------------------------
     // Use this for initialization
     void Start ()
     {
@@ -31,8 +34,26 @@ public class GameStateManager : FSM<GameStateManager>
     // Update is called once per frame
     void Update ()
     {
+		if (true == Input.GetMouseButtonUp (0))
+		{
+			_selectedEnemy = null;
+
+			GameObject tmpGObj = GetClickedObject ();
+
+			if (tmpGObj.CompareTag ("Enemy"))
+			{
+				print (tmpGObj.name);
+				_selectedEnemy = tmpGObj.GetComponent<EnemyStateManager> ();
+
+				_myPlayer.ChangeState (PlayerStateTrace.Instance);
+			
+			}//	if (tmpGObj.CompareTag ("Enemy"))
+		
+		}//	if (true == Input.GetMouseButtonUp (0))
+		
         FSMUpdate();
-	}
+	
+	}//	void Update ()
     //--------------------------------------
     public IEnumerator CountDown(int destTime)
     {
@@ -51,8 +72,25 @@ public class GameStateManager : FSM<GameStateManager>
         _gameUIManager._desc.text = "";
 
         ChangeState(GameStateIdle.Instance);
-    }
+    
+	}//	public IEnumerator CountDown(int destTime)
     //--------------------------------------
+	GameObject GetClickedObject()
+	{
+		RaycastHit hit;
+
+		GameObject target = null;
+
+		Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+
+		if( Physics.Raycast(ray.origin, ray.direction * 10, out hit ))
+			target = hit.collider.gameObject;
+
+		return target;
+
+	}// GameObject GetClickedObject()
+	//--------------------------------
+	//--------------------------------------
 
 }// public class GameStateManager : FSM<GameStateManager>
  //==========================================================================

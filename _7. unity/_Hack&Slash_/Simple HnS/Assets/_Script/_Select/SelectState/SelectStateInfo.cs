@@ -11,12 +11,7 @@ public class SelectStateInfo :  FSMSingleton<SelectStateInfo>,IFSMState<SelectSt
         e._selectUIManager._descInfo.text = e._selectedPlayer._property._info;
 
 		//	Set Info About Character I selected.
-		GlobalPlayerInfo.Instance.SetData (
-            e._selectedPlayer._property._idx,
-            e._selectedPlayer._property._moveSpeed, 
-			e._selectedPlayer._property._pow, 
-			e._selectedPlayer._property._hp, 
-			e._selectedPlayer._property._info);
+		GlobalPlayerInfo.Instance.SetData (e._selectedPlayer._property);
 
         e._selectedPlayer.ChangeState(PlayerStateStraightPunch.Instance);
     }

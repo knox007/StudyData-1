@@ -587,6 +587,7 @@ MonoBehaviour:
   _myPlayer: {fileID: 0}
   _mainCamera: {fileID: 747443838}
   _enemyGenerator: {fileID: 290953413}
+  _selectedEnemy: {fileID: 0}
 --- !u!1001 &272386877
 Prefab:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ public class SelectPlayer : MonoBehaviour
     //--------------------------------
     void Update ()
     {
-        if (true == Input.GetMouseButtonDown(0))
+        if (true == Input.GetMouseButtonUp(0))
         {
             GameObject tmp = GetClickedObject();
 

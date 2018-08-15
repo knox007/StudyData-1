@@ -26,7 +26,7 @@ public class EnemyStateAttack : FSMSingleton<EnemyStateAttack>, IFSMState<EnemyS
         if (e._myAnimator.GetCurrentAnimatorStateInfo(0).IsName(GlobalPlayerInfo.Instance._aniNameList[(int)e._curAttackIdx]) &&
             e._myAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.99f)
             //	4.	Repeat Current State
-            e.RepeatCurState();        
+            e.RepeatCurState();
 
     }//	public void Execute(EnemyStateManager e)
 	//---------------------------------

@@ -14,6 +14,9 @@ public class PlayerStateManager : FSM <PlayerStateManager>
     //---------------------------------
     public GameStateManager _gameStateManager;
     //---------------------------------
+	[HideInInspector]
+	public int _curAttackIdx;
+	//---------------------------------
     public LayerMask _moveTargetLayer;
     //---------------------------------
     [HideInInspector]
@@ -53,14 +56,7 @@ public class PlayerStateManager : FSM <PlayerStateManager>
 
     }// void Update ()
     //---------------------------------
-    public void SetData( int idx, float moveSpeed, float pow, float hp, string info )
-    {
-        _property._idx = idx;
-        _property._moveSpeed = moveSpeed;
-        _property._pow = pow;
-        _property._hp = hp;
-        _property._info = info;
-    }
+	public void SetData( CharProper tmpProper ) { _property = tmpProper; }
     //---------------------------------
     public IEnumerator CheckAnimationState(string aniName, IFSMState<PlayerStateManager> state)
     {
