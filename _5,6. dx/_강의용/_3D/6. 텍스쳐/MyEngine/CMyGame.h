@@ -30,8 +30,6 @@ public:
 	HRESULT	InitVB();
 	HRESULT	InitTexture();
 	void SetMatrix();
-	void SetMaterial();
-	void SetLight();
 	LPDIRECT3DVERTEXBUFFER9 m_pVB;	// 정점 버버
 	//------------------------------------------
 	//	그리드.

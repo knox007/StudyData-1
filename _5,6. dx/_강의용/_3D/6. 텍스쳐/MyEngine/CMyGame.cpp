@@ -94,49 +94,6 @@ void CMyGame::SetMatrix()
 
 }//	void CMyGame::SetMatrix()
 //============================================
-void CMyGame::SetMaterial()
-{
-	/*	재질	:	반사되는 빛의 성질을 결정
-		속성	:	디퓨즈(확산광)
-					엠비언트(주변광),
-					Specular(반사광),
-					power(반사광의 강도를 조절)
-	*/
-
-	D3DMATERIAL9 mtrl = { 0 };
-	mtrl.Diffuse.r = mtrl.Ambient.r = 1.0f;
-	mtrl.Diffuse.g = mtrl.Ambient.g = 1.0f;
-	mtrl.Diffuse.b = mtrl.Ambient.b = 0.0f;
-	mtrl.Diffuse.a = mtrl.Ambient.a = 1.0f;
-	
-	m_pD3DDevice->SetMaterial(&mtrl);
-
-}//	void CMyGame::SetMaterial()
-//============================================
-void CMyGame::SetLight()
-{
-	D3DXVECTOR3 vecDir;
-	D3DLIGHT9 light;
-	memset(&light, 0, sizeof(D3DLIGHT9));
-	light.Type = D3DLIGHT_DIRECTIONAL;	//	종류.
-	light.Diffuse.r = 1.0f;				//	색상.
-	light.Diffuse.g = 1.0f;
-	light.Diffuse.b = 1.0f;
-	
-	vecDir = D3DXVECTOR3(cosf(timeGetTime() / 350.0f), 1.0f, sinf(timeGetTime() / 350.0f));
-
-	D3DXVec3Normalize((D3DXVECTOR3*)&light.Direction, &vecDir);
-
-	light.Range = 1000.0f;	// 광원 유효 범위.
-
-	m_pD3DDevice->SetLight(0, &light);
-
-	m_pD3DDevice->LightEnable(0, TRUE);
-
-	m_pD3DDevice->SetRenderState(D3DRS_AMBIENT, 0x00004444);	// 주변 광원 설정.
-
-}//	void CMyGame::SetLight()
-//============================================
 INT	CMyGame::Init()
 {		
 	if (FAILED(m_pDxFont->Create(m_pD3DDevice, _T("궁서체"), 20, FW_BOLD)))
