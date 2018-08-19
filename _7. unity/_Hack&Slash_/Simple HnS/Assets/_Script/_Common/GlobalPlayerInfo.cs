@@ -31,6 +31,8 @@ public class GlobalPlayerInfo : Singleton<GlobalPlayerInfo>
         _aniNameList.Add("Base Layer.Upper Right");
 
         _aniNameList.Add("Base Layer.Win");
+		_aniNameList.Add ("Base Layer.Get Damage");
+		_aniNameList.Add ("Base Layer.Knock Down");
     }
     //--------------------------
 	public void SetData( CharProper charProperty )

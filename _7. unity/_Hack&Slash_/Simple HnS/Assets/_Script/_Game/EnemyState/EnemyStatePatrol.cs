@@ -17,6 +17,8 @@ public class EnemyStatePatrol : FSMSingleton<EnemyStatePatrol>, IFSMState<EnemyS
 		e._moveTargetOffset = new Vector3 (xPos, yPos, zPos);
 
 		e._moveTargetPos = e._myTransf.position + e._moveTargetOffset;
+
+		print ("--- EnemyStatePatrol ---");
 	
 	}//	public void Enter(EnemyStateManager e)
 	//---------------------------------
@@ -39,9 +41,11 @@ public class EnemyStatePatrol : FSMSingleton<EnemyStatePatrol>, IFSMState<EnemyS
 		}//	~if (Vector3.Distance (e._myTransf.position, e._moveTargetPos) > e._property._validMoveOffset)
 
 		//	플레이어 추적 범위 체크.
-		float distPlayer = Vector3.Distance (e._myTransf.position, e._gameStateManager._myPlayer.transform.position );
-		if (distPlayer <= e._property._attackTargetDistOffset)
-			e.ChangeState (EnemyStateTrace.Instance);
+		if (e._gameStateManager._myPlayer.CurrentState != PlayerStateDead.Instance) {
+			float distPlayer = Vector3.Distance (e._myTransf.position, e._gameStateManager._myPlayer.transform.position);
+			if (distPlayer <= e._property._attackTargetDistOffset)
+				e.ChangeState (EnemyStateTrace.Instance);
+		}
 
 	}//	public void Execute(EnemyStateManager e)
 	//---------------------------------

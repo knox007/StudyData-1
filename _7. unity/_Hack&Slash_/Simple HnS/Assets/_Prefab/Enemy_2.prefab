@@ -757,7 +757,7 @@ MonoBehaviour:
     _idx: 0
     _moveSpeed: 1
     _pow: 0
-    _hp: 0
+    _hp: 3
     _info: 
     _rotSpeed: 5
     _validMoveOffset: 0.05

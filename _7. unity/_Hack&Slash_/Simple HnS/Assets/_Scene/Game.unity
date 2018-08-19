@@ -716,7 +716,7 @@ MonoBehaviour:
   - name: Enemy_a
     _prefObj: {fileID: 1837644197484750, guid: d875dda17d6859041ab49aa0007e15e7, type: 2}
     _amount: 0
-  _defPoolAmount: 5
+  _defPoolAmount: 1
   _canPoolExpand: 0
 --- !u!114 &290953413
 MonoBehaviour:
@@ -1302,6 +1302,21 @@ Prefab:
         type: 2}
       propertyPath: _property._validMoveOffset
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114272759295175708, guid: c1c144003a617ce458c293975057b019,
+        type: 2}
+      propertyPath: _property._attackTargetDistOffset
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114272759295175708, guid: c1c144003a617ce458c293975057b019,
+        type: 2}
+      propertyPath: _property._stopToAttackDist
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114272759295175708, guid: c1c144003a617ce458c293975057b019,
+        type: 2}
+      propertyPath: _property._hp
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114810497489372982, guid: c1c144003a617ce458c293975057b019, type: 2}

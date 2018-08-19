@@ -8,8 +8,11 @@ public class EnemyStateInit : FSMSingleton<EnemyStateInit>, IFSMState<EnemyState
     //---------------------------------
     public void Enter(EnemyStateManager e)
     {
+		e._property = e._originProperty;
 		e._myAnimator.SetInteger("act", (int)CharProper.eANIMSTATE.IDLE);
 		e.ChangeState (EnemyStatePatrol.Instance);
+
+        print("--- EnemyStateInit ---");
     }
     //---------------------------------
     public void Execute(EnemyStateManager e)

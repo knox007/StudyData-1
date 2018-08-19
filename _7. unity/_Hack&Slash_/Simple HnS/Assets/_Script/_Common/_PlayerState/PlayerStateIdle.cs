@@ -8,6 +8,7 @@ public class PlayerStateIdle : FSMSingleton<PlayerStateIdle>, IFSMState<PlayerSt
     public void Enter(PlayerStateManager e)
     {
 		e._myAnimator.SetInteger("act", (int)CharProper.eANIMSTATE.IDLE);
+		print ("--- PlayerStateIdle ---");
     }
     public void Execute(PlayerStateManager e)
     {

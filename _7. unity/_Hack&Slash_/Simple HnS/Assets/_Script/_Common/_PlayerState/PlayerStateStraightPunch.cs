@@ -13,7 +13,7 @@ public class PlayerStateStraightPunch : FSMSingleton<PlayerStateStraightPunch>, 
     public void Execute(PlayerStateManager e)
     {
 		if(e._myAnimator.GetCurrentAnimatorStateInfo(0).IsName(GlobalPlayerInfo.Instance._aniNameList [(int)CharProper.eANIMSTATE.STRAIGHTPUNCH]) &&
-			e._myAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.99f )
+			(e._myAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime % 1f) > 0.99f )
             e.ChangeState(PlayerStateIdle.Instance);
         
     }

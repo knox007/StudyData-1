@@ -59,7 +59,8 @@ public class GameStateInit : FSMSingleton<GameStateInit>, IFSMState<GameStateMan
 
         }// ~if( tmpPlayerInfo != null)
 
-        e.ChangeState(GameStateCountDown.Instance);
+        //e.ChangeState(GameStateCountDown.Instance);
+		e.ChangeState(GameStateIdle.Instance);
 
     }// public void Enter(GameStateManager e)
     //--------------------------------

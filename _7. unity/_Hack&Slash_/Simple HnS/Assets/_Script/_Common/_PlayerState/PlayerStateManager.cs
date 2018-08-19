@@ -62,7 +62,7 @@ public class PlayerStateManager : FSM <PlayerStateManager>
     {
         if (_myAnimator.GetCurrentAnimatorStateInfo(0).IsName(aniName))
         {
-            while (_myAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+            while ((_myAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime % 1f) < 1f)
             {
                 //애니메이션 재생 중 실행되는 부분
                 yield return null;

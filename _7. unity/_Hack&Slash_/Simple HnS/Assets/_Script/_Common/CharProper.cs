@@ -16,7 +16,11 @@ public struct CharProper
 		HOOKLEFTTIRAMIS,
         UPPERRIGHT,
 
-		WIN,
+		WIN,			//	5
+
+		GETDAMAGE,
+
+		KNOCKDOWN,		//	7
 	}
 	//--------------------------
     public int _idx;

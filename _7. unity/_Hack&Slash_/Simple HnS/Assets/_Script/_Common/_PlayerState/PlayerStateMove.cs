@@ -11,6 +11,10 @@ public class PlayerStateMove : FSMSingleton<PlayerStateMove>, IFSMState<PlayerSt
     public void Enter(PlayerStateManager e)
 	{
 		e._myAnimator.SetInteger("act", (int)CharProper.eANIMSTATE.MOVEFORWARD);
+
+        e._gameStateManager._selectedEnemy = null;        
+
+        print ("--- PlayerStateMove ---");
 	}
     //---------------------------------
     public void Execute(PlayerStateManager e)

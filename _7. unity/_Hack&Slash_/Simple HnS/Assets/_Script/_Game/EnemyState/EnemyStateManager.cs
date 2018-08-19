@@ -11,6 +11,9 @@ public class EnemyStateManager : FSM<EnemyStateManager>
     public CharProper _property;
     //---------------------------------
 	[HideInInspector]
+	public CharProper _originProperty;
+	//---------------------------------
+	[HideInInspector]
 	public Transform _myTransf;
 	//---------------------------------
 	[Header("------- 이동관련 변수 -------")]
@@ -28,6 +31,11 @@ public class EnemyStateManager : FSM<EnemyStateManager>
     [HideInInspector]
     public int _curAttackIdx;
     //---------------------------------
+	void Awake()
+	{
+		_originProperty = _property;
+	}
+	//---------------------------------
     void OnEnable ()
     {
 		_myTransf = GetComponent<Transform> ();
@@ -40,6 +48,8 @@ public class EnemyStateManager : FSM<EnemyStateManager>
         FSMUpdate();
 	}
     //---------------------------------
+	public void Dead()	{ gameObject.DestroyAPS ();	}
+	//---------------------------------
 
 }// public class EnemyStateManager : MonoBehaviour
 //====================================================================

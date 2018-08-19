@@ -29,6 +29,8 @@ public class GameStateManager : FSM<GameStateManager>
     void Start ()
     {
         Initialize(this, GameStateInit.Instance);
+
+		_selectedEnemy = null;
 	}
     //--------------------------------------
     // Update is called once per frame
@@ -36,8 +38,6 @@ public class GameStateManager : FSM<GameStateManager>
     {
 		if (true == Input.GetMouseButtonUp (0))
 		{
-			_selectedEnemy = null;
-
 			GameObject tmpGObj = GetClickedObject ();
 
 			if (tmpGObj.CompareTag ("Enemy"))
