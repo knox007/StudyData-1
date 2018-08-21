@@ -36,7 +36,7 @@
 			
 */
 
-//*
+/*
 int main(void)
 {
 	char str1[] = "String_1";
@@ -54,3 +54,80 @@ int main(void)
 }
 //*/
 //======================================================
+/*
+	quiz)
+
+		입력을 위한 char형 배열 szTmp를 만들고
+
+		char형 포인터 pszTmp로 szTmp를 가리켜서
+
+		다음과 같은 동작을 하는 프로그램을 작성.
+
+		글자 입력	:	abcd
+		바꾸고 싶은 글자 : a
+		바꿀 글자	: h
+		입력한 글자	:	abcd
+		결과		:	hbcd
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//*
+int main(void)
+{
+	char str[50];
+
+	printf("글자를 입력하세요 : ");
+	scanf("%s", str);		
+	getchar();
+
+	char chFind;
+	char chChange;
+	printf("바꾸고 싶은 글자는 ? ");
+	scanf("%c", &chFind);
+	getchar();
+
+	printf("바꿀 글자는 ? ");
+	scanf("%c", &chChange);
+
+	printf("입력한 글자 : ");
+	printf("%s\n", str);
+
+	char *pStr = str;
+	int cur = 0;
+	while (pStr[cur] != '\0')
+	{
+		if (pStr[cur] == chFind)
+			pStr[cur] = chChange;
+
+		++cur;
+	}
+
+	printf("결과 : ");
+	printf("%s\n", str);
+	
+	return 0;
+}
+//*/
