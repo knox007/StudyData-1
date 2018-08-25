@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class FireCtrl : MonoBehaviour {
 
+    ParticleSystem _muzzleFlash;
+
+    public ParticleSystem _cartridge;
+
     public GameObject   _bullet;
 
     public Transform _firePos;
 
-	
-	// Update is called once per frame
-	void Update ()
+    private void Start()
+    {
+        //  GetComponentInChildren
+        //  -   해당 게임 오브젝트 차일드중에서 컴포넌트를 탐색.
+        //  -   찾는 것과 동일한 컴포넌트가 여러개 있다면 최상단 컴포넌트가 반환됨.
+        _muzzleFlash = _firePos.GetComponentInChildren<ParticleSystem>();
+    }
+
+
+    // Update is called once per frame
+    void Update ()
     {
         /*
             GetMouseButton(int button)          -   마우스 버튼을 클릭하고 있을때 계속 발생.
@@ -25,5 +37,9 @@ public class FireCtrl : MonoBehaviour {
     void Fire()
     {
         Instantiate(_bullet, _firePos.position, _firePos.rotation);
+
+        _cartridge.Play();
+
+        _muzzleFlash.Play();
     }
 }

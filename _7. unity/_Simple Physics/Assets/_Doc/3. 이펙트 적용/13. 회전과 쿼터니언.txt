@@ -1,0 +1,40 @@
+---------------------------------
+1.	탄피효과 적용
+---------------------------------
+
+	1. 프로젝트 적용
+
+		1)	애셋 스토어에서 Unity Particle Pack 검색 후 임포트
+
+		2)	_FreeAsset / Unity Particle Pack 폴더 생성후 이동
+
+		3)	EffectExamples / WeaponEffects / Prefabs / Cartridge EjectEffect 선택
+
+		4)	총 모델링의 적절한 위치에 세팅
+
+		5)	스크립트 연동
+
+
+---------------------------------
+2.	총구 화염 효과 적용.
+---------------------------------
+
+1. 프로젝트 적용
+
+		1)	EffectExamples / WeaponEffects / Prefabs / MuzzleFlashEffect 선택
+
+		2)	FirePos에 차일드화.
+
+		3)	스크립트 연동
+
+
+
+---------------------------------
+3.	스파크와 탄흔 효과
+---------------------------------
+
+1. 프로젝트 적용
+
+		1)	EffectExamples / WeaponEffects / Prefabs / BulletImpactMetalEffect 선택
+		
+		2)	스크립트 연동
