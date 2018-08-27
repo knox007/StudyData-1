@@ -64,8 +64,12 @@ public class RemoveBullet : MonoBehaviour {
 
         Quaternion rot = Quaternion.FromToRotation(-coll.gameObject.transform.forward, contactPt.normal);
 
-        Instantiate(_bulletEffectMetal, contactPt.point, rot);
-        //Instantiate(_bulletEffectMetal, contactPt.point, Quaternion.identity);
+        //  스파크 생성.
+        GameObject spark = Instantiate(_bulletEffectMetal, contactPt.point, rot);
+
+        //  스파크를 피충돌체에 자식으로 설정.
+        //  -   부모의 트랜스폼 영향을 받음.
+        spark.transform.parent = this.transform;
     }
 
 }
