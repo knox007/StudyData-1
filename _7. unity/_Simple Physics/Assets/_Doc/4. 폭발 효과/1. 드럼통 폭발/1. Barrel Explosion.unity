@@ -233,30 +233,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114203785485211138, guid: 336fffac13c355345aac2ea3e2410554, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 336fffac13c355345aac2ea3e2410554, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &180501294 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1135940157694090, guid: 336fffac13c355345aac2ea3e2410554,
-    type: 2}
-  m_PrefabInternal: {fileID: 180501293}
---- !u!114 &180501295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 180501294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 512075f4f408c114ca4de5daa2ec4418, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _expEffect: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 2}
-  _meshes:
-  - {fileID: 4300000, guid: c34c879db77af964a8432a2abd2fd308, type: 3}
-  - {fileID: 4300000, guid: 9e203064fefcc294794ee363a2b1c4ba, type: 3}
 --- !u!4 &218268738 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011227296186, guid: 9defeac88977c0d448aa4541073ee9e4,

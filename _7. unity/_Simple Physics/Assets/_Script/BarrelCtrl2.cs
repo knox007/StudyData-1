@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BarrelCtrlEx : MonoBehaviour {
+public class BarrelCtrl2 : MonoBehaviour {
 
     //  폭발 효과 프리팹
     public GameObject _expEffect;
