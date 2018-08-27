@@ -29,7 +29,7 @@ public class Char : MonoBehaviour {
 
         char a = '안';
         //char a = (char)65;
-        //int a = '안';
+        //int a = 'A';
         char b = '녕';
         char c = '하';
         char d = '세';
