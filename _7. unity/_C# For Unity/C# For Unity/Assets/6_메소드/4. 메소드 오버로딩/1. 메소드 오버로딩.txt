@@ -39,7 +39,7 @@
 
 		-	int result1 = Plus(1,2);		->	int Plus( int, int );
 			
-			double result2 = Plus( 1.2, 2.3 );	->	int Plus( int, int );
+			double result2 = Plus( 1.2, 2.3 );	->	double Plus( double a, double b );
 
 	3.	오버로딩의 목적
 

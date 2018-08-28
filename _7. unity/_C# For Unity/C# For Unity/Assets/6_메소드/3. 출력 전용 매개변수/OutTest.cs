@@ -24,6 +24,14 @@ public class OutTest : MonoBehaviour {
         print(res);
         print(rest);
 
+        int Add, Sub, Multi, Divid, Rest;
+        AddSubMultiDividRest(a, b, out Add, out Sub, out Multi, out Divid, out Rest);
+        print(Add);
+        print(Sub);
+        print(Multi);
+        print(Divid);
+        print(Rest);
+
     }
 	
     void DivideByRef( int a, int b, ref int result, ref int rest )
@@ -36,6 +44,15 @@ public class OutTest : MonoBehaviour {
     {
         result = a / b;
         rest = a % b;
+    }
+
+    void AddSubMultiDividRest(int a, int b, out int Add, out int Sub, out int Multi, out int Divide, out int Rest)
+    {
+        Add = a + b;
+        Sub = a - b;
+        Multi = a * b;
+        Divide = a / b;
+        Rest = a % b;
     }
 }
 

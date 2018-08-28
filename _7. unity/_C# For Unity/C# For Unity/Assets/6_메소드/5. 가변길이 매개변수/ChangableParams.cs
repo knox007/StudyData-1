@@ -23,8 +23,8 @@ public class ChangableParams : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		int sum = Sum (1, 2);
-		//int sum = Sum (1, 2, 3, 4, 5);
+		//int sum = Sum (1, 2);
+		int sum = Sum (1, 2, 3, 4, 5);
 		print ("Sum = " + sum);
 		
 	}
