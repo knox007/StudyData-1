@@ -73,12 +73,13 @@ int main(void)
 }
 //*/
 //======================================================
+
 /*
-	quiz)
-		3명의 학생의 점수 국영수를 관리하는 2차원 배열
-		int student[3][5]를 만들어서 [n][0~2번째]인덱스에는
-		국,영,수의 점수를 넣고 마지막 3,4번째 인덱스는 총점과 평균을 입력하여
-		출력하도록 한다.
+		quiz)	2차원배열을 이용하여 3명의 학생으로부터
+
+			국영수 점수를 받아서 총점과 평균을
+
+			출력하는 프로그램을 만든다.
 
 		1번학생 10 10 10
 		2번학생 20 20 20
@@ -92,9 +93,49 @@ int main(void)
 
 		3번학생
 		국어 30 영어 30 수학 30 총점 90 평균 30
-
 */
 
+
+
+
+
+
+
+/*
+int main(void)
+{
+	int student[3][5];
+	int studIdx = 0;
+	int scoreIdx = 0;
+
+	for (studIdx = 0; studIdx < 3; ++studIdx)
+	{
+		printf("%d번 학생 점수 입력 : \n", studIdx + 1);
+		for (scoreIdx = 0; scoreIdx < 3; ++scoreIdx)
+			scanf("%d", &student[studIdx][scoreIdx]);
+	}
+
+	for (studIdx = 0; studIdx < 3; ++studIdx)
+	{	
+		student[studIdx][3] = 0;
+		for (scoreIdx = 0; scoreIdx < 3; ++scoreIdx)
+			student[studIdx][3] += student[studIdx][scoreIdx];
+
+		student[studIdx][4] = student[studIdx][3] / 3;
+	}
+
+	for (studIdx = 0; studIdx < 3; ++studIdx)
+	{
+		printf("%d번 학생의 점수 : ", studIdx + 1);
+		for (scoreIdx = 0; scoreIdx < 5; ++scoreIdx)
+			printf("%d점 ", student[studIdx][scoreIdx]);
+
+		printf("\n");
+	}
+
+	return 0;
+}
+//*/
 
 //======================================================
 /*
