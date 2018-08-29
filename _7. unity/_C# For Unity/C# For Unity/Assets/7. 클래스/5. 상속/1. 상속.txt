@@ -1,0 +1,180 @@
+﻿/// 상속 ////////////////////////////////////////////////////
+
+-----------------------
+1.	형식
+-----------------------
+
+	1.	class 부모 클래스( 기반 클래스 )
+		{
+			//	멤버 선언
+		}
+
+		class 자식 클래스( 파생 클래스 )	:	부모 클래스( 기반 클래스 )
+		{
+			//	private로 선언된 것을 제외한 부모클래스의 모든 것을 물려받음.
+		}
+
+
+-----------------------
+2.	주요 키워드
+-----------------------
+
+	1.	base 키워드
+
+		-	this	->	자기 자신.
+
+			base	->	부모 클래스.
+
+
+		예)
+			class CBase
+			{
+				public void BaseMethod() { ..... }
+			}
+
+			class CChild : Base
+			{
+				public void ChildMethod()
+				{
+					base.BaseMethod();
+				}
+			}
+
+	2.	sealed 키워드
+
+		-	의도하지 않은 상속이나 파생 클래스의 구현을 막기위해
+
+			상속이 불가능하도록 클래스를 선언.
+
+			-	봉인 클래스 라고 함.
+
+			-	상속받으려는 시도가 컴파일 타임에 발견되면 에러 발생.
+
+			예)
+
+				sealed	class Base
+				{
+					........
+				}
+
+				class Derived : Base	<------	컴파일 에러. 
+				{
+					........
+				}
+	
+	3.	is, as
+	
+		-	부모 클래스와 자식 클래스 사이 형변환이 가능.
+
+		-	자식 클래스의 인스턴스는 부모 클래스의 인스턴스로도 사용 가능.
+
+			예)	
+				class Zookeeper
+				{
+					public void Wash( Dog dog )	{ ... }
+					public void Wash( Cat cat )	{ ... }
+					public void Wash( Tiger tiger )	{ ... }
+					public void Wash( Lion lion )	{ ... }
+					public void Wash( Horse hores )	{ ... }
+					.....
+				}
+
+
+				class Animal
+				{
+					.......
+				}
+
+				class Dog : Animal	{ .... }
+				class Cat : Animal	{ .... }
+				class Tiger : Animal	{ .... }
+				......
+
+				class Zookeeper
+				{
+					public void Wash( Animal animal )	{ ... }
+				}
+
+		-	is
+			
+			-	객체가 해당 형식에 해당하는지 검사.
+
+				예)
+					Animal animal = new Dog();
+
+					Dog dog;
+
+					if( animal is Dog )		<------	animal 객체가 Dog 형식인지 확인.
+					{
+						dog = (Dog)animal;
+						
+						dog.Bark();
+					}
+
+			as
+
+			-	형변환연산자와 같은 역할.
+
+			-	참조 형식에 대해서만 사용이 가능.
+
+				값 형식은 기존의 형변환 연산자 사용.
+
+			-	실패시 처리
+
+				형변환 연산자	-	실패시 예외처리
+
+								-	null은 어떤 타입으로도 형변환 가능.
+
+									결국 null 반환.
+
+
+				as				-	null 반환
+
+								-	null은 null 반환
+
+
+
+					
+
+				예)
+					1)
+					Animal animal = AnimalFactory.GetAnimal();
+
+					try
+					{
+						Cat cat = (Cat)animal;	<----- animal이 null인 경우도 있다.						
+					
+						if( cat != null)
+							cat.Meow();
+
+					}
+					catch( InvalidCastException )
+					{
+
+					}
+					
+					
+					
+					2)
+					Animal animal = AnimalFactory.GetAnimal();
+					
+					Cat cat = animal as Cat;	<-----	animal을 Cat으로 형변환 시도.
+					if( cat != null )					실패시 null 반환.
+					{
+						cat.Meow();
+					}
+			
+					
+
+			-	일반적으로 형변환 연산자보다 as 연산자 사용을 권장.( Effective C# (빌 와그너 지음)참고. )
+
+
+
+
+
+
+-----------------------
+3.	오버라이딩과 다형성
+-----------------------
+
+	
