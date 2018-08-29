@@ -37,6 +37,11 @@ public class ForeachTest : MonoBehaviour {
 
         foreach (int a in arr)
             print(a);
+
+
+		foreach (int a in arr)
+			print(a);
+		
     }
 	
 }

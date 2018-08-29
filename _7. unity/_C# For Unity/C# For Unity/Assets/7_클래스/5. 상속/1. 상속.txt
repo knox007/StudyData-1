@@ -111,6 +111,9 @@
 						dog.Bark();
 					}
 
+					----->	참조에서만 사용가능한가?
+					----->	위 예제의 논리가 맞는가?
+
 			as
 
 			-	형변환연산자와 같은 역할.
@@ -177,4 +180,52 @@
 3.	오버라이딩과 다형성
 -----------------------
 
-	
+	1.	다형성
+
+		-	객체가 여러 형태를 가질수 있음을 의미.
+
+		-	원래 하위 형식 다형성의 줄임말.
+
+			-	자신으로부터 상속받아 만들어진 파생클래스를 통해
+
+				다형성을 구현.
+
+
+
+				예)
+					//	기본 아머 슈트.
+					class ArmorSuite
+					{
+						public virtual void Init()
+						{
+							print("Armored");
+						}
+					}
+
+					//	아이언맨
+					class IronMan : ArmorSuite
+					{
+						public override void Init()
+						{
+							base.Init();
+							print("Repulsor Laser");
+						}
+					}
+
+
+					//	워 머신
+					class WarMachine : ArmorSuite
+					{
+						public override void Init()
+						{
+							base.Init();
+							print("Double Barrel Cannon");
+							print("Micro Rocket Launcher");
+						}
+					}
+
+					-	Init()는 각 클래스의 기능 초기화.
+
+					-	IronMan과 WarMachine은 각각의 기능에 맞게
+
+						Init()를 재정의할 필요가 있음.

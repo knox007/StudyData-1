@@ -21,8 +21,10 @@
 			CTest test2 = test1;
 			test2._b = 30;
 
-			print( test._a );
-			print( test._b );
+			print( test1._a );
+			print( test1._b );
+			print( test2._a );
+			print( test2._b );
 
 
 	2.	값 형식과 참조형식이의 메모리에 저장되는 방식 차이.
