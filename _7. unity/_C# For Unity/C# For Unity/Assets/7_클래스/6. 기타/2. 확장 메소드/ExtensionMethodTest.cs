@@ -34,17 +34,18 @@ using UnityEngine;
 
 public static class IntExtension
 {
-    public static int Square( this int tmpInt ) { return tmpInt * tmpInt; }
+    public static int Square(this int tmpInt) { return tmpInt * tmpInt; }
 
-    public static int Pow( this int tmpInt, int count )
+    public static int Pow(this int tmpInt, int count)
     {
         int result = tmpInt;
 
         for (int cur = 1; cur < count; ++cur)
             result = result * tmpInt;
 
-        return result;        
+        return result;
     }
+
 }
 
 public class ExtensionMethodTest : MonoBehaviour {
@@ -56,12 +57,15 @@ public class ExtensionMethodTest : MonoBehaviour {
         print(3.Pow(2));
         print(2.Pow(4));
 
+        string hello = "hello";
+        
+        print(hello.Add(", world"));
+
     }
 	
 }
 
 //  Simple Hack & Slash - 메모리풀 참고
-
 
 /*
     quiz)
@@ -74,3 +78,7 @@ public class ExtensionMethodTest : MonoBehaviour {
 
         ->  hello, world 출력
 */
+
+
+
+public static class StringExtension { public static string Add(this string tmpString, string addString) { return tmpString + addString; } }

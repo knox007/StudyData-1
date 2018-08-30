@@ -56,10 +56,5 @@ public class VarTest : MonoBehaviour {
         foreach (var e in d)
             print(e);
 
-
-
-
-
-
     }
 }

@@ -14,9 +14,11 @@ public class OutTest : MonoBehaviour {
 
         int rest = 0;
         //int rest;
+		       
+        
+		DivideByRef(a, b, ref res, ref rest);
 
-        DivideByRef(a, b, ref res, ref rest);
-        //DivideByOut(a, b, out res, out rest);
+		//DivideByOut(a, b, out res, out rest);
         //  DivideByOut(a, b, out int res, out int rest);   c# 7.0 이상 지원
 
         print(a);
@@ -24,6 +26,7 @@ public class OutTest : MonoBehaviour {
         print(res);
         print(rest);
 
+		/*
         int Add, Sub, Multi, Divid, Rest;
         AddSubMultiDividRest(a, b, out Add, out Sub, out Multi, out Divid, out Rest);
         print(Add);
@@ -31,7 +34,7 @@ public class OutTest : MonoBehaviour {
         print(Multi);
         print(Divid);
         print(Rest);
-
+		*/
     }
 	
     void DivideByRef( int a, int b, ref int result, ref int rest )
