@@ -30,6 +30,9 @@ int main(void)
 
 	funcPtr1(num1, num2);
 	funcPtr2(psz);
+
+	Add(num1, num2);
+	ShowString(psz);
 	
 	return 0;
 }
@@ -96,7 +99,70 @@ int main()
 	quiz)
 		두 정수의 입력을 받아 정수를 반환하는 사칙 연산 함수를 각각 만들고
 			
-		함수포인터를 이용하여 20과 10에 대한 사칙연산을 적용한다.
+		함수포인터를 이용하여 20과 10에 대한 사칙연산을 실행한다.
 
 */
 //======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+int Add(int a, int b)	{return a + b;}
+int Sub(int a, int b)	{return a - b;}
+int Multi(int a, int b)	{return a * b;}
+int Div(int a, int b)	{return a / b;}
+int Rest(int a, int b)	{return a % b;}
+
+int(*Calc)(int a, int b);
+
+int main()
+{
+	int a = 10, b = 3;
+	int result = 0;
+
+	Calc = Add;
+	result = Calc(a, b);
+	printf("%d + %d = %d\n", a, b, result);
+
+	Calc = Sub;
+	result = Calc(a, b);
+	printf("%d - %d = %d\n", a, b, result);
+
+	Calc = Multi;
+	result = Calc(a, b);
+	printf("%d * %d = %d\n", a, b, result);
+
+	Calc = Div;
+	result = Calc(a, b);
+	printf("%d / %d = %d\n", a, b, result);
+
+	Calc = Rest;
+	result = Calc(a, b);
+	printf("%d %% %d = %d\n", a, b, result);
+	
+	return 0;
+}
+//*/
