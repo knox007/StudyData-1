@@ -60,6 +60,8 @@ public class ExtensionMethodTest : MonoBehaviour {
 	
 }
 
+//  Simple Hack & Slash - 메모리풀 참고
+
 
 /*
     quiz)
