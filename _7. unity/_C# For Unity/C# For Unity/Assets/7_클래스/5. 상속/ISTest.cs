@@ -11,7 +11,7 @@ public class ISTest : MonoBehaviour {
 
       uint b = (uint)a;
 
-      if(b is int )
+      if(a is int )
           print("int");
       else
           print("not int");
