@@ -108,3 +108,55 @@
 			CopyArray<int>(source, target);
 
 	(소스 참고)
+
+
+-----------------------------
+3.	일반화 클래스.
+-----------------------------
+
+	1.	선언
+
+		-	class  클래스이름 < 형식 매개 변수 >
+			{
+				.................
+			}
+
+	2.	적용
+
+		-	class Array_Int
+			{
+				int[] _array;
+
+				............
+
+				public int GetElement(int idx) { return _array[idx]; }
+
+			}
+
+			class Array_Double
+			{
+				double[] _array;
+
+				............
+
+				public double GetElement(int idx) { return _array[idx]; }
+
+			}
+
+
+			->	class Array_Generic<T>
+				{
+					T[] _array;
+
+					................
+
+					public T GetElement(int idx) { return _array[idx]; }
+
+				}
+
+
+				Array_Generic<int> intArr = new Array_Generic<int>();
+				Array_Generic<double> doubleArr = new Array_Generic<double>();
+
+
+		(소스 참고)

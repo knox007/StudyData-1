@@ -38,7 +38,7 @@ using System;
 public class SystemArrayTest : MonoBehaviour {
 
 	//--------------------------------
-	static bool Check( int score )
+	bool Check( int score )
 	{
 		if (score >= 40)
 			return true;
@@ -46,7 +46,7 @@ public class SystemArrayTest : MonoBehaviour {
 			return false;
 	}
 	//--------------------------------
-	static void Print(int value )
+	void Print(int value )
 	{
 		print (value);
 	}
