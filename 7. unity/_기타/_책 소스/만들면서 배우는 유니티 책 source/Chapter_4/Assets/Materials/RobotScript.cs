@@ -22,7 +22,7 @@ public class RobotScript : MonoBehaviour {
 	
 	void Update() {
 		if(IsSearch == true) {
-			animation.Play ("run");	
+			GetComponent<Animation>().Play ("run");	
 			WayPointMove();
 		} else {
 			Attack();	
@@ -65,13 +65,13 @@ public class RobotScript : MonoBehaviour {
         if( CurrentDelay <= 0 ) {
             CurrentDelay = MaxDelay;
 			RocketLauncher.Fire();
-            animation.CrossFade( "shoot", 0.5f );
+            GetComponent<Animation>().CrossFade( "shoot", 0.5f );
         }
 	}
 	
 	void OnCollisionEnter(Collision collision) {
 		if(collision.transform.tag == "Bullet") {
-			Camera.mainCamera.GetComponent<ScoreScript>().CurrentScore += 20;
+			Camera.main.GetComponent<ScoreScript>().CurrentScore += 20;
 			
 			Health = Health - 1;
 			if(Health < 0) {

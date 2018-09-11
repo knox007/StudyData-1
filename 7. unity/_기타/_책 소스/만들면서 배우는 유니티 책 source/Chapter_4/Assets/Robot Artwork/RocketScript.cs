@@ -11,7 +11,7 @@ public class RocketScript : MonoBehaviour {
 		}
 		
 		if(collision.transform.tag == "Player") {
-			Camera.mainCamera.GetComponent<HealthScript>().CurrentHealth -= 10;
+			Camera.main.GetComponent<HealthScript>().CurrentHealth -= 10;
 		}
 	}
 }

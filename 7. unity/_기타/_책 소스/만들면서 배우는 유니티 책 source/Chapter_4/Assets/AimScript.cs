@@ -7,7 +7,7 @@ public class AimScript : MonoBehaviour
     public Rect AimRect;
 
     void Start() {
-		Screen.showCursor = false;
+		Cursor.visible = false;
 		
 		// Rect에 사용될 값을 미리 설정하기
         float left = (Screen.width - AimTexture.width) / 2;

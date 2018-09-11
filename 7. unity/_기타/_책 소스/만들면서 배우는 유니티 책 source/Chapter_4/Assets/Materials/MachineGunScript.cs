@@ -14,7 +14,7 @@ public class MachineGunScript : MonoBehaviour {
             cb.velocity = transform.TransformDirection(new Vector3(0, 0, BulletSpeed));
 			
 			// 소리 재생
-			AudioSource.PlayClipAtPoint(audio.clip, transform.position);
+			AudioSource.PlayClipAtPoint(GetComponent<AudioSource>().clip, transform.position);
         }
     }
 }

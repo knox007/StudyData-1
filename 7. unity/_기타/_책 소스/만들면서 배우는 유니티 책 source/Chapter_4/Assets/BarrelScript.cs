@@ -7,7 +7,7 @@ public class BarrelScript : MonoBehaviour {
 	
 	 void OnCollisionEnter(Collision collision) {
         if (collision.transform.tag == "Bullet") {
-            Camera.mainCamera.GetComponent<ScoreScript>().CurrentScore += 10;
+            Camera.main.GetComponent<ScoreScript>().CurrentScore += 10;
         }
     }
 }
