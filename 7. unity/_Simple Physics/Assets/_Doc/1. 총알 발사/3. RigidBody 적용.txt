@@ -1,68 +1,68 @@
+ï»¿---------------------------------
+1.	RigidBody ì»´í¬ë„ŒíŠ¸
 ---------------------------------
-1.	RigidBody ÄÄÆ÷³ÍÆ®
----------------------------------
 
-	1.	¹°¸®¿£ÁøÀÇ Áö¿øÀ» ¹Þ±â À§ÇØ¼­ Rigidbody ÄÄÆ÷³ÍÆ®¸¦ Àû¿ëÇÑ´Ù.
+	1.	ë¬¼ë¦¬ì—”ì§„ì˜ ì§€ì›ì„ ë°›ê¸° ìœ„í•´ì„œ Rigidbody ì»´í¬ë„ŒíŠ¸ë¥¼ ì ìš©í•œë‹¤.
 
-	2.	Àû¿ë ¹æ¹ý
+	2.	ì ìš© ë°©ë²•
 
-		1)	¸Þ´º - Component - Physics - Rigidbody
+		1)	ë©”ë‰´ - Component - Physics - Rigidbody
 
-		2)	°ÔÀÓ¿ÀºêÁ§Æ® ¼±ÅÃ - ÀÎ½ºÆåÅÍ¿¡¼­ Add Component Å¬¸¯ - Physics - Rigidbody ¼±ÅÃ
+		2)	ê²Œìž„ì˜¤ë¸Œì íŠ¸ ì„ íƒ - ì¸ìŠ¤íŽ™í„°ì—ì„œ Add Component í´ë¦­ 	- Physics 	-	Rigidbody ì„ íƒ
 
-																- Rigidbody °Ë»ö ÈÄ ¼±ÅÃ.
+										- Rigidbody ê²€ìƒ‰ í›„ ì„ íƒ.
 
-	3.	¼Ó¼º
+	3.	ì†ì„±
 		-------------------------------------------
-		Mass	:	»ó´ëÀûÀÎ ÀÇ¹ÌÀÇ Áú·®.
+		Mass		:	ìƒëŒ€ì ì¸ ì˜ë¯¸ì˜ ì§ˆëŸ‰.
 
-					¿ÀºêÁ§Æ® AÀÇ Mass°¡ 1, ¿ÀºêÁ§Æ® BÀÇ Mass°¡ 10 ÀÌ¶ó¸é
+					ì˜¤ë¸Œì íŠ¸ Aì˜ Massê°€ 1, ì˜¤ë¸Œì íŠ¸ Bì˜ Massê°€ 10 ì´ë¼ë©´
 
-					B°¡ Aº¸´Ù 10¹è ¹«°Ì´Ù°í ÇØ¼®.
+					Bê°€ Aë³´ë‹¤ 10ë°° ë¬´ê²ë‹¤ê³  í•´ì„.
 
-					ÆíÀÇ»ó 1Kg¶ó°í °¡Á¤ÇÏ°í ÀÛ¾÷.
+					íŽ¸ì˜ìƒ 1Kgë¼ê³  ê°€ì •í•˜ê³  ìž‘ì—….
 		-------------------------------------------
-		Drag	:	ÀÌµ¿ ¸¶Âû°è¼ö( ÀúÇ× )
+		Drag		:	ì´ë™ ë§ˆì°°ê³„ìˆ˜( ì €í•­ )
 		-------------------------------------------
-		Angular Drag	:	È¸Àü ¸¶Âû°è¼ö( ÀúÇ× )
+		Angular Drag	:	íšŒì „ ë§ˆì°°ê³„ìˆ˜( ì €í•­ )
 		-------------------------------------------
-		Use Gravity	:	Áß·Â Àû¿ë ¿©ºÎ.
+		Use Gravity	:	ì¤‘ë ¥ ì ìš© ì—¬ë¶€.
 
-						µðÆúÆ® °ªÀº true.
+					ë””í´íŠ¸ ê°’ì€ true.
 		-------------------------------------------		
-		Is Kinematic	:	Kinematic( ¿îµ¿ÇÐ ).
+		Is Kinematic	:	Kinematic( ìš´ë™í•™ ).
 							
-							¿îµ¿À» ÀÏÀ¸Å°´Â ÈûÀÇ ¹®Á¦¿¡ ´ëÇØ¼­´Â ¾ð±ÞÇÏÁö ¾Ê°í ´ÜÁö ¿îµ¿ÀÇ »óÅÂ¸¸À» ´Ù·ç´Â ¿ªÇÐ(ÕôùÊ)ÀÇ ÀÏºÎºÐ.
-							( ³×ÀÌ¹ö Áö½Ä¹é°ú ¹ßÃé. )
+							ìš´ë™ì„ ì¼ìœ¼í‚¤ëŠ” íž˜ì˜ ë¬¸ì œì— ëŒ€í•´ì„œëŠ” ì–¸ê¸‰í•˜ì§€ ì•Šê³  ë‹¨ì§€ ìš´ë™ì˜ ìƒíƒœë§Œì„ ë‹¤ë£¨ëŠ” ì—­í•™(åŠ›å­¸)ì˜ ì¼ë¶€ë¶„.
+							( ë„¤ì´ë²„ ì§€ì‹ë°±ê³¼ ë°œì·Œ. )
 
-							¿ÜºÎ Èû¿¡ ´ëÇÑ ¿µÇâÀÌ ¹ÌÄ¡Áö ¾Ê´Â ¿ÀºêÁ§Æ® ¼³Á¤.
+							ì™¸ë¶€ íž˜ì— ëŒ€í•œ ì˜í–¥ì´ ë¯¸ì¹˜ì§€ ì•ŠëŠ” ì˜¤ë¸Œì íŠ¸ ì„¤ì •.
 
-							ÀÌ ¿É¼ÇÀ» °¡Áø ¿ÀºêÁ§Æ®¿¡ ´ëÇØ¼­´Â ¹°¸®¿£ÁøÀÌ ÇØ´ç ¿ÀºêÁ§Æ®¿¡°Ô °¡ÇØÁö´Â ÈûÀÇ Å©±â¿Í ¹æÇâµîÀ» °è»êÇÏÁö ¾Ê´Â´Ù´Â °ÍÀ» ÀÇ¹Ì.
+							ì´ ì˜µì…˜ì„ ê°€ì§„ ì˜¤ë¸Œì íŠ¸ì— ëŒ€í•´ì„œëŠ” ë¬¼ë¦¬ì—”ì§„ì´ í•´ë‹¹ ì˜¤ë¸Œì íŠ¸ì—ê²Œ ê°€í•´ì§€ëŠ” íž˜ì˜ í¬ê¸°ì™€ ë°©í–¥ë“±ì„ ê³„ì‚°í•˜ì§€ ì•ŠëŠ”ë‹¤ëŠ” ê²ƒì„ ì˜ë¯¸.
 
-							Rigidbody¸¦ Àû¿ëÇÏÁö ¾Ê´Â °Í vs Is Kinematic Ã¼Å© ¼³Á¤ÀÇ Â÷ÀÌ.
+							Rigidbodyë¥¼ ì ìš©í•˜ì§€ ì•ŠëŠ” ê²ƒ vs Is Kinematic ì²´í¬ ì„¤ì •ì˜ ì°¨ì´.
 
-							-	Collision°è¿­ ÇÔ¼öµéÀº È£Ãâ µÊ.
+							-	Collisionê³„ì—´ í•¨ìˆ˜ë“¤ì€ í˜¸ì¶œ ë¨.
 
-								-	¿ÜºÎÀÇ ÀÚ±Ø¿¡ ´ëÇØ ¹°¸®ÀûÀ¸·Î ¹ÝÀÀÀ» º¸ÀÏ ÇÊ¿ä°¡ ¾ø´Â °æ¿ì ¼³Á¤.
+								-	ì™¸ë¶€ì˜ ìžê·¹ì— ëŒ€í•´ ë¬¼ë¦¬ì ìœ¼ë¡œ ë°˜ì‘ì„ ë³´ì¼ í•„ìš”ê°€ ì—†ëŠ” ê²½ìš° ì„¤ì •.
 		-------------------------------------------
-		Interpolate	:	¹°¸®·ÂÀ» ÀÌ¿ëÇÑ ¿òÁ÷ÀÓÀÌ ²÷¾îÁö´Â Çö»ó ¹ß»ý½Ã º¸°£Àû¿ë.
+		Interpolate	:	ë¬¼ë¦¬ë ¥ì„ ì´ìš©í•œ ì›€ì§ìž„ì´ ëŠì–´ì§€ëŠ” í˜„ìƒ ë°œìƒì‹œ ë³´ê°„ì ìš©.
 
-						-	None
+					-	None
 
-						-	Interpolate	:	ÀÌÀü ÇÁ·¹ÀÓÀÇ Transform°ú º¸°£.
+					-	Interpolate	:	ì´ì „ í”„ë ˆìž„ì˜ Transformê³¼ ë³´ê°„.
 
-						-	Extrapolate	:	´ÙÀ½ ÇÁ·¹ÀÓÀÇ Transform º¯È­¸¦ ÃßÁ¤ÇÏ¿© º¸°£.
+					-	Extrapolate	:	ë‹¤ìŒ í”„ë ˆìž„ì˜ Transform ë³€í™”ë¥¼ ì¶”ì •í•˜ì—¬ ë³´ê°„.
 
 		-------------------------------------------
-		Collision Detection	:	¾ÆÁÖ ºü¸¥ ¹°Ã¼´Â ¹°¸®¿£ÁøÀÌ Ãæµ¹ °ËÃâÀ» ³õÄ¥¼ö ÀÖÀ½.
+		Collision Detection	:	ì•„ì£¼ ë¹ ë¥¸ ë¬¼ì²´ëŠ” ë¬¼ë¦¬ì—”ì§„ì´ ì¶©ëŒ ê²€ì¶œì„ ë†“ì¹ ìˆ˜ ìžˆìŒ.
 
-								Ãæµ¹ °ËÃâÀÇ ¼¼¹Ðµµ Á¶Á¤.
+						ì¶©ëŒ ê²€ì¶œì˜ ì„¸ë°€ë„ ì¡°ì •.
 
-								Discrete < Continuous < Continuous Dynamic ¼øÀ¸·Î ¼¼¹Ðµµ ³ôÀ¸¸ç ÆÛÆ÷¸Õ½º¸¦ ¸¹ÀÌ ¼ÒºñÇÔ.							
+						Discrete < Continuous < Continuous Dynamic ìˆœìœ¼ë¡œ ì •ë°€ë„ ë†’ìœ¼ë©° í¼í¬ë¨¼ìŠ¤ë¥¼ ë§Žì´ ì†Œë¹„í•¨.							
 		-------------------------------------------
 		Constraints 
 			
-			Freeze Position	:	ÇØ´ç ÃàÀ¸·Î ÀÌµ¿ ¸·À½.
+			Freeze Position	:	í•´ë‹¹ ì¶•ìœ¼ë¡œ ì´ë™ ë§‰ìŒ.
 
-			Freeze Rotation	:	ÇØ´ç ÃàÀ» ±âÁØÀ¸·Î ÇÏ´Â È¸ÀüÀ» ¸·À½.
+			Freeze Rotation	:	í•´ë‹¹ ì¶•ì„ ê¸°ì¤€ìœ¼ë¡œ í•˜ëŠ” íšŒì „ì„ ë§‰ìŒ.
 		-------------------------------------------
