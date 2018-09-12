@@ -8,7 +8,7 @@ public class RemoveBullet : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "BULLET")
+        if (collision.collider.CompareTag("BULLET"))
         {
             ShowEffect(collision);
 
@@ -40,6 +40,18 @@ public class RemoveBullet : MonoBehaviour {
         -   transform   :   충돌한 게임오브젝트의 Transform 컴포넌트.
         */
 
+        /*
+            Destroy
+
+            -   게임 오브젝트 파괴.
+
+            -   지연시간 적용해서 파괴 가능.
+
+                -   Destroy(collision.gameObject, 3.0f);
+
+                    -   3초후 collision.gameObject 파괴.
+        */
+
     }
 
     void ShowEffect(Collision coll)
@@ -65,11 +77,14 @@ public class RemoveBullet : MonoBehaviour {
         Quaternion rot = Quaternion.FromToRotation(-coll.gameObject.transform.forward, contactPt.normal);
 
         //  스파크 생성.
-        GameObject spark = Instantiate(_bulletEffectMetal, contactPt.point, rot);
-
-        //  스파크를 피충돌체에 자식으로 설정.
-        //  -   부모의 트랜스폼 영향을 받음.
-        spark.transform.parent = this.transform;
+        if (_bulletEffectMetal != null)
+        {
+            GameObject spark = Instantiate(_bulletEffectMetal, contactPt.point, rot);
+            //  스파크를 피충돌체에 자식으로 설정.
+            //  -   부모의 트랜스폼 영향을 받음.
+            spark.transform.parent = this.transform;
+        }
+        
     }
 
 }

@@ -38,8 +38,10 @@ public class FireCtrl : MonoBehaviour {
     {
         Instantiate(_bullet, _firePos.position, _firePos.rotation);
 
-        _cartridge.Play();
+        if(_cartridge!=null)
+            _cartridge.Play();
 
-        _muzzleFlash.Play();
+        if(_muzzleFlash!=null)
+            _muzzleFlash.Play();
     }
 }
