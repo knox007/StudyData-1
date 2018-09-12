@@ -26,8 +26,7 @@ bld/
 [Ll]ibrary/
 [Tt]emp/
 [Uu]nityPackageManager/
-[Cc]sproj/
-[Ss]ln/
+
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -89,6 +88,8 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+*.csproj
+*.sln
 
 # Chutzpah Test files
 _Chutzpah*
