@@ -24,6 +24,18 @@ public class BulletCtrl : MonoBehaviour {
 }
 //===========================================================
 /*
+    GetComponent
+
+    -   게임 오브젝트에 연결되어있는 컴포넌트를 얻어오는 메소드.
+    
+    -   형식
+
+        -   public Component GetComponent<Type>();
+
+           -    Type에 해당하는 컴포넌트가 없으면 null 반환.
+*/
+
+/*
  * Rigidbody에 힘(Force)을 가하는 함수.
     
     void AddForce( Vector3 force )
