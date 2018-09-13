@@ -36,6 +36,9 @@
 		|	double double	|	8byte or 이상	|	double 이상의 표현 범위
 
 
+	* long / int는 크기와 표현범위가 같다!!
+
+	-	https://blog.naver.com/hweetae/220815782827
 
 
 
