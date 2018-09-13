@@ -26,18 +26,18 @@ int main(void)
 
 int main(void)
 {
-	int scoreEng, scoreKor;
+	//int scoreEng, scoreKor;
 	//	변수 선언.
 	//	-	선언만하고 초기화를 하지 않거나 바로 정의를 해주지 않으면
 	//		해당 변수에 아무 의미없는 값들이 저장됨.(쓰레기 값)
 	//	-	보통 해당 변수의 기본값으로 설정해주는 데이터나 0으로 초기화를 함.
 
-	//	int scoreEng = 100, scoreKor = 90;	
+	int scoreEng = 100, scoreKor = 90;	
 	//	scoreEng = 100, scoreKor = 90;
 
 	
 	printf("영어 : %d, 국어 : %d\n", scoreEng, scoreKor);
-	scoreEng = 100, scoreKor = 90;
+	scoreEng = 50, scoreKor = 30;
 	
 	int scoreMath = 50, scoreComp = 50;	//	변수 초기화.
 	printf("영어 : %d, 국어 : %d\n", scoreEng, scoreKor);
