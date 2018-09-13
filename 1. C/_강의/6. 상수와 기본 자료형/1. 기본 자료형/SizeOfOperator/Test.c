@@ -60,6 +60,7 @@ int main(void)
 	printf("chNum1 과 chNum2의 크기 : %d, %d\n", sizeof(chNum1), sizeof(chNum2));
 	printf("shNum1 과 shNum2의 크기 : %d, %d\n", sizeof(shNum1), sizeof(shNum2));
 	printf("-----------------------\n");
+	//	int 형보다 작은 크기의 데이터는 int형 데이터로 바꿔서 연산이 진행된다.
 	printf("char형 데이터의 합의 크기 : %d\n", sizeof(chNum1+chNum2));
 	printf("short형 데이터의 합의 크기 : %d\n", sizeof(shNum1+shNum2));
 	printf("-----------------------\n");
