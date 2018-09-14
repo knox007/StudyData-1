@@ -9,7 +9,7 @@
 
 
 
-//*
+/*
 int main(void)
 {
 	int num1, num2, num3;
@@ -61,7 +61,7 @@ int main(void)
 
 	printf("실수 입력 (e 표기법) : ");
 	scanf("%lf", &num2);
-	printf("입력된 실수는 %f\n\n", num2);
+	printf("입력된 실수는 %lf\n\n", num2);
 
 	printf("실수 입력 (e 표기법) : ");
 	scanf("%Lf", &num3);
