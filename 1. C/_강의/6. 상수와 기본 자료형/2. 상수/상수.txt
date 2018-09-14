@@ -57,7 +57,7 @@
 			정수형	|	U	|	unsigned int	|	unsigned int num = 1025u;	|
 				|	L	|	long		|	long num = 1025L;		|
 				|	UL	|	unsigned long	|	unsigned long num = 1025L;	|
-				|	LL	|	long long	|	long long num = 1025LL;		|
+				|	LL	|	long long		|	long long num = 1025LL;		|
 			-----------------------------------------------------------------------------------------
 			실수형	|	F	|	float		|	float num = 3.14f;		|
 				|	L	|	long double	|	long double num = 5.78L;	|
