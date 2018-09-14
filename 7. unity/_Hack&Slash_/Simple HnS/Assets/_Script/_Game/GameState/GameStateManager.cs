@@ -9,6 +9,8 @@ public class GameStateManager : FSM<GameStateManager>
     //  게임씬 UI 매니져
     public GameUIManager _gameUIManager;
     //--------------------------------------
+	public SceneLoader _sceneLoader;
+	//--------------------------------------
     //  플레이어 캐릭터 리스트.
     public PlayerStateManager[] _playerList;
     //--------------------------------------

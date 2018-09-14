@@ -17,12 +17,20 @@ public class PlayerStateManager : FSM <PlayerStateManager>
 	[HideInInspector]
 	public int _curAttackIdx;
 	//---------------------------------
+	[HideInInspector]
+	public int _enemyDownCount;
+	//---------------------------------
     public LayerMask _moveTargetLayer;
     //---------------------------------
     [HideInInspector]
     public Vector3 _clickedPoint;    
     //---------------------------------
-    void Start () { Initialize(this, PlayerStateIdle.Instance); }
+    void Start ()
+	{
+		_enemyDownCount = 0;
+
+		Initialize(this, PlayerStateIdle.Instance);
+	}
     //---------------------------------
     void Update ()
     {

@@ -48,7 +48,7 @@ public class EnemyStateManager : FSM<EnemyStateManager>
         FSMUpdate();
 	}
     //---------------------------------
-	public void Dead()	{ gameObject.DestroyAPS ();	}
+	public void Dead()	{ ChangeState(EnemyStateDestroy.Instance);	}
 	//---------------------------------
 
 }// public class EnemyStateManager : MonoBehaviour

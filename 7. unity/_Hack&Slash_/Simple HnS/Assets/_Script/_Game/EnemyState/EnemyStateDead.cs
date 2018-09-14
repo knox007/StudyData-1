@@ -14,7 +14,8 @@ public class EnemyStateDead : FSMSingleton<EnemyStateDead>, IFSMState<EnemyState
 		e._myAnimator.SetInteger("act", (int)CharProper.eANIMSTATE.KNOCKDOWN);
 
         print("--- EnemyStateDead ---");
-        //Invoke ("Clear", 2f);
+        
+		Invoke ("DoDead", 2f);
     }
 	//---------------------------------
 	public void Execute(EnemyStateManager e)
@@ -27,6 +28,11 @@ public class EnemyStateDead : FSMSingleton<EnemyStateDead>, IFSMState<EnemyState
 	//---------------------------------
 	public void Skip(EnemyStateManager e) { }
 	//---------------------------------
+	public void DoDead()
+	{
+		_e.Dead ();
+	}
+	//-------------------------
 
 }
 //==========================================================

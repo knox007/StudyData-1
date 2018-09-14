@@ -580,6 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameUIManager: {fileID: 1924658064}
+  _sceneLoader: {fileID: 1924658063}
   _playerList:
   - {fileID: 787832385}
   - {fileID: 1584263078}
