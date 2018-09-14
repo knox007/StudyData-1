@@ -19,7 +19,8 @@ int main(void)
 		printf("input number : (0 : finish)");
 		scanf("%d", &num);
 
-		printf("%d x %d = %d\n", 2, num, 2 * num);
+		if( num != 0 )
+			printf("%d x %d = %d\n", 2, num, 2 * num);
 	
 	} while (num != 0);	//	;으로 마무리!!
 	
