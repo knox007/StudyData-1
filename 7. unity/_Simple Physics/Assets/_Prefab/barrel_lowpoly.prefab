@@ -24,8 +24,8 @@ GameObject:
   - component: {fileID: 54237072175269134}
   - component: {fileID: 64191597248030162}
   - component: {fileID: 114751512330195400}
-  - component: {fileID: 114203785485211138}
-  m_Layer: 0
+  - component: {fileID: 114835577512216038}
+  m_Layer: 8
   m_Name: barrel_lowpoly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1135940157694090}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0, z: -4.7}
+  m_LocalPosition: {x: 1.36, y: -0, z: -2.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,18 +115,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 0cb3a092ec94c2741979790357cabba3, type: 3}
---- !u!114 &114203785485211138
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1135940157694090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e517c9b173210804a807a68a7fedd08b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _expEffect: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 2}
 --- !u!114 &114751512330195400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,3 +128,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletEffectMetal: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d,
     type: 2}
+--- !u!114 &114835577512216038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1135940157694090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512075f4f408c114ca4de5daa2ec4418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _expEffect: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 2}
+  _meshes:
+  - {fileID: 4300000, guid: c34c879db77af964a8432a2abd2fd308, type: 3}
+  - {fileID: 4300000, guid: 9e203064fefcc294794ee363a2b1c4ba, type: 3}
+  _textures:
+  - {fileID: 2800000, guid: d2170db6828d61d42b9fc306ed9bff3e, type: 3}
+  - {fileID: 2800000, guid: 20f7ef14fa4486440881eb8a21c3da6d, type: 3}
+  - {fileID: 2800000, guid: c22ba024ea98c154cb04226e5c8bd801, type: 3}
+  - {fileID: 2800000, guid: 57bc259461f95da428d76734fcfd8199, type: 3}
+  _expRadius: 10
