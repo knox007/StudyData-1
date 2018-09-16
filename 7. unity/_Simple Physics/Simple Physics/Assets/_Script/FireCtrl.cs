@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class FireCtrl : MonoBehaviour {
 
-    ParticleSystem _muzzleFlash;
+	public GameObject   	_bullet;
 
-    public ParticleSystem _cartridge;
+	public Transform 		_firePos;
 
-    public GameObject   _bullet;
 
-    public Transform _firePos;
 
+	ParticleSystem 			_muzzleFlash;
+
+    public ParticleSystem 	_cartridge;
     private void Start()
     {
         //  GetComponentInChildren
