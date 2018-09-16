@@ -47,18 +47,11 @@ void Shoot()
 
 int main(void)
 {
-	const int BULLET_POW = 100;
-	
+	const int BULLET_POW = 100;	
 
 	printf("총알의 속도  : %d\n", BULLET_SPEED);
 	printf("총알의 공격력  : %d\n", BULLET_POW);
-
-
-
-
-
-
-
+	
 	return 0;
 }
 

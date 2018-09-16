@@ -16,8 +16,7 @@
 int main(void)
 {
 	int num = 0;
-
-	
+		
 	while (num < 5)
 	{
 		printf("Hello !! %d 회 출력\n", num + 1);
@@ -26,7 +25,6 @@ int main(void)
 
 				//	주석 처리후 결과 확인 해볼것.
 	}
-	
 
 	//	2.	반복의 대상이 하나의 문장이라면 중괄호 생략 가능.
 	//	while (num < 5)
@@ -48,7 +46,7 @@ int main(void)
 */
 
 
-/*
+//*
 int main(void)
 {
 	int num = 0;
@@ -72,7 +70,25 @@ int main(void)
 
 예) 4 입력 -> 3 6 9 12 출력 */
 
+/*
+int main(void)
+{
+	int inputNum = 0;
 
+	printf("숫자를 입력하세요 : ");
+	scanf("%d", &inputNum);
+
+	int cur = 1;
+	while (cur <= inputNum)
+	{
+		printf("%d x %d = %d\n", 3, cur, 3 * cur);
+
+		++cur;
+	}
+
+	return 0;
+}
+//*/
 
 //======================================================
 /*
