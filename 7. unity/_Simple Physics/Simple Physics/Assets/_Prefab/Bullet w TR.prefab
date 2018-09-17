@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 135127306195249186}
   - component: {fileID: 96529023257478782}
   m_Layer: 0
-  m_Name: Bullet With TR
+  m_Name: Bullet w TR
   m_TagString: BULLET
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
