@@ -68,8 +68,6 @@ int main(void)
 */
 
 
-
-
 /*
 int main(void)
 {
@@ -96,6 +94,31 @@ int main(void)
 */
 
 
+
+
+
+/*
+int main(void)
+{
+	int total = 0;
+
+	int inputNumSmall;
+	int inputNumBig;
+
+	printf("작은수를 입력하세요 : ");
+	scanf("%d", &inputNumSmall);
+	printf("큰 수를 입력하세요 : ");
+	scanf("%d", &inputNumBig);
+
+	int cur;
+	for (cur = inputNumSmall; cur <= inputNumBig; ++cur)
+		total += cur;
+
+	printf("%d ~ %d 까지의 합 : %d\n", inputNumSmall, inputNumBig, total);
+
+	return 0;
+}
+//*/
 
 
 

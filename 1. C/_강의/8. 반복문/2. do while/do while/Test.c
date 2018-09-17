@@ -9,7 +9,7 @@
 */
 
 
-//*
+/*
 int main(void)
 {
 	int num = 0;
@@ -32,3 +32,34 @@ int main(void)
 	0 ~ 100 이하 짝수의 합을 구하라
 	결과는 2550.
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int main(void)
+{
+	int num = 0;
+
+	int sum = 0;
+	do
+	{
+		if (num % 2 == 0)
+			sum += num;
+		++num;
+
+	} while (num <= 100);	//	;으로 마무리!!
+
+	printf("%d\n", sum);
+
+	return 0;
+}
