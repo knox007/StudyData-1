@@ -26,15 +26,12 @@
 
             -   지역변수로만 사용.
             
-            -   System 네임스페이스 사용.
-
-            
 */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using System;
+//using System;
 
 public class VarTest : MonoBehaviour {
         
