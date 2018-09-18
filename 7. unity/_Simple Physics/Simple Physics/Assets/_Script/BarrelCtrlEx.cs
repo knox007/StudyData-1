@@ -26,7 +26,8 @@ public class BarrelCtrlEx : MonoBehaviour {
 
 	public float _expRadius = 10.0f;
 
-
+    public AudioClip   _expSfx;
+    AudioSource _audioSrc;    
 
 	// Use this for initialization
 	void Start () {
@@ -39,7 +40,9 @@ public class BarrelCtrlEx : MonoBehaviour {
 
 		_meshRenderer.material.mainTexture = _textures [Random.Range (0, _textures.Length)];
 
-	}
+        _audioSrc = GetComponent<AudioSource>();
+
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -84,8 +87,9 @@ public class BarrelCtrlEx : MonoBehaviour {
 
         //  변경된 메쉬에 따라 메쉬 컬라이더 수정.
         GetComponent<MeshCollider>().sharedMesh = _meshes[idx];
-    
-	
+
+        if(_expSfx!=null)
+            _audioSrc.PlayOneShot(_expSfx, 1.0f);
 	}
 
 	void IndirectDamage(Vector3 pos)
