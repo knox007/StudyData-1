@@ -17,7 +17,7 @@
 			case 정수:
 				break;
 
-			default 정수 :
+			default :
 				break;
 		
 		}

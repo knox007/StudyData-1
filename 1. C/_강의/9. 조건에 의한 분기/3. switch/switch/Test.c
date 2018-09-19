@@ -58,7 +58,7 @@ int main(void)
 
 	-	하지만 switch 문으로 구현할 수 있는 조건의 구성에는 한계가 있다.
 
-		->	switch문으로 표현하기 애미한 경우에 if ~ else를 사용한다.
+		->	switch문으로 표현하기 애매한 경우에 if ~ else를 사용한다.
 
 */
 
