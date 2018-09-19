@@ -15,16 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SimpleCout.cpp">
+    <ClCompile Include="1.SimpleCout.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="SimpleCin.cpp">
+    <ClCompile Include="2.SimpleCin.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="3.NameSpace.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="4. Using.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="quiz.txt">
-      <Filter>소스 파일</Filter>
+      <Filter>리소스 파일</Filter>
     </Text>
   </ItemGroup>
 </Project>
