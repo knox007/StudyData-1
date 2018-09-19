@@ -19,27 +19,28 @@ public class BarrelCtrl : MonoBehaviour {
         _rigidBody = GetComponent<Rigidbody>();
 	}
 
+	void ExpBarrel()
+	{        
+		Instantiate(_expEffect, transform.position, Quaternion.identity);   //  Quaternion.identity
+		//  -   무회전.
+		//      기본 회전값을 적용.(0, 0, 0)
+
+		//  폭발시 무게를 가볍게 함.
+		_rigidBody.mass = 1.0f;
+
+		//  윗 방향으로 힘을 적용.
+		_rigidBody.AddForce(Vector3.up * 500f);
+	}
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.CompareTag("BULLET"))
         {
             if (++_hitCount == 3)
                 ExpBarrel();
-
         }
     }
 
 
-    void ExpBarrel()
-    {        
-        Instantiate(_expEffect, transform.position, Quaternion.identity);   //  Quaternion.identity
-                                                                            //  -   무회전.
-                                                                            //      기본 회전값을 적용.(0, 0, 0)
-
-        //  폭발시 무게를 가볍게 함.
-        _rigidBody.mass = 1.0f;
-
-        //  윗 방향으로 힘을 적용.
-        _rigidBody.AddForce(Vector3.up * 500f);
-    }
+  
 }
