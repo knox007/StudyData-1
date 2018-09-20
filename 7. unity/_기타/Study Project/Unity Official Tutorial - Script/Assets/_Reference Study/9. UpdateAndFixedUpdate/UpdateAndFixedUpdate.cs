@@ -16,7 +16,7 @@ using UnityEngine;
     
         -   프레임을 기반으로 호출되는 Update 와 달리
         
-        -   Fixed Timestep에 설정된 값에 따라 일정한 간격으로 호출.
+           	Fixed Timestep에 설정된 값에 따라 일정한 간격으로 호출.
             
         -   물리 효과가 적용된(Rigidbody) 오브젝트를 조정할 때 사용
             
