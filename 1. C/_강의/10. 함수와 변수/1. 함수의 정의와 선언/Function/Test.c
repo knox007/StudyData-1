@@ -6,7 +6,6 @@
 1.	반환값과 매개변수에 따른 함수의 분류
 */
 
-
 /*
 //-----------------------------
 int Add(int num1, int num2)
@@ -58,14 +57,60 @@ int main(void)
 	int GetMinimum( int a, int b, int c )
 	int GetMaximum( int a, int b, int c )
 	
-	*/
+*/
 
 
 
 
 
+/*
+//---------------------
+int GetMinimum(int a, int b, int c)
+{
+	if (a < b)
+	{
+		if (a < c)
+			return a;
+	}
+	else if (b < c)
+		return b;
+	else 
+		return c;
+}
+//---------------------
+int GetMaximum(int a, int b, int c)
+{
+	if (a > b)
+	{
+		if (a > c)
+			return a;
+	}
+	else if (b > c)
+		return b;
+	else
+		return c;
+}
+//---------------------
+int main(void)
+{
+	printf("3개의 숫자를 입력하세요 \n");
 
+	int a, b, c;
 
+	scanf("%d %d %d", &a, &b, &c);
+
+	int min, max;
+
+	min = GetMinimum(a, b, c);
+	max = GetMaximum(a, b, c);
+
+	printf("가장 작은 수 : %d\n", min);
+	printf("가장 큰 수 : %d\n", max);
+
+	return 0;
+}
+//---------------------
+//*/
 
 //======================================================
 /*
@@ -141,6 +186,7 @@ int main()
 4.	함수 선언 방식
 
 		-	반환형	이름( 매개변수 );
+		
 
 			예)	int TestFunc( int a );
 				또는
@@ -148,7 +194,7 @@ int main()
 */	
 
 /*
-//	void TestFunc();
+void TestFunc();
 
 int main()
 {
@@ -189,7 +235,8 @@ void TestFunc()
 
 /*
 //	1)	하나의 함수내에 둘 이상의 return 문이 존재하는 경우.
-//	int Compare(int num1, int num2);	//	선언이 되어 있지 않다면 컴파일러는 리턴 타입을 int로 간주한다.
+//	int Compare(int num1, int num2);	
+//	-	함수가 선언이 되어 있지 않다면 컴파일러는 리턴 타입을 int로 간주한다.
 int main()
 {
 	int n1, n2;
@@ -255,7 +302,37 @@ int CompareAbs(int num1, int num2)
 화씨 온도를 반환하면 섭씨 온도를 반환하는 함수를 만들어 확인해보자.
 
 섭씨(Celsius) = (F - 32) / 1.8
-화씨(Fahrenheit) = (1.8 x F) + 32
+화씨(Fahrenheit) = (1.8 x C) + 32
+
+예)
+	섭씨온도를 입력하세요 : 
+	화씨로  입니다.
+
+	화씨온도를 입력하세요
+	섭씨로  입니다.
 
 */
 //======================================================
+
+/*
+float GetCels(float Fah)	{ return (Fah - 32) / 1.8f; }
+float GetFahr(float Cels)	{ return (1.8f * Cels) + 32; }
+
+int main()
+{
+	float Cel, Fah;
+	printf("섭씨온도를 입력하세요 : ");
+	scanf("%f", &Cel);
+	Fah = GetFahr(Cel);
+	printf("화씨로 %f 입니다.\n",Fah);
+
+
+	printf("화씨온도를 입력하세요 : ");
+	scanf("%f", &Fah);
+	Cel = GetCels(Fah);
+	printf("섭씨로 %f 입니다.\n", Cel);
+
+
+	return 0;
+}
+//*/
