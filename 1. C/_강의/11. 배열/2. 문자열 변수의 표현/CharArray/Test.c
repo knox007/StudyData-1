@@ -100,9 +100,9 @@ int main(void)
 	
 	
 	//	문자열과 문자배열의 출력.
-	//	char arr1[] = { 'H', 'i', '~' };
-	//	char arr2[] = { 'H', 'i', '~', '\0' };
-	//	printf("%s,    %s\n", arr1, arr2);	
+		char arr1[] = { 'H', 'i', '~' };
+		char arr2[] = { 'H', 'i', '~', '\0' };
+		printf("%s,    %s\n", arr1, arr2);	
 
 	return 0;
 }
@@ -118,6 +118,36 @@ quiz)	입력받은 영단어의 길이를 출력하는 프로그램.
 */
 
 
+
+
+
+
+
+
+
+
+
+
+
+/*
+int main(void)
+{
+	char str[50];
+	int idx = 0;
+	int length = 0;
+
+	printf("문자열 입력 : ");
+	scanf("%s", str);
+	
+	while (str[idx] != '\0')
+		++idx;
+
+	length = idx;
+	printf("%s의 길이는 %d 입니다.\n", str, length);
+
+	return 0;
+}
+//*/
 
 
 
@@ -174,4 +204,31 @@ int main()
 
 
 
+
+
+
+/*
+int main()
+{
+	char szInput[50];
+	printf("영단어를 입력하세요 : ");
+	scanf("%s", szInput);
+
+	int idx = 0;
+	char max = szInput[0];
+	while (szInput[idx] != 0)
+	{
+		printf("%c :  %d\n", szInput[idx], szInput[idx]);
+
+		if (max < szInput[idx])
+			max = szInput[idx];
+
+		++idx;
+	}
+	
+	printf("아스키 코드값이 가장 큰 문자는 %c\n", max);
+
+	return 0;
+}
+//*/
 //======================================================

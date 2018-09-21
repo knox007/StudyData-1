@@ -29,6 +29,7 @@ int main(void)
 	int intPtrLen = sizeof(pInt);
 		
 	printf("pChar = %p,  pInt = %p\n", pChar, pInt);
+	printf("tmpChar 주소 = %p,  tmpInt 주소 = %p\n", &tmpChar, &tmpInt);
 	printf("charPtrLen = %d,  intPtrLen = %d\n", charPtrLen, intPtrLen);
 
 	return 0;
@@ -71,6 +72,7 @@ int main(void)
 				int *pNum = &num;
 
 				*pNum = 20;				->	pNum이 가리키는 메모리 공간에 20을 저장.
+				->	num = 20;
 				printf("%d", *pNUm);	->	pNum이 가리키는 메모리 공간에 저장된 값을 출력.
 
 				->	*pNum == num				
