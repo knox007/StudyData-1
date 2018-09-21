@@ -31,6 +31,8 @@ using UnityEngine;
         
             -   카메라가 따라다니는 오브젝트가 Update함수 안에서 움직일 경우가 있기 때문.
 
+            -   스크립트의 실행 순서를 장담할 수 없음.
+
 */
 public class UpdateAndFixedUpdate : MonoBehaviour
 {
