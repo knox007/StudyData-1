@@ -14,7 +14,7 @@
 /*
 int main(void)
 {
-	char str[] = "Good morning!";
+	char str[] = "Good morning!";	//	널문자가 자동으로 추가됨.
 
 	printf("문자열 출력 : %s\n", str);
 	printf("\n");
@@ -33,7 +33,13 @@ int main(void)
 	char space = ' ';
 	char newline = '\n';
 	printf("%d, %d, %d\n", null, space, newline);
+	printf("\n");
 
+	char str2[] = "A";
+	printf("문자열 출력 : %s\n", str2);
+	printf("\n");
+	printf("배열 str2의 크기 : %d\n", sizeof(str2));
+	
 	return 0;
 }
 
@@ -92,10 +98,11 @@ int main(void)
 	}
 	printf("\n");
 	
-//	char arr1[] = { 'H', 'i', '~' };
-//	char arr2[] = { 'H', 'i', '~', '\0' };
-
-//	printf("%s,    %s\n", arr1, arr2);
+	
+	//	문자열과 문자배열의 출력.
+	//	char arr1[] = { 'H', 'i', '~' };
+	//	char arr2[] = { 'H', 'i', '~', '\0' };
+	//	printf("%s,    %s\n", arr1, arr2);	
 
 	return 0;
 }
@@ -119,7 +126,7 @@ quiz)	입력받은 영단어의 길이를 출력하는 프로그램.
 /*
 3.	널문자의 필요성
 
-	-	메모리상에서 문자열(모든 데이터)은 이진 데이터로 저장된다.
+	-	메모리상에서 문자열(모든 데이터)은 이진 데이터로 저장됨.
 
 		시작과 끝이 표시되어 있지 않다면 문자열을 구분하는 것은 불가능.
 
