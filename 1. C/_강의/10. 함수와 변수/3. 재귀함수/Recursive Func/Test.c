@@ -50,7 +50,7 @@ int main(void)
 //*/
 //======================================================
 /*
-quiz)	입력한 수 이하 정수의 합을 구하는 재귀 함수
+quiz)	입력한 수 이하 양의 정수의 합을 구하는 재귀 함수
 
 */
 
@@ -79,10 +79,11 @@ int Recursive(int num)
 
 int main(void)
 {
-	int num = Recursive(100);
+	//int num = Recursive(100);
+	int num = Recursive(3);
 
 	printf("%d\n", num);
 
 	return 0;
 }
-*/
+//*/
