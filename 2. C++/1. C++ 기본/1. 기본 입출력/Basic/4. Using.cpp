@@ -26,7 +26,7 @@ int main()
 /*
 	" 지역변수는 전역변수를 가린다 !!! "
 */
-
+/*
 #include <iostream>
 
 using namespace std;
@@ -43,3 +43,4 @@ int main()
 
 	return 0;
 }
+//*/
