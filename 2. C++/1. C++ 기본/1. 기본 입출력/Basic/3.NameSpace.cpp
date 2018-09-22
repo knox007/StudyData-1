@@ -42,6 +42,19 @@
 
 */
 
+/*
+::( 범위 지정 연산자 )
+
+	-	COMPANY_A::Func()
+
+		-	COMPANY_A라는 namespace에 선언되어 있는 Func() 호출.
+
+	-	전역변수 접근용.
+	
+		예)	::val = 100;
+
+*/
+
 
 #include <iostream>
 
@@ -56,20 +69,7 @@ namespace COMPANY_B
 }
 
 int main()
-{
-	/*
-		::( 범위 지정 연산자 )
-
-		-	COMPANY_A::Func()
-
-			-	COMPANY_A라는 namespace에 선언되어 있는 Func() 호출.
-
-		-	전역변수에 접근용.
-
-			예)	::val = 100;
-
-				
-	*/
+{	
 	COMPANY_A::Func();
 	COMPANY_B::Func();
 
