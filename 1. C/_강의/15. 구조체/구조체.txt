@@ -32,18 +32,18 @@
 
 				-	구조체 사용.
 
-					struct point
+					struct SPoint
 					{
-					   int xPos;						
-					   int yPos;
+					   int _xPos;						
+					   int _yPos;
 					}
 
 
-					struct person
+					struct SPerson
 					{
-					   char name[20];	// 이름 표시
-					   char phoneNum[20];	// 전화번호	
-					   int age;		// 나이
+					   char _name[20];	// 이름 표시
+					   char _phoneNum[20];	// 전화번호	
+					   int _age;		// 나이
 					}	
 					
 
@@ -55,9 +55,9 @@
 
 		-	struct	구조체타입  객체이름;
 
-			예)	struct point  pos;
+			예)	struct SPoint pos;
 
-				struct person man;	
+				struct SPerson man;	
 
 
 	2.	멤버변수 접근 방법.
@@ -65,7 +65,7 @@
 
 		-	구조체_변수_이름.멤버변수
 
-			예)	pos.xPos = 10;
+			예)	pos._xPos = 10;
 
 	(소스 참고)
 		
@@ -77,9 +77,30 @@
 3.	구조체 변수의 초기화.
 -------------------------------
 
+	1.	구조체 변수의 초기화 방법은 배열의 초기화와 유사하다.
+
+		-	멤버의 순서대로 초기값을 나열.
+
+			-	초기화 과정에서 문자열 멤버변수의 저장을 위해
+	
+				strcpy등의 함수를 사용하지 않아도 됨.
+
+		예)
+
+			int main()
+			{
+			   struct SPoint pos = {10, 20};
+
+    			   struct SPerson man = {"홍길동", "010-1234-5678", 20};
+
+			   .....	
+
+			   return 0;	
+
+			}
 
 
-
+		
 
 
 
