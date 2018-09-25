@@ -29,3 +29,12 @@ int main()
 	return 0;
 }
 
+
+
+/*
+	QUIZ)
+
+		두개의 매개변수를 서로 바꾸는 swap함수를 만들되
+
+		int, char, double의 값을 서로 바꾸도록 한다.
+*/
