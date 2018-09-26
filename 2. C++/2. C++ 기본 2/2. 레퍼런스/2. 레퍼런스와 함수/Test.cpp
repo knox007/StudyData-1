@@ -39,14 +39,6 @@ int main()
 	레퍼런스를 이용한 성능 향상.
 */
 
-typedef struct
-{
-	int _age;
-	char _name[20];
-	char _phoneNum[20];
-
-} SPerson;
-
 
 /*
 	call by value 방식
@@ -68,7 +60,17 @@ typedef struct
 			-	상수화.
 */
 
-//*
+/*
+
+typedef struct
+{
+	int _age;
+	char _name[20];
+	char _phoneNum[20];
+
+} SPerson;
+
+
 void ShowInfo(SPerson p)
 //	void ShowInfo(SPerson &p)
 {
@@ -92,6 +94,58 @@ int main()
 	cin >> person._phoneNum;
 
 	ShowInfo(person);
+	return 0;
+}
+//*/
+//=====================================================
+/*
+	레퍼런스를 리턴하는 함수	
+*/
+
+/*
+//	잘못된 형태
+
+int& Func()
+{	
+	int val = 10;
+	
+	//	"지역변수는 코드블록과 수명을 함께한다!!!"
+	//	-	val은 Func함수의 종료와 함께 메모리에서 사라진다.
+
+	return val;
+}
+
+int main()
+{
+	int &ref = Func();
+	//	ref라는 이름이 붙어 있던 메모리 공간이 사라져버렸다.
+			
+	cout << ref << endl;
+	//	정상적으로 출력이 되었다하더라도 신뢰할 수 없는 값이 되버림.
+
+	return 0;
+}
+//*/
+//=====================================================
+//	적절한 형태
+
+/*
+int& Func(int &val)	//	2.	val1에 val이라는 이름이 추가됨.
+{
+	val++;
+	return val;	//	3.	val이라는 이름이 사라짐.
+				//		-	메모리 공간이 사라지는 것은 아님.
+}
+
+int main()
+{
+	//	1.	val1 이라는 메모리 공간 할당.
+	int val1 = 10;
+	int &ref = Func(val1);	//	4. ref라는 이름이 추가됨.
+
+	cout << "val1 = " << val1 << endl;
+	cout << "ref = " << ref << endl;
+
 	return 0;
 }
 //*/
