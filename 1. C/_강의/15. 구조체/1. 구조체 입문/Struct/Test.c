@@ -15,6 +15,9 @@
 			-	구조체_변수_이름.멤버변수
 */
 
+
+/*
+
 struct SPoint
 {
 	int _xPos;
@@ -27,8 +30,6 @@ struct SPerson
 	char _phoneNumber[20];
 	int _age;
 };
-
-/*
 
 int main()
 {
@@ -54,6 +55,20 @@ int main()
 //*/
 //======================================================
 /*
+
+struct SPoint
+{
+	int _xPos;
+	int _yPos;
+};
+
+struct SPerson
+{
+	char _name[30];
+	char _phoneNumber[20];
+	int _age;
+};
+
 int main()
 {
 	struct SPerson tmpPerson1,tmpPerson2;
@@ -87,6 +102,18 @@ int main()
 */
 
 /*
+struct SPoint
+{
+	int _xPos;
+	int _yPos;
+};
+
+struct SPerson
+{
+	char _name[30];
+	char _phoneNumber[20];
+	int _age;
+};
 int main()
 {
 	struct SPoint pos = { 10, 20 };
@@ -99,5 +126,86 @@ int main()
 
 	return 0;
 }
+//*/
+//======================================================
+/*
+	4-1.	구조체와 typedef 선언
+
+		-	일반적인 방법.
+*/
+
+
+/*
+typedef int INT;
+typedef int * PTR_INT;
+
+typedef unsigned int UINT;
+typedef unsigned int * PTR_UINT;
+
+typedef unsigned char UCHAR;
+typedef unsigned char * PTR_UCHAR;
+
+int main()
+{
+	INT num1 = 120;
+	PTR_INT pNum1 = &num1;
+
+	UINT num2 = 190;
+	PTR_UINT pNum2 = &num2;
+
+	UCHAR num3 = 'Z';
+	PTR_UCHAR pNum3 = &num3;
+
+	printf("%d %u %c\n", *pNum1, *pNum2, *pNum3);
+
+	return 0;
+}
+
+//*/
+//======================================================
+/*
+	4-2.	구조체와 typedef 선언
+
+		-	구조체에 적용.
+*/
+
+/*
+//	1)
+struct SPoint
+{
+	int _xPos;
+	int _yPos;
+};
+
+typedef struct SPoint SPos;
+
+//	2)
+//typedef struct SPoint
+//{
+//	int _xPos;
+//	int _yPos;
+//
+//}SPos;
+
+//	3)
+typedef struct 
+{
+	char _szName[20];
+	char _szPhoneNum[20];
+	int _nAge;
+
+}SPerson;
+
+int main()
+{
+	SPos pos = { 10,20 };
+	SPerson man = { "홍길동", "010-1234-5678", 20 };
+
+	printf("[%d, %d]\n", pos._xPos, pos._yPos);
+	printf("%s %s %d\n", man._szName, man._szPhoneNum, man._nAge);
+
+	return 0;
+}
+
 //*/
 //======================================================

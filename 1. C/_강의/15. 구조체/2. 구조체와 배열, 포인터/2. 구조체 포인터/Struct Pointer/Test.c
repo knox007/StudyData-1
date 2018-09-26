@@ -4,11 +4,14 @@
 #include <math.h>
 //======================================================
 /*
-1.	구조체 배열의 선언
+1.	구조체 변수와 포인터
 
-	-	일반적인 배열의 선언방식과 동일.
-
+	-	선언 및 초기화.
+	
+	-	접근.
 */
+
+/*
 
 struct SPoint
 {
@@ -16,57 +19,49 @@ struct SPoint
 	int _yPos;
 };
 
-struct SPerson
+int main()
 {
-	char _name[30];
-	char _phoneNumber[20];
-	int _age;
+	struct SPoint pos1 = { 1,2 };
+	struct SPoint pos2 = { 100, 200 };
+	
+	struct SPoint *pPos3 = &pos1;
+	(*pPos3)._xPos += 4;
+	(*pPos3)._yPos += 5;
+	printf("[%d, %d]\n", pPos3->_xPos, pPos3->_yPos);
+
+	pPos3 = &pos2;
+	pPos3->_xPos += 1;
+	pPos3->_yPos += 2;
+	printf("[%d, %d]\n", (*pPos3)._xPos, (*pPos3)._yPos);
+
+	return 0;
+}
+
+//*/
+//======================================================
+/*
+	-	멤버변수로 포인터 사용하기.
+*/
+//======================================================
+//*
+//	1)	다른 타입의 포인터 변수.
+
+struct SPoint
+{
+	int _xPos;
+	int _yPos;
 };
 
-/*
+struct SCircle
+{
+	double _rad;
+	struct SPoint * _pCenter;
+};
+
 int main()
 {
-	struct SPoint arrPos[3];
-
-	int idx;
-
-	for (idx = 0; idx < 3; ++idx)
-	{
-		printf("점의 좌표 입력 : ");
-		scanf("%d %d", &arrPos[idx]._xPos, &arrPos[idx]._yPos);
-	}
 	
-	for (idx = 0; idx < 3; ++idx)
-		printf("[%d, %d] ", arrPos[idx]._xPos, arrPos[idx]._yPos);
-
-	printf("\n");
-
-	return 0;
-}
-
-//*/
-//======================================================
-/*
-
-2.	구조체 배열 초기화
-
-*/
-
-//*
-int main()
-{
-	struct SPerson avengers[3] = 
-	{
-		{"IronMan", "010-1234-5678", 50},
-		{ "Hulk", "010-1234-5678", 40 },
-		{ "SpiderMan", "010-1234-5678", 30 }
-	};
-
-	int idx = 0;
-	for (idx = 0; idx < 3; ++idx)
-		printf("%s %s %d\n", avengers[idx]._name, avengers[idx]._phoneNumber, avengers[idx]._age);
 
 	return 0;
 }
 //*/
-//======================================================
