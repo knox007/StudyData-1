@@ -1,0 +1,82 @@
+﻿/// 벡터 ////////////////////////////////////////////////////
+-----------
+1.	특징
+-----------
+
+	-	크기와 방향을 지님.
+
+	-	시작점이 다르더라도 크기와 방향이 일치하면 같은 벡터.
+
+-----------
+2.	주요 연산
+-----------
+
+	-	덧셈
+		
+		-	A + B
+		
+			-	주로 트랜스폼의 위치 이동에 사용.
+
+			-	피연산자의 순서는 결과와 무관.
+
+
+	-	뺄셈
+
+		-	B - A
+
+			-	A지점에서 B지점으로 향하는 방향과 거리 측정.
+
+			-	피연산자의 순서에 따라 결과가 달라짐.
+
+	
+	-	단위 벡터
+
+		-	크기가 1인 벡터.
+
+
+	-	벡터 정규화
+
+		-	벡터를 단위 벡터로 만드는 것.
+
+		-	Vector3.Normalize()
+				
+			-	해당 벡터의 정규화된 값을 전달한다.
+
+				-	해당 벡터의 값이 변화되진 않는다.
+
+			-	https://docs.unity3d.com/kr/530/ScriptReference/Vector3-normalized.html
+
+			
+		-	Vector3.Normalize()
+
+			-	해당 벡터의 값을 정규화한다.
+
+				-	해당 벡터의 값이 변화된다.
+
+			-	https://docs.unity3d.com/kr/530/ScriptReference/Vector3.Normalize.html
+
+
+	-	벡터간 거리 측정.
+
+		-	1)	Vector3.Distance
+
+				-	https://docs.unity3d.com/ScriptReference/Vector3.Distance.html
+		
+			2)	Vector3.magnitude
+
+				-	https://docs.unity3d.com/ScriptReference/Vector3-magnitude.html
+			
+			3)	Vector3.sqrMagnitude
+
+				-	https://docs.unity3d.com/ScriptReference/Vector3-sqrMagnitude.html
+
+			-	1),2)번은 결과 및 계산방식 동일.
+
+			-	3)은 루트 연산을 하지 않으므로 연산속도가 더 빠름
+
+			-	단순 거리 비교용이라면 3)번 권장.
+
+	
+	-	벡터의 내적과 외적
+
+		-	http://rapapa.net/?p=2974
