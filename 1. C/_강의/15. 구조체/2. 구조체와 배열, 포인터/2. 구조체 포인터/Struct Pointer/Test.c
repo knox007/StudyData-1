@@ -78,21 +78,74 @@ int main()
 //*/
 
 
-//*
+/*
 //	2)	자신과 같은 타입의 포인터 변수.
-typedef struct
+typedef struct SPoint
 {
 	int _xPos;
 	int _yPos;
-	SPoint *pPoint;
 
-}SPoint;
+	struct SPoint *_pPoint;
+
+} SPoint;
 
 int main()
 {
+	SPoint pos1 = { 1,1 };
+	SPoint pos2 = { 2,2 };
+	SPoint pos3 = { 3,3 };
 
+	pos1._pPoint = &pos2;
+	pos2._pPoint = &pos3;
+	pos3._pPoint = &pos1;
+
+	printf("점의 연결 관계\n");
+	printf("[%d, %d]와(과) [%d, %d]가 연결\n",
+		pos1._xPos, pos1._yPos, pos1._pPoint->_xPos,pos1._pPoint->_yPos);
+
+	printf("[%d, %d]와(과) [%d, %d]가 연결\n",
+		pos2._xPos, pos2._yPos, pos2._pPoint->_xPos, pos2._pPoint->_yPos);
+
+	printf("[%d, %d]와(과) [%d, %d]가 연결\n",
+		pos3._xPos, pos3._yPos, pos3._pPoint->_xPos, pos3._pPoint->_yPos);
 
 	return 0;
 }
 
 //*/
+//======================================================
+/*
+	-	구조체변수의 주소와 첫번째 멤버의 주소.
+
+		-	구조체 변수의 주소 값 == 첫번째 멤버의 주소 값.
+*/
+
+/*
+typedef struct
+{
+	int _xPos;
+	int _yPos;
+
+}SPos;
+
+typedef struct
+{
+	char _name[20];
+	char _phoneNum[20];
+	int _age;
+
+}SPerson;
+
+int main()
+{
+	SPos pos = { 10, 10 };
+	SPerson person = { "홍길동","010-1234-5678", 20 };
+
+	printf("%p %p\n", &pos, &pos._xPos);
+	printf("%p %p\n", &person, person._name);
+
+	return 0;
+}
+
+//*/
+//======================================================
