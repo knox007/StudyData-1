@@ -1,78 +1,107 @@
 //=====================================================
 /*
-	레퍼런스
+	레퍼런스와 함수.
 
-		-	이름이 존재하는 메모리 공간(변수)에 하나의 이름을 더 부여하는 행위.
-
-			-	변수에 별명을 붙여주는 행위.
-
-		-	키워드 & 사용.
-
-			-	두가지 용법
-
-				예)
-					int nVal = 10;
-
-					int *pVal = &nVal;	//	주소값 얻기.
-
-					int &rVal = nVal;	//	레퍼런스 선언.
-
-			
+		-	포인터와 같이 Call by Reference 구현 가능.			
 */
 //=====================================================
 #include<iostream>
 using namespace std;
 //=====================================================
-int Func1()
+/*
+void Swap(int &a, int &b)
 {
-	int nVal = 20;
-	int &ref = nVal;
-
-	return nVal;
+	int temp = a;
+	a = b;
+	b = temp;
 }
-int Func2()
-{
-	int nVal = 20;
-	int &ref = nVal;
 
-	return ref;	//	ref는 int형 레퍼런스인데도 반환이 가능하다.
-}
 int main()
 {
-	int nVal = 10;
+	int val1 = 10;
+	int val2 = 20;
 
-	int &ref = nVal;
+	cout << "--- before ---" << endl;
+	cout << "val1 = " << val1 << endl;
+	cout << "val2 = " << val2 << endl;
 
-	nVal++;
-	cout << "nVal : " << nVal <<endl;
-	cout << "ref : " << ref << endl;
+	Swap(val1, val2);
 
-	ref++;
-	cout << "nVal : " << nVal << endl;
-	cout << "ref : " << ref << endl;
-
-	cout << "Func1() : " << Func1() << endl;
-	cout << "Func2() : " << Func2() << endl;
+	cout << "--- after ---" << endl;
+	cout << "val1 = " << val1 << endl;
+	cout << "val2 = " << val2 << endl;
 
 	return 0;
 }
-/*
-	확인
-
-		-	레퍼런스를 가지고 하는 연산은 해당 참조변수를 가지고 하는 연산과 같은 효과를 지님.
-
-			-	레퍼런스와 변수는 생성과정의 차이만 있을뿐 생성되고나면 거의 같은 것이다.
-
-			-	상황에 따라 아주 미묘한 차이가 있다.
-
-				-	"클래스의 상속과 다형성"에서 다시 언급.
-*/
+//*/
 //=====================================================
 /*
-	주의 사항
-		
-		-	선언과 동시에 초기화가 되어야함.
-
-		-	상수로 초기화 불가능.
+	레퍼런스를 이용한 성능 향상.
 */
+
+typedef struct
+{
+	int _age;
+	char _name[20];
+	char _phoneNum[20];
+
+} SPerson;
+
+
+/*
+	call by value 방식
+	
+	-	매개변수 p에 값을 복사한다.
+
+		-	이 과정에서 복사되는 바이트의 수는
+
+			int(4byte) + char[20](20byte) + char[20](20byte) = 44byte.
+
+	call by reference 방식 ( by 레퍼런스 )
+	
+	-	해당 변수에 이름만 하나더 추가하는 방식이므로 복사는 발생하지 않음.
+
+	-	하지만 함수내부에서 여전히 레퍼런스를 변경할 가능성은 존재.
+
+		-	해결할 방법은??
+
+			-	상수화.
+*/
+
+//*
+void ShowInfo(SPerson p)
+//	void ShowInfo(SPerson &p)
+{
+	cout << "--- 개인 정보 ---" << endl;
+	cout << "이름 : " << p._name << endl;
+	cout << "전화번호 : " << p._phoneNum<< endl;
+	cout << "나이 : " << p._age<< endl;
+}
+
+int main()
+{
+	SPerson person;
+
+	cout << "이름 : ";
+	cin >> person._name;
+
+	cout << "나이 : ";
+	cin >> person._age;
+
+	cout << "전화번호 : ";
+	cin >> person._phoneNum;
+
+	ShowInfo(person);
+	return 0;
+}
+//*/
 //=====================================================
+
+
+
+
+
+
+
+
+
