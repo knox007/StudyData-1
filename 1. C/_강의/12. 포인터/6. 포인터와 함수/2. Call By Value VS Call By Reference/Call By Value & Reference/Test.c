@@ -61,6 +61,8 @@ int main(void)
 
 
 /*
+//	혹시 함수오버로딩을 이용하려한다면 포기할 것.
+//	함수 오버로딩은 c++에 도입 
 void SwapPtr(int *pn1, int *pn2)
 {
 	int tmp = *pn1;
@@ -102,6 +104,27 @@ void SwapPtr(int *pn1, int *pn2)
 		 num2	->	num3
 		 num3	->	num1
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
