@@ -115,7 +115,7 @@ int main(void)
 
 			-	포인터의 타입은 메모리 공간을 참조하는 기준이 된다.
 
-				예)	return pNum;
+				예)	return *pNum;
 
 					-	pNum에 저장된 주소로부터 몇바이트를 읽어들여야 하는가?
 

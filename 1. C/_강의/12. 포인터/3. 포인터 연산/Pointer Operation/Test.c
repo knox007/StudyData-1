@@ -66,7 +66,7 @@ int main(void)
 	int c = *(ptr + 1);
 
 	//	실행결과는??
-	//printf("%d, %d, %d\n", a, b, c);
+	printf("%d, %d, %d\n", a, b, c);
 }
 //*/
 //======================================================
@@ -98,3 +98,42 @@ int main(void)
 	ptr을 이용하여 모든 배열요소의 값을 2씩 증가시킨 후 출력.
 
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+int main(void)
+{
+	int arr[] = { 1,2,3,4,5 };
+
+	int *ptr = arr;
+
+	printf("--- before ---\n");
+	for (int cur = 0; cur < 5; ++cur)
+		printf("%d\n", *(ptr + cur));
+
+	for (int cur = 0; cur < 5; ++cur)
+		*(ptr + cur) += 2;
+
+	printf("--- after ---\n");
+	for (int cur = 0; cur < 5; ++cur)
+		printf("%d\n", *(ptr + cur));
+
+	return 0;
+}
+//*/
