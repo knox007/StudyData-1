@@ -436,11 +436,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1254834703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916ab77b4a9aafe449d6eb72441828bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e610421021058b44bf676aeb9d5b251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
-  _axisState: {fileID: 113739737}
+  _axisRawState: {fileID: 113739737}
 --- !u!1 &1799212303
 GameObject:
   m_ObjectHideFlags: 0
