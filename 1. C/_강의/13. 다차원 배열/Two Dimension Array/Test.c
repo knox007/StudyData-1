@@ -331,6 +331,11 @@ int main(void)
 
 					-	열의 크기를 명시해줌으로서 초기화 기준 제시
 
+						예)	int arr[][2] = {1,2,3,4,5,6,7,8};
+							
+							int arr[][4] = {1,2,3,4,5,6,7,8};
+
+
 		=>	2차원 배열을 선언과 동시에 초기화 하는 경우
 
 			배열의 행의 크기만 생략이 가능.		
@@ -360,3 +365,43 @@ int main(void)
 
 		과 같은 형태로 초기화 한다.
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//*
+int main(void)
+{
+	int arr1[2][4] = { 1,2,3,4, 5,6,7,8 };
+	int arr2[4][2] = { 0, };
+
+	printf("--- arr1 ---\n");
+	for (int row = 0; row < 2; ++row)
+		for (int col = 0; col < 4; ++col)
+			printf("[%d, %d] = %d\n", row, col, arr1[row][col]);
+
+	for (int row = 0; row < 2; ++row)
+	{
+		for (int col = 0; col < 4; ++col)
+			arr2[col][row] = arr1[row][col];
+	}
+
+	printf("--- arr2 ---\n");
+	for (int row = 0; row < 4; ++row)
+		for (int col = 0; col < 2; ++col)
+			printf("[%d, %d] = %d\n", row, col, arr2[row][col]);
+
+	return 0;
+}
+//*/
