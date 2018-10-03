@@ -10,7 +10,7 @@
 
 		예)
 
-			int형 변수 : int num	->	int형 배열 : int arr[10];
+			int형 변수 : int num			->	int형 배열 : int arr[10];
 
 			SPoint형 변수 : struct SPoint pos	->	SPoint형 배열 : struct SPoint arr[10];
 
