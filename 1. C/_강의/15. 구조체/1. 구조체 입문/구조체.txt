@@ -41,7 +41,7 @@
 
 					struct SPerson
 					{
-					   char _name[20];	// 이름 표시
+					   char _name[20];		// 이름 표시
 					   char _phoneNum[20];	// 전화번호	
 					   int _age;		// 나이
 					}	
