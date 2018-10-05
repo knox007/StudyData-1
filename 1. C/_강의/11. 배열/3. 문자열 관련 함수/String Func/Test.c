@@ -42,11 +42,11 @@ int main()
 	strcpy(szTmp1, szOrigin);
 	printf("%s\n", szTmp1);
 
-	// strcpy 1
+	// strncpy 1
 	strncpy(szTmp2, szOrigin, sizeof(szTmp2));
 	printf("%s\n", szTmp2);
 
-	// strcpy 2
+	// strncpy 2
 	strncpy(szTmp2, szOrigin, sizeof(szTmp2)-1);
 	szTmp2[sizeof(szTmp2) - 1] = 0;
 	printf("%s\n", szTmp2);
@@ -108,7 +108,7 @@ int main()
 	{
 		printf("다른 문자열!!\n");
 
-		if( !strncmp(szTmp1, szTmp2, 3))
+		if( !strncmp((szTmp1 + 1), szTmp2, 3))
 			printf("하지만 앞 3글자는 동일!!\n");
 	}
 
@@ -151,4 +151,66 @@ int main()
 		예)	ad8a9aadf0a12
 
 			-> 8 + 9 + 0 + 1 + 2 = 20
+
+		힌트) 아스키코드표 참고.
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+int CharToNumber(char cWord) { return cWord - '0'; }
+
+int main()
+{
+	char szWords[30] = "a9b4c31";
+
+	int len = strlen(szWords);
+
+	int sum = 0;
+	for (int cur = 0; cur < len; ++cur)
+	{
+		if ('0' <= szWords[cur] && szWords[cur] <= '9')
+			sum += CharToNumber(szWords[cur]);
+	}
+
+	printf("%s의 숫자들의 합 : ", szWords);
+	printf("%d\n", sum);
+
+	return 0;
+}
+//*/

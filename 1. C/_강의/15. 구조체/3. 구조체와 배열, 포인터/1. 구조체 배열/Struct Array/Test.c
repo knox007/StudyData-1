@@ -10,23 +10,17 @@
 
 */
 
-struct SPoint
+/*
+typedef struct 
 {
 	int _xPos;
 	int _yPos;
-};
+}SPoint;
 
-struct SPerson
-{
-	char _name[30];
-	char _phoneNumber[20];
-	int _age;
-};
 
-/*
 int main()
 {
-	struct SPoint arrPos[3];
+	SPoint arrPos[3];
 
 	int idx;
 
@@ -52,7 +46,15 @@ int main()
 
 */
 
-//*
+/*
+struct SPerson
+{
+	char _name[30];
+	char _phoneNumber[20];
+	int _age;
+};
+
+
 int main()
 {
 	struct SPerson avengers[3] = 
@@ -70,3 +72,12 @@ int main()
 }
 //*/
 //======================================================
+/*
+	Quiz)
+
+		위 예문을 참고하여
+
+		외부로 부터 데이터를 입력받고 배열에 저장한뒤 순서대로 출력하는
+
+		프로그램을 만든다.
+*/

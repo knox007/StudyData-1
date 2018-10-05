@@ -59,31 +59,7 @@
 3.	strcat / strncat
 -----------------
 
-
-	1.	실수.
-
-		int main()
-		{
-
-			char str1[] = "My String";
-
-			char str2[] = "My String";				
-
-			if( str1 == str2 )
-
-				....
-
-			else
-
-				....
-
-			return;
-
-		}
-
-
-
-	2.	원형
+	1.	원형
 
 		#include <string.h>
 
@@ -104,6 +80,26 @@
 -----------------
 4.	strcmp / strncmp
 -----------------
+	1.	실수.
+
+		int main()
+		{
+
+			char str1[] = "My String";
+
+			char str2[] = "My String";				
+
+			if( str1 == str2 )
+
+				....
+
+			else
+
+				....
+
+			return;
+
+		}
 
 	1.	원형
 

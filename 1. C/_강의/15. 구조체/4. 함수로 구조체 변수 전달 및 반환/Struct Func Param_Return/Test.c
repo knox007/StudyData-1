@@ -121,6 +121,8 @@ int main()
 
 
 /*
+	-	4칙 연산은 왜 안되나?
+
 	SPoint pos3 = pos1 + pos2;
 	printf("크기 : %d\n", sizeof(pos3));
 	printf("[%d, %d]\n", pos3._xPos, pos3._yPos);
