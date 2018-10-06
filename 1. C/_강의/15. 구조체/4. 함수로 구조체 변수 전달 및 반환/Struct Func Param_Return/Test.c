@@ -114,7 +114,7 @@ int main()
 
 	printf("Å©±â : %d\n", sizeof(pos2));
 	printf("[%d, %d]\n", pos2._xPos, pos2._yPos);
-
+	
 	return 0;
 }
 //*/

@@ -61,8 +61,10 @@ int main()
 	pszName2 = ReadUserName();
 	printf("¿Ã∏ß : %s\n", pszName2);
 
+	
 	printf("pszName1 : %s\n", pszName1);
 	printf("pszName2 : %s\n", pszName2);
+	
 
 	return 0;
 }

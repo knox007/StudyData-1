@@ -17,7 +17,7 @@
 				-	데이터 절감을 목적으로 사용.
 */
 
-//*
+/*
 //---------------------------
 typedef struct
 {
@@ -88,11 +88,7 @@ int main()
 
 			-	마지막 이름 다음에 나오는 쉼표의 유무는 의미 없음.
 
-			-	이름의 중복을 허용하지 않음.
-
-				
-
-
+			-	이름과 값의 중복을 허용하지 않음.
 
 */
 
@@ -105,7 +101,8 @@ typedef enum eLocation
 	CITY,
 	SCHOOL,
 	HOSPITAL,
-	//HOSPITAL=1,
+	//	HOSPITAL,	//	이름 중복 (X)
+	//	HOSPITAL=1,	//	값 중복 (X)
 
 	EXIT,
 
@@ -117,14 +114,14 @@ int main()
 	{
 		printf("1. 도시\t2. 학교\t3. 병원\n");
 		printf("이동할 곳을 입력하세요 (4 : 종료)");
-		int location;
-		scanf("%d", &location);
-		//	eLOCATION eLoc;
-		//	scanf("%d", (int*)&eLoc);
+		//int location;
+		//scanf("%d", &location);
+			eLOCATION eLoc;
+			scanf("%d", (int*)&eLoc);
 		printf("\n");
 
-		switch ( location - 1)
-		//	switch (eLoc - 1)
+		//switch ( location - 1)
+			switch (eLoc - 1)
 		{
 		case CITY:
 			printf("도시로 이동\n");
