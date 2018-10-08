@@ -5,185 +5,154 @@
 /*
 	1.	파일 입출력 함수. ( 자주 사용. )
 
-		-	바이너리 데이터의 입출력
+		-	서식에 따른 데이터 입출력
 
-			-	size_t fread( void *buffer, size_t size, size_t count, FILE *stream );
+			-	 fprintf / fscanf
 
-				-	buffer	:	읽어드린 데이터가 저장될 버퍼.
+				-	int fprintf( FILE *stream, const char *format [,argument ]...);
+					
+					-	파일 출력.
+				
+					int fscanf( FILE *stream, const char *format [, argument ]...);
 
-				-	size	:	항목 크기.
+					-	파일 읽기.
+					
+					참고)	int printf( const char *format [, argument]...);
 
-				-	count	:	항목 갯수.
+							int scanf( const char *format [, argument]...);
 
-				-	stream	:	읽어드릴 파일 포인터.
+							-	매개변수로 가변인자 사용.
 
-				-	반환값	:	성공					-	매개변수 count 값.
+							-	적용 대상이 다를 뿐.( 파일 / 콘솔 )
 
-														-	성공했지만 count를 다 읽지못한채
+							-	fscanf의 경우 파일을 읽다가 파일 끝에 도달하거나 
 
-															파일의 끝에 도달하는 경우
-															
-															count 보다 작은 값 반환.
-
-								실패, 파일 끝 도달 시	-	count 보다 작은 값.
-
-
-		-	size_t fwrite( const void *buffer, size_t size, size_t count, FILE *stream );
-
-				-	buffer	:	저장할 데이터의 포인터.
-
-				-	반환값	:	성공	-	매개변수 count 값.
-
-								실패	-	count 보다 작은 값.
-
+								에러가 생기면 EOF를 반환.
+							
 */
-//======================================================
-/*	파일 저장.
+
+/*	fprintf
 int main()
 {
-	int buf[7] = { 1,2,3,4,5,6,7 };
+	char szName[10];
+	char gender = 'm';
+	int age;
+	
+	FILE* pFile = fopen("friend.txt", "wt");
 
-	FILE* pfSrc = fopen("src.bin", "wb");
-
-	if (pfSrc == NULL)
+	if (pFile == NULL)
 	{
-		puts("파일 열기 실패");
+		puts("파일 열기 실패!!");
 		return -1;
 	}
 
-	fwrite(buf, sizeof(int), 7, pfSrc);
+	for (int i = 0; i < 3; ++i)
+	{
+		puts("이름 성별 나이 순으로 입력");
+		scanf("%s %c %d", szName, &gender, &age);	//	엔터키의 입력을 읽어들이지 않고 입력 버퍼에 남겨둔다.
+		getchar();									//	입력 버퍼에 남아있는 엔터키의 소멸을 위해 getchar호출.
+		fprintf(pFile, "%s %c %d", szName, gender, age);
+	}
+	
+	fclose(pFile);
+	return 0;
 
-	fclose(pfSrc);
+}
+//*/
+
+
+
+/*	fscanf
+
+int main()
+{
+	char szName[10];
+	char gender = 'm';
+	int age;
+
+	FILE* pFile = fopen("friend.txt", "rt");
+
+	if (pFile == NULL)
+	{
+		puts("파일 열기 실패!!");
+		return -1;
+	}
+
+	int res = 0;
+
+	while (1)
+	{
+		res = fscanf(pFile, "%s %c %d", szName, &gender, &age);
+		if (res == EOF)
+			break;
+
+		printf("%s %c %d\n", szName, gender, age);
+	}
+
+	fclose(pFile);
 
 	return 0;
+
 }
 //*/
 //======================================================
-/*	파일 로딩.
+/*
+	2.	구조체 객체의 입출력
+
+		-	구조체 객체를 하나의 바이너리 데이터로 인식하고 처리.
+
+		-	fwrite와 fread로 통째로 처리.
+
+*/
+
+/*
+typedef struct
+{
+	char _szName[20];
+	char _gender;
+	int _age;
+
+} SFriendInfo;
+
 int main()
 {
-	int buf[7] = { 0, };
+	FILE* pFile;
 
-	FILE* pfSrc = fopen("src.bin", "rb");
+	SFriendInfo myFriend1;
+	SFriendInfo myFriend2;
 
-	if (pfSrc == NULL)
+	//-----------------------
+	//	fwrite
+	pFile = fopen("FriendInfo.bin", "wb");
+	if (pFile == NULL)
 	{
-		puts("파일 열기 실패");
+		puts("파일 열기 실패 (쓰기 모드)");
 		return -1;
 	}
 
-	fread(buf, sizeof(int), 7, pfSrc);
+	puts("이름, 성별, 나이 순으로 입력");
+	scanf("%s %c %d", myFriend1._szName, &myFriend1._gender, &myFriend1._age);
+	fwrite( &myFriend1, sizeof(myFriend1), 1, pFile);
+	fclose(pFile);
 
-	for (int cur = 0; cur < 7; ++cur)
-		printf("%d ", buf[cur]);
+	//------------------------
+	//	fread
+	pFile = fopen("FriendInfo.bin", "rb");
+	if (pFile == NULL)
+	{
+		puts("파일 열기 실패 (읽기 모드)");
+		return -1;
+	}
+	fread(&myFriend2, sizeof(myFriend2), 1, pFile);
+	printf("%s %c %d\n", myFriend2._szName, myFriend2._gender, myFriend2._age);
 
-	printf("\n");
-
-	fclose(pfSrc);
+	fclose(pFile);
 
 	return 0;
 }
 //*/
 //======================================================
 /*
-Quiz)	fread / fwrite 를 이용해 파일 복사 프로그램 작성.
+	Quiz)	위의 예제를 fpritf / fscanf로 바꿔서 적용.
 */
-//======================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*	파일 복사.
-int main()
-{
-	FILE* pfSrc = fopen("src.bin", "rb");
-	FILE* pfDst = fopen("dst.bin", "wb");
-
-	if (pfSrc == NULL || pfDst == NULL)
-	{
-		puts("파일 열기 실패!!");
-		return -1;
-	}
-
-	int readCount = 0;
-	int readBuf[7] = { 0 };
-	
-
-//	readCount = fread(readBuf, sizeof(int), 7, pfSrc);
-//	fwrite(readBuf, sizeof(int), 7, pfDst);
-
-	while (1)
-	{
-		readCount = fread(readBuf, sizeof(int), 7, pfSrc);
-
-		if (readCount < 7)
-		{
-			if (feof(pfSrc) != 0)
-			{
-				fwrite(readBuf, sizeof(int), readCount, pfDst);
-				puts("파일 복사 완료");
-				break;
-			}
-			else
-				puts("파일 복사 실패!!!ㅠㅠ");
-
-			break;
-		}
-
-		fwrite(readBuf, sizeof(int), 7, pfDst);
-	}
-
-	fclose(pfSrc);
-	fclose(pfDst);
-
-	return 0;
-}
-//*/
 //======================================================
