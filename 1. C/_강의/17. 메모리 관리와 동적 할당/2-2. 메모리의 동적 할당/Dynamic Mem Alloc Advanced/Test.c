@@ -43,7 +43,7 @@ int main()
 	ptr = &num;
 	printf("ptr = %p\n", ptr);
 
-	//	*ptr = 30;
+	//	ptr = 30;
 	//	++ptr;
 
 	ptr = SimpleFunc;

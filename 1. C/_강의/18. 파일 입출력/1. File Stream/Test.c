@@ -1,7 +1,6 @@
 //======================================================
 #pragma warning (disable : 4996)
 #include <stdio.h>
-#include <math.h>
 //======================================================
 /*
 	1.	파일 입출력
@@ -209,6 +208,8 @@ int main()
 
 					오류 발생시 NULL 반환.
 
+				-	개행 문자를 만나거나 max-1 개를 읽으면 마지막에 종료 문자를 추가.
+
 			-	int fputs( const char *str, FILE *stream );
 
 		
@@ -377,9 +378,8 @@ int main()
 	puts("파일 복사 시작!!");
 	if (pfSrc == NULL || pfDst == NULL)
 	{
-	puts("파일 오픈 실패!!");
-
-	return -1;
+		puts("파일 오픈 실패!!");
+		return -1;
 	}
 
 	while ((fgets( str, sizeof(str), pfSrc)) != NULL)
