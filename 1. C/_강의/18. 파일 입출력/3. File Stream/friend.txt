@@ -1,1 +1,1 @@
-aaa m 20bbb w 20ccc m 21
+aaa m 20bbb w 11ccc w 33

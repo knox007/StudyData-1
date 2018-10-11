@@ -105,7 +105,7 @@ int main()
 
 */
 
-/*
+//*
 typedef struct
 {
 	char _szName[20];

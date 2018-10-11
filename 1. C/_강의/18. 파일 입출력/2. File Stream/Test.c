@@ -140,7 +140,7 @@ Quiz)	fread / fwrite 를 이용해 파일 복사 프로그램 작성.
 
 
 
-/*	파일 복사.
+//*	파일 복사.
 int main()
 {
 	FILE* pfSrc = fopen("src.bin", "rb");
@@ -155,17 +155,20 @@ int main()
 	int readCount = 0;
 	int readBuf[7] = { 0 };
 	
+	//	방법 1)
+	//	readCount = fread(readBuf, sizeof(int), 7, pfSrc);
+	//	fwrite(readBuf, sizeof(int), 7, pfDst);
 
-//	readCount = fread(readBuf, sizeof(int), 7, pfSrc);
-//	fwrite(readBuf, sizeof(int), 7, pfDst);
-
+	
+	//	방법 2)
 	while (1)
 	{
 		readCount = fread(readBuf, sizeof(int), 7, pfSrc);
 
 		if (readCount < 7)
 		{
-			if (feof(pfSrc) != 0)
+			int errCode = feof(pfSrc);
+			if (errCode != 0)
 			{
 				fwrite(readBuf, sizeof(int), readCount, pfDst);
 				puts("파일 복사 완료");
