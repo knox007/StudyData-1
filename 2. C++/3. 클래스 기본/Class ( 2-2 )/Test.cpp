@@ -155,10 +155,34 @@ using namespace std;
 			
 			-	생성자의 특징
 
-				-	생성자를 정의하지 않으면 컴파일러에 의해 기본 생성자(매개변수가 없는 생성자)가 자동 삽입됨.
+				-	생성자를 정의하지 않으면 컴파일러에 의해 기본 생성자(매개변수가 없는 생성자)가 자동 삽입되며
+				
+					아무일도 하지 않음.	( 디폴트 생성자. )
 
-					-	디폴트 생성자.
+					예)
+						class CTest
+						{
+								int _x, _y;
 
+							public:
+
+								void DoSomething() {...}
+								.....
+						}
+
+
+						class CTest
+						{
+								int _x, _y;
+
+							public:
+
+								CTest() {}
+
+								void DoSomething() {...}
+								.....
+						}
+				
 					-	생성자가 하나라도 정의되어 있다면 디폴트 생성자는 생성되지 않음.
 
 						예)	class CTest
@@ -207,8 +231,138 @@ using namespace std;
 
 				-	오버로딩 안됨.
 
+			-	동적으로 메모리를 할당하는 멤버변수가 있다면
+
+				반드시 소멸자를 정의하여 처리해줘야 함.
 
 
-	
+			-	소멸자를 정의해주지 않으면 디폴트 소멸자가 자동으로 삽입되며
+
+				아무런 일도 하지않는다.
+
+				예)
+				class CTest
+				{
+						int _x, _y;
+
+					public:
+
+						void DoSomething() {...}
+						.....
+				}
+
+
+				class CTest
+				{
+						int _x, _y;
+
+					public:
+
+						CTest() {}
+
+						~CTest() {}
+
+						void DoSomething() {...}
+						.....
+				}
 */
+//=================================================
+/*
+	Quiz - 1)	직사각형을 나타내는 CRectangle,
+				원을 나타내는 CCircle 클래스를
+				다음과 같이 사용할 수 있도록 구현한다.
+
+			CRectangle _rec(가로,세로);
+			_rec.GetArea();		//	면적
+			_rec.GetGirth();	//	둘레
+
+			CCircle	_circle(반지름);
+			_circle.GetArea();	//	면적
+			_circle.GetGirth();	//	둘레
+
+
+	Quiz - 2)	시,분,초를 관리하는 CTime클래스를
+				다음과 같이 사용할 수 있도록 구현한다.
+		
+			CTime _time(시);
+			CTime _time(시,분);
+			CTime _time(시,분,초);
+
+			_time.ShowTime();		->	xx시 xx분 xx초
+			_time.ShowTimeInSec();	->	xx초.
+
+*/
+//=================================================
+/*
+	3 - 1.	this 포인터
+
+		-	자기 참조 포인터.
+
+			-	자기 자신을 가리키는 포인터.
+
+*/
+//=================================================
+
+/*
+class CTest
+{
+public:
+	CTest * GetThis() { return this; }
+};
+
+int main()
+{
+	CTest* pTest = new CTest();
+
+	cout << pTest << endl;
+	cout << pTest->GetThis() << endl;
+	
+	return 0;
+}
+//*/
+
+
+/*
+	3 - 2.	this포인터의 활용.
+
+		-	매개변수로 멤버변수 값을 할당할때 
+
+			매개변수의 이름과 멤버변수의 이름이 같을때 구분.
+*/
+
+/*
+class CTest
+{
+public:
+	int aa, bb;
+		
+	CTest(int aa, int bb)
+	{
+		aa = aa;
+		bb = bb;
+	}
+		
+	//CTest(int aa, int bb)
+	//{
+	//	this->aa = aa;
+	//	this->bb = bb;
+	//}	
+
+	void ShowData()
+	{
+		cout << aa << "  " << bb << endl;
+	}
+};
+
+int main()
+{
+	CTest* pTest = new CTest(3,3);
+
+	//	결과는???
+	pTest->ShowData();
+
+	return 0;
+}
+
+//*/
 //=================================================
