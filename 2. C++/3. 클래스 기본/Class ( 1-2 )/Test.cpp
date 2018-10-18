@@ -89,7 +89,7 @@ using namespace std;
 /*
 	4.	멤버함수 외부 정의.
 
-		-	멤버함수를 클래스 외부제 정의하기.
+		-	멤버함수를 클래스 외부에 정의하기.
 
 			class CTest
 			{
@@ -101,7 +101,7 @@ using namespace std;
 			void CTest::Play()
 			{ .... }
 
-			-	반환형	클래스이름::( 범위지정 연산자 ) 함수이름(매개변수)
+			-	반환형	클래스이름::함수이름(매개변수)
 				{ 
 					.......
 				}
@@ -136,10 +136,14 @@ using namespace std;
 
 			cal.Init();	//	멤버변수 초기화.
 
-			int sum		= cal.Sum(1,2);
-			int minus	= cal.Minus(5,2);
-			int multi	= cal.Multi(2,3);
-			int div		= cal.Divide(4,2);
+			cal.Sum(1,2);
+			cal.ShowResult();
+			cal.Minus(5,2);
+			cal.ShowResult();
+			cal.Multi(2,3);
+			cal.ShowResult();
+			cal.Divide(4,2);
+			cal.ShowResult();
 
 
 */

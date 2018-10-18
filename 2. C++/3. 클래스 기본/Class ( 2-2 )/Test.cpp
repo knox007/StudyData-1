@@ -79,7 +79,7 @@ using namespace std;
 
 				¿¹)	class CTest				
 					{
-						int _a,-b;
+						int _a,_b;
 
 						public:
 
