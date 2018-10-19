@@ -171,7 +171,50 @@ int main()
 //*/
 //=================================================
 /*
-	4.	세가지 형태의 상속
+	4.	Protected 멤버.
+
+		-	public과 private의 중간 정도되는 접근제한.
+
+		-	외부에서는 private, 상속관계에서는 public으로 처리.
+
+			->	기본적으로 private과 같으나
+
+				상속관계에 놓여있는 경우에는 접근을 허용함.
+*/
+//=================================================
+/*
+class CBase
+{
+	int _a;
+protected:
+	int _b;
+};
+
+class CChild : public CBase
+{	
+	public void SetData()
+	{	_a = 10;	//	private
+		_b = 20;	//	protected, 상속 관계에서는 public!!
+	}
+};
+
+int main()
+{
+	CBase base;
+	base._a = 10;	//	private
+	base._b = 20;	//	protected, 외부에서는 private!!
+
+	
+	CChild child;
+	child.SetData();
+
+	return 0;
+}
+
+//*/
+//=================================================
+/*
+	5.	세가지 형태의 상속
 
 						|	public		|	protected	|	private		|
 	---------------------------------------------------------------------
@@ -186,45 +229,45 @@ int main()
 
 		나머지 상속은 본인보다 접근 권한이 넓으면 해당 상속 형태로 변환한다.
 
-		->	private vs 접근 불가 ???
+	->	private vs 접근 불가 ???
 */
 //=================================================
 /*
-	Quiz)	
+	Quiz)
 
-		은행 계좌 정보를 관리하는 클래스
-		
-		class CAccount
+	은행 계좌 정보를 관리하는 클래스
+
+	class CAccount
+	{
+		int _money;
+		char _accNum[20];
+
+	public :
+
+		CAccount(char* pszAccNum, int money )
 		{
-			int _money;
-			char _accNum[20];
-
-			public :
-
-			CAccount(char* pszAccNum, int money )
-			{
-				strcpy(_accNum, pAszAccnum);
-				_money = money;
-			}
+			strcpy(_accNum, pAszAccnum);
+			_money = money;
 		}
+	}
 
-		CAccount를 상속받는 CKoreaAccount를 만들어 다음과 같이 사용하는 프로그램 작성.
+	CAccount를 상속받는 CKoreaAccount를 만들어 다음과 같이 사용하는 프로그램 작성.
 
-		단, CKoreaAccount는 이체한도 정보를 가지고 있다.
+	단, CKoreaAccount는 이체한도 정보를 가지고 있다.
 
-		int main()
-		{
-			CKoreaAccount korAcc("계좌번호", 100, 1000(이체한도) );
+	int main()
+	{
+		CKoreaAccount korAcc("계좌번호", 100, 1000(이체한도) );
 
-			korAcc.ShowData();
+		korAcc.ShowData();
 
-			return 0;
-		}
+		return 0;
+	}
 
-		결과
+	결과
 
-			계좌번호 : ....
-			계좌 잔액 : ....
-			이체 한도 : ......
+		계좌번호 : ....
+		계좌 잔액 : ....
+		이체 한도 : ......
 */
 //=================================================
