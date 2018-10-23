@@ -147,7 +147,7 @@ int main()
 				메모리까지 해제할 기회를 제공.
 */
 //=================================================
-/*
+//*
 class CParent
 {
 public:
@@ -194,7 +194,7 @@ class CChild : public CBase
 {	
 	public void SetData()
 	{	_a = 10;	//	private
-		_b = 20;	//	protected, 상속 관계에서는 public!!
+		_b = 20;	//	protected, 상속 관계에서는 public !!
 	}
 };
 
@@ -202,7 +202,7 @@ int main()
 {
 	CBase base;
 	base._a = 10;	//	private
-	base._b = 20;	//	protected, 외부에서는 private!!
+	base._b = 20;	//	protected, 외부에서는 private !!
 
 	
 	CChild child;
