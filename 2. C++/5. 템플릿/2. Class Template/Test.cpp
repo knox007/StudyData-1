@@ -89,3 +89,154 @@ int main()
 					결정되어야 할 템플릿의 자료형이 다를 수도 있음.
 */
 //=================================================
+/*
+	---------------------------------------
+	2.	클래스 템플릿의 선언과 정의의 분리
+	---------------------------------------
+*/
+//=================================================
+/*
+
+template <typename T>
+class CData
+{
+	T _data;
+
+public:
+	CData(T d);
+
+	void SetData(T d);
+
+	T GetData();
+
+};
+
+template <typename T>
+CData<T>::CData(T d)
+{
+	_data = d;
+}
+
+template <typename T>
+void CData<T>::SetData(T d)
+{
+	_data = d;
+}
+
+template <typename T>
+T CData<T>::GetData()
+{
+	return _data;
+}
+
+//*/
+
+/*
+	1)	CData<T>::
+
+		-	" T 타입에 대해 템플릿으로 정의되어 있는 CData 클래스 템플릿 "
+
+	2)	template <typename T>
+
+		-	클래스 선언부에서 이미 선언후 계속 중복 선언.
+
+		-	멤버 함수를 정의할 때마다 반드시 붙여줘야함.
+
+
+	-	템플릿 클래스의 선언과 정의를 하나의 파일( 주로 *.h )에서 해줘야 함.
+
+		-	템플릿은 컴파일러에 의해 처리됨.
+
+		-	분리된 파일의 연관관계를 찾아주는 것은 링커의 역할.
+*/
+//=================================================
+/*
+	Quiz)	다음 스택클래스를 템플릿화 한다.
+
+		스택
+
+		-	자료구조의 일종
+
+		-	LIFO( Last Input, First Out ) / FILO( First Input, Last Out )
+
+		-	push
+
+			-	데이터 저장
+
+			pop
+
+			-	데이터 꺼내기
+
+*/
+
+/*
+class CStack
+{
+	int _topIdx;
+	char* _pStack;
+	
+public:
+	CStack(int size = 10);
+	~CStack();
+	void Push(const char value);
+	char Pop();
+};
+
+CStack::CStack(int size)
+{
+	_topIdx = -1;
+	_pStack = new char[size];
+}
+
+CStack::~CStack()
+{
+	delete[] _pStack;
+	_pStack = NULL;
+}
+
+void CStack::Push(const char value)
+{
+	_pStack[++_topIdx] = value;
+}
+
+char CStack::Pop()
+{
+	return _pStack[_topIdx--];
+}
+
+int main()
+{
+	CStack tmpStack(10);
+
+	tmpStack.Push('a');
+	tmpStack.Push('b');
+	tmpStack.Push('c');
+
+	for (int i = 0; i < 3; ++i)
+		cout << tmpStack.Pop() << endl;
+
+	return 0;
+}
+//*/
+
+/*
+int main()
+{
+	CStack< char > stackChar(10);
+	stackChar.Push('a');
+	stackChar.Push('b');
+	stackChar.Push('c');
+
+
+	CStack< int > stackInt(10);
+	stackChar.Push(10);
+	stackChar.Push(20);
+	stackChar.Push(30);
+
+
+	........
+
+	return 0;
+}
+*/
+//=================================================
