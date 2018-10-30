@@ -54,9 +54,10 @@ void MakeAccount()
 	++g_index;
 
 	cout << "개설되었습니다.!!" << endl;
+	
 	getchar();
 	getchar();
-
+	
 }//	void MakeAccount()
 //-------------------------------
 //	입 금.
@@ -86,6 +87,7 @@ void Deposit()
 	}//	for (int curId = 0; curId < g_index; ++curId)
 
 	cout << "-- 찾고자 하는 ID가 없습니다. !!--" << endl;
+
 	getchar();
 	getchar();
 
@@ -118,6 +120,7 @@ void Withdraw()
 	}//	for (int curId = 0; curId < g_index; ++curId)
 
 	cout << "-- 찾고자 하는 ID가 없습니다. !!--" << endl;
+
 	getchar();
 	getchar();
 
@@ -148,6 +151,7 @@ void Inquire()
 	}//	for (int curId = 0; curId < g_index; ++curId)
 
 	cout << "-- 찾고자 하는 ID가 없습니다. !!--" << endl;
+
 	getchar();
 	getchar();
 
@@ -166,14 +170,14 @@ void InquireAll()
 		for (int curId = 0; curId < g_index; ++curId)
 		{
 			cout << "---------" << endl;
-			cout << "1. 계좌 ID : " << g_AccountArray[curId]._id << endl;
-			cout << "2. 이 름 : " << g_AccountArray[curId]._szName << endl;
+			cout << "1. 계좌 ID : " << g_AccountArray[curId]._id << " ";
+			cout << "2. 이 름 : " << g_AccountArray[curId]._szName << " ";
 			cout << "3. 잔 액 : " << g_AccountArray[curId]._balance << endl;
 
 		}//	for (int curId = 0; curId < g_index; ++curId)
 	
 	}//	if(g_index == 0)
-
+	
 	getchar();
 	getchar();
 
@@ -209,7 +213,7 @@ int main()
 			break;
 
 		case DEPOSIT:
-			Deposit();			
+			Deposit();
 			break;
 
 		case WITHDRAW:
@@ -229,9 +233,10 @@ int main()
 
 		default :
 			cout << " 다시 선택하세요 !!" << endl;
+			system("pause");
 			break;
 
-		}//	switch (select)		
+		}//	switch (select)
 		
 	}//	while (1)
 
