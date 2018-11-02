@@ -72,6 +72,22 @@ int main()
 	cout << endl << endl;
 
 
+	cout << "--- 정렬 ---" << endl;
+	lt.sort();
+	for (iterCur = lt.begin(); iterCur != lt.end(); iterCur++) {
+		cout << *iterCur << " ";
+	}
+	cout << endl << endl;
+
+
+	lt.clear();
+	cout << "--- 전체 삭제 ---" << endl;
+	for (iterCur = lt.begin(); iterCur != lt.end(); iterCur++) {
+		cout << *iterCur << " ";
+	}
+	cout << endl << endl;
+
+
 	return 0;
 
 }//	int main()
@@ -80,6 +96,6 @@ int main()
 /*
 	Quiz)	주소록 관리 프로그램을 list로 만든다.
 
-			등록, 삭제, 조회, 전체 삭제 기능만 적용.
+			등록, 삭제, 조회, 정렬, 전체 삭제 기능만 적용.
 */
 //=================================================
