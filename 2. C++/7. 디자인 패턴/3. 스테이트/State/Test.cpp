@@ -146,14 +146,30 @@ public:
 };
 //*/
 //=================================================
+/*	적용
+
+int main()
+{
+	Npc npc;
+
+	npc.SetNpcState(new NpcStateFight());
+	npc.Act();
+	
+	npc.SetNpcState(new NpcStateWandering());
+	npc.Act();
+	
+	return 0;
+}
+*/
+//=================================================
 /*
 	유한 상태 머신은 상태패턴을 확장한 것.
 	
-	유한상태머신 참고 링크
-	
-		http://showmiso.tistory.com/156
-
+		유한상태머신 참고 링크	
 		http://blog.naver.com/jerrypoiu/221235988023
+
+		uml
+		http://1ilsang.blog.me/221104669002
 
 */
 //=================================================
