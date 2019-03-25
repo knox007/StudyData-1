@@ -71,6 +71,8 @@ public class BoxingUnBoxing : MonoBehaviour {
         int a = 123;
         object b = (object)a;
         int c = (int)b;         //  언박싱할때, 형변환 연산자를 명시적으로 사용해야 함.
+        //int c = b;         
+
 
         print(a);
         print(b);

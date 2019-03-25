@@ -45,9 +45,6 @@ public class Char : MonoBehaviour {
 
         string aa = "안녕하세요";
         print(aa);
-
-
-
     }
 	
 	// Update is called once per frame

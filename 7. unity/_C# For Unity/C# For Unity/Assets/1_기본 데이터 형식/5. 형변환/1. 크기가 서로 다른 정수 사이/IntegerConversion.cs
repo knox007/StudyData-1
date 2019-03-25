@@ -31,6 +31,9 @@ public class IntegerConversion : MonoBehaviour {
         sbyte d = (sbyte)c;
         print(d);
 
+        //  int     :   0000    0000    0000    0000    0000    0000    1000    0000
+        //  short   :                                                   1000    0000
+
     }
-	
+
 }
