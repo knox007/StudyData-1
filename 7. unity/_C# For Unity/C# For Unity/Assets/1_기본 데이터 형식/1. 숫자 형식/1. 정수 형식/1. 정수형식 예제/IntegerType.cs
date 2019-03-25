@@ -9,9 +9,13 @@ public class IntegerType : MonoBehaviour {
         sbyte a = -10;
         //sbyte a = -500000000000;
         byte b = 40;
+        //byte b = 300;
 
         print(a);
         print(b);
+
+        print("byte.min = " + byte.MinValue);
+        print("byte.max = " + byte.MaxValue);
 
         short c = -30000;
         ushort d = 60000;
@@ -26,6 +30,12 @@ public class IntegerType : MonoBehaviour {
 
         print(e);
         print(f);
+
+        int max = int.MaxValue;
+        int min = int.MinValue;
+
+        print(min);
+        print(max);
 
     }
 
