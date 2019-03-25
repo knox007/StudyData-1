@@ -68,9 +68,6 @@ public class basicscript : MonoBehaviour
             -   상속
                 -   기존의 만들어진 클래스(부모 클래스)의 기능을 물려받아 재사용할수 있도록 한다.(자식 클래스)                
                 -   자식 클래스는 부모 클래스의 기능을 재정의 하거나 확장하여 사용한다.
-                
-
-                
 
 */
 public class basicscript : MonoBehaviour
