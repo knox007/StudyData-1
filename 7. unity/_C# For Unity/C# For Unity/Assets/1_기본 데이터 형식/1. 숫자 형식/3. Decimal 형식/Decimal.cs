@@ -7,6 +7,8 @@
         
         -   -7.9e28 ~ 7.9 e28
 
+        -   실무에선 거의 사용하지 않음.
+
  */
 using System.Collections;
 using System.Collections.Generic;

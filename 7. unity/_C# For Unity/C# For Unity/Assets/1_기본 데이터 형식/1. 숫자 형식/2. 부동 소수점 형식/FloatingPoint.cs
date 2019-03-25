@@ -15,9 +15,8 @@ public class FloatingPoint : MonoBehaviour {
 
         print(b);
 
-        //  메모리를 두배로 사용하지만
-        //  데이터의 손실이 적기때문에
-        //  double형 사용을 권장.
+        //  메모리를 두배로 사용하지만 데이터의 손실이 적기때문에 double형 사용을 권장.
+        //  ... 한다고는 하지만 실제 float도 많이 사용.
 
     }
 	
