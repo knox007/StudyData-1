@@ -11,11 +11,13 @@ public class LifeCycleTest : MonoBehaviour
     private void OnEnable() { Debug.Log("OnEnable is called!!"); }
     //-------------------------------
     private void OnDisable() { Debug.Log("OnDisable is called!!"); }
-    //-------------------------------    
+    //-------------------------------
+    private void OnApplicationQuit() { Debug.Log("OnApplicationQuit is called!!"); }
+    //-------------------------------
     // Use this for initialization
     void Start () { Debug.Log("Start is called!!"); }
     //-------------------------------
-    /*
+    //*
 	void Update ()
     {
         Debug.Log("Update is called!!");
@@ -24,7 +26,7 @@ public class LifeCycleTest : MonoBehaviour
     }
     //*/
     //-------------------------------
-    /*
+    //*
     private void FixedUpdate()
     {
         Debug.Log("FixedUpdate is called!!");
