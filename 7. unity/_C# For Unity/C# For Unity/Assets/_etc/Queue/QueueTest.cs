@@ -16,9 +16,15 @@ public class QueueTest : MonoBehaviour
         _queue.Enqueue(4);
         ShowDatas();
 
+        print("********************");
+        print("_queue.Dequeue()");
+        print("********************");
         _queue.Dequeue();
         ShowDatas();
 
+        print("********************");
+        print("_queue.Enqueue(5)");
+        print("********************");
         _queue.Enqueue(5);
         ShowDatas();
 
@@ -27,8 +33,14 @@ public class QueueTest : MonoBehaviour
     void ShowDatas()
     {
         print("------------");
+        /*
         foreach (int tmp in _queue)
             print(tmp);
+        */
+        for(int i = 0; i < _queue.Count; ++i)
+        {
+            print(_queue.ToArray()[i]);
+        }
         print("------------");
     }
     //------------------------
