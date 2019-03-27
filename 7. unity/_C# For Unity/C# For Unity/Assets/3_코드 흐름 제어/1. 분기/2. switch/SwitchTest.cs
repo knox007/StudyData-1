@@ -64,9 +64,9 @@ public class SwitchTest : MonoBehaviour
     {
         switch (_eState)
         {
-            case eSTATE.Dead:
+            case eSTATE.Dead:						//	:	으로 마무리.
                 print("state is Dead.");
-                break;
+                break;  					        //	주석처리 한다면...?
 
             case eSTATE.Chase:
                 print("state is Chase.");
@@ -83,7 +83,53 @@ public class SwitchTest : MonoBehaviour
             default:
                 print("and so on.");
                 break;
-        }
-    }
+
+        }// switch (_eState)
+
+    }// void OnMouseDown()
+    //----------------------
+
+}// public class SwitchTest : MonoBehaviour
+ //=========================================================
+ /*	quiz 1)	
+
+     영문자를 입력하세요 (A ~ C) : A(또는 a)
+
+     한글로 에이
+
+ */
+ //======================================================
+ /*
+ 2.	switch vs if ~ else
+
+
+     -	switch 문이 if ~ else 문에 비해 간결해 보인다.
+
+     -	하지만 switch 문으로 구현할 수 있는 조건의 구성에는 한계가 있다.
+
+         ->	switch문으로 표현하기 애매한 경우에 if ~ else를 사용한다.
+
+ */
+
+/*	아래와 같이 비교할 범위가 큰 경우 if ~ else가 더 유용하다.
+void Start()
+{
+	int num;
+	
+	if (0 <= num && num < 10)
+		print("0 이상 10 미만\n");
+	else if (10 <= num && num < 20)
+		print("10 이상 20 미만\n");
+	else if (20 <= num && num < 30)
+		print("20 이상 30 미만\n");
+	else
+		print("30 이상\n");
+
 }
-//=========================================================
+*/
+//======================================================
+/*	quiz 2)
+
+	위 if ~ else 문을 약간 수정하면 switch 문으로 변경이 가능하다.
+
+*/
