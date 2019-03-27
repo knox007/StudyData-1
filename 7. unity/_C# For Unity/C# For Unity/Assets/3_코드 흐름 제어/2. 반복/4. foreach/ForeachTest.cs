@@ -45,5 +45,5 @@ public class ForeachTest : MonoBehaviour {
 /*
     quiz)
 
-        foreach 를 사용하여 위 배열요소를 각각 5를 더한 값을 출력.
+        foreach 를 사용하여 위 배열요소에 각각 5를 더한 값을 출력.
  */
