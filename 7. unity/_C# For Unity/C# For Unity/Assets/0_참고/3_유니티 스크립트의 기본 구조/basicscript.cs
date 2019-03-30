@@ -72,15 +72,38 @@ public class Basicscript : MonoBehaviour
 */
 public class Basicscript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /*
+    Start
+    -	게임 시작시 1회 호출되는 함수.
+            주로 초기화에 사용됨.
+    */
     void Start()
     {
         Debug.Log("Start Func called!!!");
     }
 
-    // Update is called once per frame
+    /*
+	Update
+	-	매 프레임 마다 반복해서 호출되는 함수.
+
+        -   프레임(Frame) 
+        
+            게임에서 화면에 뿌려지는 정지 영상의 낱장을 뜻한다.
+            연속된 장면을 주사해 움직이는 화상을 만들어내는
+            애니메이션(Animation)이나 영화의 필름 낱장을 뜻하는 말에서 유래된 용어이다.
+            
+            (출처:네이버 백과 사전)
+
+	-	예)	초당 60프레임의 게임은 Update함수가 
+			1초에 60번 호출.
+
+    */
     void Update()
     {
         Debug.Log("Update Func called!!!");
     }
 }
+
+/*
+ 3. Conventions and Syntax 참고
+ */
