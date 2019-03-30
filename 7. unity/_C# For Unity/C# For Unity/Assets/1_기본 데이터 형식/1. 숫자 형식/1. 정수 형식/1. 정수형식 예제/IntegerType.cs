@@ -5,9 +5,9 @@
 1.	숫자 데이터 형식
 --------------------------
 
-	1.	문자 데이터도 숫자(아스키 코드 값 )으로 되어 있다.
+	1.	문자 데이터도 숫자(아스키 코드 값)으로 되어 있다.
 
-       예) 'a' = 61, b = '64'
+       예) 'a' = ??, 'b' = ??
 
 	2.	15가지 기본 자료형중 12가지가 숫자 데이터 형식.
 
@@ -81,7 +81,7 @@ public class IntegerType : MonoBehaviour {
 
         print(min);
         print(max);
-
+        
     }
 
     // Update is called once per frame
@@ -89,3 +89,6 @@ public class IntegerType : MonoBehaviour {
 		
 	}
 }
+/*
+    Quiz)   'a', 'b'의 아스키 값을 출력하자.
+*/

@@ -30,12 +30,17 @@ public class Char : MonoBehaviour {
         char a = '안';
         //char a = 65;
         //char a = (char)65;
+        //char bb = 'a';
+        //int intB = bb;
+        //print(intB);
         //char a = 'A';
         //int a = 'A';
         char b = '녕';
         char c = '하';
         char d = '세';
         char e = '요';
+
+        
 
         print(a);
         print(b);
