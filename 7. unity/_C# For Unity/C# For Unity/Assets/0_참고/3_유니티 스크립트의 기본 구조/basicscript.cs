@@ -41,7 +41,7 @@ using UnityEngine;
 */
 using UnityEngine;
 /*
-public class basicscript : MonoBehaviour
+public class Basicscript : MonoBehaviour
 
     -   클래스
         -   C# 프로그래밍을 구성하는 기본 단위.
@@ -58,7 +58,7 @@ public class basicscript : MonoBehaviour
         class
             -   클래스 선언 키워드
 
-        basicscript
+        Basicscript
             -   클래스 이름
             -   유니티의 경우 파일이름과 클래스의 이름이 다른 파일을
                 게임 오브젝트에 부착하려고 하는 경우 에러가 발생.
@@ -70,8 +70,10 @@ public class basicscript : MonoBehaviour
                 -   자식 클래스는 부모 클래스의 기능을 재정의 하거나 확장하여 사용한다.
 
 */
-public class basicscript : MonoBehaviour
+
+public class Basicscript : MonoBehaviour
 {
+    //  https://docs.unity3d.com/kr/530/Manual/ExecutionOrder.html
     // Start is called before the first frame update
     void Start()
     {
