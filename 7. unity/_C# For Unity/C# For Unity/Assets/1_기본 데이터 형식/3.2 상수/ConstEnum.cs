@@ -70,3 +70,5 @@ public class ConstEnum : MonoBehaviour
 
 }
 //=======================================================
+
+//  27. Enum 참고
