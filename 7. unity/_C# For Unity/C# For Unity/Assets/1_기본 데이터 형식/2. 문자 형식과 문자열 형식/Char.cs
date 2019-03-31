@@ -40,8 +40,6 @@ public class Char : MonoBehaviour {
         char d = '세';
         char e = '요';
 
-        
-
         print(a);
         print(b);
         print(c);
@@ -50,10 +48,27 @@ public class Char : MonoBehaviour {
 
         string aa = "안녕하세요";
         print(aa);
+
+        print("-- 문자열 -> 문자배열 --");
+        string bb = "Hello";
+        char[] charArray = bb.ToCharArray();
+        for (int i = 0; i < charArray.Length; ++i)
+            print(charArray[i]);
+
+        print("-- 문자배열 -> 문자열 --");
+        char[] charArray2 = { 'A', 'B', 'C', 'D' };
+        bb = new string(charArray2);
+        print(bb);
+
+        // 문자 연산
+        char c1 = 'A';
+        char c2 = (char)(c1 + 1);
+        print(c2);
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }
