@@ -35,6 +35,8 @@
 
             특정 요소에 값을 할당하면 그 이후 값들은 자동으로 1씩 증가되어 할당됨.
 
+        -	이름과 값의 중복을 허용하지 않음.
+
 
  */
 //=======================================================
@@ -63,7 +65,6 @@ public class ConstEnum : MonoBehaviour
         print(circleArea);
 
         print("-- 열거형 예시 --");
-        _eDirection = eDIRECTION.EAST;
         print(_eDirection);        
     }
 
