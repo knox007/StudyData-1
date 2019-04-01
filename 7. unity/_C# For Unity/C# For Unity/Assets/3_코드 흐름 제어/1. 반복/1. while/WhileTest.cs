@@ -50,6 +50,7 @@ using UnityEngine;
 
  */
 //===============================================================
+//*
 public class WhileTest : MonoBehaviour
 {
     public GameObject[] _objects;
@@ -67,7 +68,21 @@ public class WhileTest : MonoBehaviour
     }
 
 }
+//*/
 //===============================================================
+/* 두개의 값을 입력 받아 연산하기.
 
+public class WhileTest : MonoBehaviour
+{
+    public int _valueA;
+    public int _valueB;
+
+    private void Start()
+    {
+        Debug.Log(_valueA + " * " + _valueB + " = " + (_valueA * _valueB));
+    }
+}
+//*/
+//===============================================================
 /*	quiz)
     숫자를 하나 입력 받으면 그 숫자에 대한 구구단을 출력한다.*/
