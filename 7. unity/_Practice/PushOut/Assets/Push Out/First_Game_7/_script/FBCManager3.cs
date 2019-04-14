@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //==============================================================
-public class FBCManager : MonoBehaviour
+public class FBCManager3 : MonoBehaviour
 {
+    //----------------------------
+    public UIManager2 _uiManager;
     //----------------------------
     public int _count;      //  낙하하는 박스 갯수 파악.
     public float _time;     //  박스가 떨어지기까지 걸리는 시간 파악.
@@ -24,10 +26,21 @@ public class FBCManager : MonoBehaviour
         if( other.gameObject.CompareTag("FBC"))
             ++_count;
 
+        //  플레이어가 떨어지면 실패로 처리한다.
+        if (other.gameObject.CompareTag("Player") && _isEnd == false)
+        {
+            _isEnd = true;
+            _uiManager._textFailed.gameObject.SetActive(true);
+        }
+
+
         //  16개 이상 떨어지면 박스가 다 떨어진것으로 한다.
         //  이 경우, 게임 성공으로 처리한다.
         if (_count >= 16)
+        {            
             _isEnd = true;
+            _uiManager._textClear.gameObject.SetActive(true);
+        }
     }
     //----------------------------
     private void Update()
@@ -35,6 +48,8 @@ public class FBCManager : MonoBehaviour
         //  박스가 다 떨어지지 않은 상태라면 경과시간을 누적한다.
         if (_isEnd==false)
             _time += Time.deltaTime;
+
+        _uiManager._textTime.text = _time.ToString();
     }
     //----------------------------
 

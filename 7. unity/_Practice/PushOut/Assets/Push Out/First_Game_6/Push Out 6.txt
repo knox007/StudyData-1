@@ -1,0 +1,49 @@
+﻿/// PushOut ////////////////////////////////////////////
+
+10.	UI를 적용한다.
+
+	-	Hieracy 창에서 마우스 우클릭후 팝업창에서 UI - Text를 선택한다.
+
+		트랜스폼	
+			위치	:	-270,155,0
+			크기	:	160, 45
+
+		Text 속성
+			Font Size	:	30
+			Alignment	:	가로 정렬 - 중앙
+							세로 정렬 - 중앙
+
+			Color		:	White( RGBA - 255,255,255,255 )
+
+		이름 : Text - Elapsed Time으로 수정.
+
+	-	Canvas 게임 오브젝트에 UIManager.cs를 적용한다.( UiManager.cs 참고 )
+
+
+11.	FBCManager.cs에 UIManager 클래스를 참고할 수 있도록 변수를 만든다.
+
+	-	Text - Elapsed Timed으로 경과시간을 연출할 수 있도록 한다.
+
+
+12.	플레이어가 FBC 게임오브젝트에 충돌할 경우도 적용한다
+
+	-	이 경우 게임 실패로 처리한다.
+
+	-	Capsule에 Player로 태그가 설정되어 있는지 확인한다.
+
+	-	FBCManager.cs에 동일한 방법으로 태그를 비교한다.
+
+13.	게임 성공과 실패에대한 메시지를 연출한다.
+
+	-	UIManager에 성공과 실패를 위한 Text 변수를 추가한다.
+
+	-	Canvas에 성공과 실패를 위한 Text를 추가하여 UIManager에 적용한다.
+							
+
+
+
+
+
+
+>>	To be continue...
+			
