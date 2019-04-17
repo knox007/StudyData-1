@@ -21,4 +21,5 @@ public class Basic_Move3 : MonoBehaviour {
             this.transform.Translate(Vector3.forward * MoveSpeed * Time.deltaTime);
         }
     }
+
 }
