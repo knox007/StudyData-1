@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+  
+  1.	두 개 이상의 결과를 요구하는 메소드
+    
+    -   메소드( out _ 매개변수 타입 _ 매개변수 이름 )
+  
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,15 +33,6 @@ public class OutTest : MonoBehaviour {
         print(res);
         print(rest);
 
-		/*
-        int Add, Sub, Multi, Divid, Rest;
-        AddSubMultiDividRest(a, b, out Add, out Sub, out Multi, out Divid, out Rest);
-        print(Add);
-        print(Sub);
-        print(Multi);
-        print(Divid);
-        print(Rest);
-		*/
     }
 	
     void DivideByRef( int a, int b, ref int result, ref int rest )
@@ -48,15 +46,7 @@ public class OutTest : MonoBehaviour {
         result = a / b;
         rest = a % b;
     }
-
-    void AddSubMultiDividRest(int a, int b, out int Add, out int Sub, out int Multi, out int Divide, out int Rest)
-    {
-        Add = a + b;
-        Sub = a - b;
-        Multi = a * b;
-        Divide = a / b;
-        Rest = a % b;
-    }
+    
 }
 
 /*
@@ -77,3 +67,83 @@ public class OutTest : MonoBehaviour {
         
 
  */
+
+
+
+/*
+   1.		
+       quiz)
+
+           두 수를 입력하여 사칙 연산의 결과를 출력하는 함수를 이용하여 프로그램을 만든다.
+
+           예)
+
+               10 3
+
+               합 : 13
+
+               차 : 7
+
+               곱 : 30
+
+               몫 : 3
+
+               나머지 : 1
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+void AddSubMultiDividRest(int a, int b, out int Add, out int Sub, out int Multi, out int Divide, out int Rest)
+{
+    Add = a + b;
+    Sub = a - b;
+    Multi = a * b;
+    Divide = a / b;
+    Rest = a % b;
+}
+
+
+
+
+int Add, Sub, Multi, Divid, Rest;
+AddSubMultiDividRest(a, b, out Add, out Sub, out Multi, out Divid, out Rest);
+print(Add);
+print(Sub);
+print(Multi);
+print(Divid);
+print(Rest);
+*/
