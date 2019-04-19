@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 607923292}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9babb7cf5335ff74ab63c6de2143aef8, type: 3}
+  m_Script: {fileID: 11500000, guid: e52c9f11f828fff45b75b1b3b1a68699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _uiManager: {fileID: 1293572740}
@@ -1186,10 +1186,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 611605856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2876d774f3589fd48b8064acae66fb48, type: 3}
+  m_Script: {fileID: 11500000, guid: 5268470cae275d1468085033c537cb3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 15
+  MoveSpeed: 0
 --- !u!1 &624151312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1976,7 +1976,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1293572735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c7e1d670e25905469971b7c99f23884, type: 3}
+  m_Script: {fileID: 11500000, guid: bce9a58db5bea0b44929b2a90957c4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _textTime: {fileID: 1895201796}
