@@ -1,0 +1,3 @@
+11.	UI 연결
+
+	-	UIManager1.cs 참고.
