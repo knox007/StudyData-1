@@ -1055,7 +1055,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 339415046}
-  - component: {fileID: 339415045}
   - component: {fileID: 339415047}
   - component: {fileID: 339415048}
   m_Layer: 0
@@ -1065,27 +1064,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &339415045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339415044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de782190fadbccb47b49a60db6bd00f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _eGameState: 0
-  _moles: []
-  _limitTime: 5
-  _hitCount_Good: 0
-  _hitCount_Bad: 0
-  _aclipReady: {fileID: 8300000, guid: 6840a92a21afcc14c84435b5b78d0ff5, type: 3}
-  _aclipGo: {fileID: 8300000, guid: a3551e9d1bd3b6c4d96a60f62b9fe594, type: 3}
-  _aclipFinish: {fileID: 8300000, guid: 465f8dbfd0cb31d4c92fdec43de04ec9, type: 3}
-  _audioSrc: {fileID: 339415047}
 --- !u!4 &339415046
 Transform:
   m_ObjectHideFlags: 0
