@@ -53,7 +53,7 @@ public class Mole8 : MonoBehaviour
     public Texture[] _imageCatch2;
     //-----------------------
     //  게임 매니져에 접근하기 위한 변수.
-    public GameManager1 _gameManager;
+    public GameManager2 _gameManager;
     //-----------------------
     private void Awake()
     {
@@ -76,7 +76,7 @@ public class Mole8 : MonoBehaviour
         else
             _isGoodMole = false;
 
-        if (_gameManager._eGameState == GameManager1.eGAMESTATE.READY)
+        if (_gameManager._eGameState == GameManager2.eGAMESTATE.READY)
             _gameManager.Go();
     }
     //-----------------------
@@ -173,6 +173,11 @@ public class Mole8 : MonoBehaviour
 
         //  Open 시작.
         Open_On();
+        
+        //* 1)  게임 상태 갱신 - 시작.
+        if (_gameManager._eGameState == GameManager2.eGAMESTATE.READY)
+            _gameManager.Go();
+        //*/
     }
     //-----------------------
     private void Update()
