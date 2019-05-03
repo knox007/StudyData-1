@@ -38,7 +38,7 @@
 
 		-	벡터를 단위 벡터로 만드는 것.
 
-		-	Vector3.normalized
+		-	Vector3.Normalize()
 				
 			-	해당 벡터의 정규화된 값을 전달한다.
 

@@ -90,14 +90,12 @@ public class TransformFunctions : MonoBehaviour {
 
          */
 
-        //  https://docs.unity3d.com/kr/current/ScriptReference/Transform.Translate.html
         if (Input.GetKey(KeyCode.UpArrow))
             _myTransf.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
 
         if (Input.GetKey(KeyCode.DownArrow))
             _myTransf.Translate(-Vector3.forward * moveSpeed * Time.deltaTime);
 
-        //  https://docs.unity3d.com/kr/current/ScriptReference/Transform.Rotate.html
         if (Input.GetKey(KeyCode.LeftArrow))
             _myTransf.Rotate(Vector3.up, -turnSpeed * Time.deltaTime);
 
