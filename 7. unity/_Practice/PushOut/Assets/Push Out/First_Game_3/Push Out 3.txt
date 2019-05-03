@@ -1,9 +1,0 @@
-﻿/// PushOut ////////////////////////////////////////////
-
-5.	Quiz)	캐릭터가 이동방향으로 회전하도록 한다.
-
-		힌트)	Input.GetAxisRaw / Quaternion.LookRotation
-
-
->>	To be continue...
-			
